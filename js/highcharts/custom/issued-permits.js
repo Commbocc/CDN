@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 	// execs
 
-	$('body').append("<style type=\"text/css\">pre.data { display: none; } .chart-pie { min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto }</style>");
+	$('body').append("<style type=\"text/css\">pre.data { display: none; }</style>");
 
 	$('.chart-pie').each(function(){
 		var options = {
@@ -38,7 +38,7 @@ $(document).ready(function () {
 			},
 			plotOptions: {
 				pie: {
-					innerSize: 100,
+					innerSize: $(this).data('inner-size') || 0,
 					depth: 45,
 					allowPointSelect: true,
 					cursor: 'pointer',
