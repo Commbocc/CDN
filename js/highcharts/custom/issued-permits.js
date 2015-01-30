@@ -19,14 +19,14 @@ $(document).ready(function () {
 
 	// execs
 
-	$('body').append("<style type=\"text/css\">pre.data { display: none; } .chart-pie-3d { min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto }</style>");
+	$('body').append("<style type=\"text/css\">pre.data { display: none; } .chart-pie { min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto }</style>");
 
-	$('.chart-pie-3d').each(function(){
+	$('.chart-pie').each(function(){
 		var options = {
 			chart: {
 				type: 'pie',
 				options3d: {
-					enabled: true,
+					enabled: $(this).data('3d') || false,
 					alpha: 40
 				}
 			},
@@ -62,7 +62,7 @@ $(document).ready(function () {
 		});
 
 
-	$('.chart-column-3d').each(function(){
+	$('.chart-column').each(function(){
 		var options = {
 			chart: {
 				type: 'column'
