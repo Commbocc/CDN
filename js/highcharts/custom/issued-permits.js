@@ -1,8 +1,11 @@
 $(document).ready(function () {
 
+	var chartColors = ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE', 
+	'#DB843D', '#92A8CD', '#A47D7C', '#B5CA92'];
+
 	// functions
 
-	function chartSeriesData(csvData) {
+	function chartSeriesData(csvData, chartObj) {
 		var seriesData = [];
 		var lines = csvData.split(/\r|\r\n|\n/);
 		$.each(lines, function(index,line) {
@@ -14,15 +17,65 @@ $(document).ready(function () {
 				});
 			};
 		});
-		return seriesData;
+		if (chartObj.data('mini') == "false") {
+			return seriesData;
+		} else {
+			return minisculeValues(seriesData, chartObj);
+		}
+	}
+
+	function minisculeValues(seriesData, chartObj) {
+		var minThreshold = chartObj.data('misc-threshold') || .035;
+		var miniValue = 0;
+		var miniLabel = "";
+		var total = 0;
+		var passedValues= [];
+		seriesData.forEach(function(line) {	total += line.y; });
+
+		var i = 0;
+		seriesData.forEach(function(line) {
+			if ( line.y/total <= minThreshold ) {
+				i++;
+				miniValue += line.y;
+				miniLabel = miniLabel.concat(line.name+": "+line.y+"<br>");
+			} else {
+				passedValues.push(line);
+			}
+		});
+
+		if (i == 1) {
+			passedValues.sort(compare);
+			miniValue += passedValues[0].y;
+			miniLabel = miniLabel.concat(passedValues[0].name+": "+passedValues[0].y+"<br>");
+			passedValues.shift();
+		};
+
+		if (miniValue > 0) {
+			passedValues.push({
+				name: "Misc. ≤ " + (minThreshold*100).toFixed(1) +"%",
+				tooltip: miniLabel,
+				y: miniValue
+			});
+		};
+
+		return passedValues;
+	}
+
+	function compare(a,b) {
+		if (a.y < b.y)
+			return -1;
+		if (a.y > b.y)
+			return 1;
+		return 0;
 	}
 
 	// execs
 
-	$('body').append("<style type=\"text/css\">pre.data { display: none; }</style>");
+	$('body').append("<style type=\"text/css\">.chart .data { display: none; }</style>");
 
-	$('.chart-pie').each(function(){
+	$('.chart.chart-pie').each(function(){
 		var options = {
+			colors: chartColors,
 			chart: {
 				type: 'pie',
 				options3d: {
@@ -34,7 +87,7 @@ $(document).ready(function () {
 				text: $(this).data('title') || null
 			},
 			tooltip: {
-				pointFormat: '{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)'
+				pointFormat: '{point.tooltip}{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)'
 			},
 			plotOptions: {
 				pie: {
@@ -55,15 +108,15 @@ $(document).ready(function () {
 			};
 			var csvData = $(this, '.data').text().replace(/\t/g, '');
 			options.series.push({
-				data: chartSeriesData(csvData),
+				data: chartSeriesData(csvData, $(this)),
 				name: $(this).data('series-name') || 'Value'}
 				);
 			$(this).highcharts(options);
 		});
 
-
-	$('.chart-column').each(function(){
+	$('.chart.chart-column').each(function(){
 		var options = {
+			colors: chartColors,
 			chart: {
 				type: 'column'
 			},
@@ -93,7 +146,7 @@ $(document).ready(function () {
 				enabled: false
 			},
 			tooltip: {
-				pointFormat: '<b>${point.y}</b>'
+				pointFormat: '{point.tooltip}<b>${point.y}</b>'
 			},
 			series: [{
 				name: 'Population',
@@ -114,7 +167,7 @@ $(document).ready(function () {
 		};
 		var csvData = $(this, '.data').text().replace(/\t/g, '');
 		options.series.push({
-			data: chartSeriesData(csvData),
+			data: chartSeriesData(csvData, $(this)),
 			name: $(this).data('series-name') || 'Value'}
 			);
 		$(this).highcharts(options);
