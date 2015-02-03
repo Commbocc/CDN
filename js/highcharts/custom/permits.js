@@ -6,7 +6,7 @@ $(document).ready(function () {
 		},
 		chartColors: ['#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE', '#DB843D', '#92A8CD', '#A47D7C', '#B5CA92'],
 		xAxis: {
-			categories: ['Nov, 2013', 'Dec, 2013', 'Jan, 2014', 'Feb, 2014', 'Mar, 2014', 'Apr, 2014', 'May, 2014', 'Jun, 2014', 'Jul, 2014', 'Aug, 2014', 'Sep, 2014', 'Oct, 2014', 'Nov, 2014', 'Dec, 2014']
+			categories: ['Oct, 2013', 'Nov, 2013', 'Dec, 2013', 'Jan, 2014', 'Feb, 2014', 'Mar, 2014', 'Apr, 2014', 'May, 2014', 'Jun, 2014', 'Jul, 2014', 'Aug, 2014', 'Sep, 2014', 'Oct, 2014', 'Nov, 2014', 'Dec, 2014']
 		},
 		labels: {
 			items: [{
