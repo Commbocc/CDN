@@ -8,15 +8,15 @@ $(document).ready(function () {
 		xAxis: {
 			categories: ['Oct, 2013', 'Nov, 2013', 'Dec, 2013', 'Jan, 2014', 'Feb, 2014', 'Mar, 2014', 'Apr, 2014', 'May, 2014', 'Jun, 2014', 'Jul, 2014', 'Aug, 2014', 'Sep, 2014', 'Oct, 2014', 'Nov, 2014', 'Dec, 2014']
 		},
-		labels: {
-			items: [{
-				// html: 'Total',
-				style: {
-					left: '50px',
-					top: '18px'
-				}
-			}]
-		},
+		// labels: {
+		// 	items: [{
+		// 		// html: 'Total',
+		// 		style: {
+		// 			left: '50px',
+		// 			top: '18px'
+		// 		}
+		// 	}]
+		// },
 		series: [{
 			type: 'column',
 			name: 'New Residential',
