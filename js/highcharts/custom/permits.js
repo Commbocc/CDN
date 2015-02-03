@@ -41,7 +41,7 @@ $(document).ready(function () {
 		}, {
 			type: 'spline',
 			name: 'Total',
-			data: [3272, 2585, 2535, 2872, 2912, 3116, 3686, 3704, 3894, 3843, 3709, 3581, 3822, 2759, 3323],
+			data: [3272, 2585, 2534, 2872, 2912, 3116, 3686, 3704, 3894, 3843, 3709, 3581, 3822, 2759, 3323],
 			marker: {
 				lineWidth: 2,
 				lineColor: Highcharts.getOptions().colors[3],
@@ -50,7 +50,7 @@ $(document).ready(function () {
 		}, {
 			type: 'spline',
 			name: 'Residential',
-			data: [1097, 882, 809, 935, 876, 1012, 1147, 1157, 1172, 1115, 1026, 1108, 1179, 889, 1007],
+			data: [1097, 882, 808, 935, 876, 1012, 1147, 1157, 1172, 1115, 1026, 1108, 1179, 889, 1007],
 			color: Highcharts.getOptions().colors[0]
 		}, {
 			type: 'spline',
