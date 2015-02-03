@@ -30,18 +30,16 @@ $(document).ready(function () {
 		var miniLabel = "";
 		var total = 0;
 		var passedValues= [];
-		seriesData.forEach(function(line) {	total += line.y; });
+		for (var i = 0; i < seriesData.length; i++) { total += seriesData[i].y; };
 
-		var i = 0;
-		seriesData.forEach(function(line) {
-			if ( line.y/total <= minThreshold ) {
-				i++;
-				miniValue += line.y;
-				miniLabel = miniLabel.concat(line.name+": "+line.y+"<br>");
+		for (var i = 0; i < seriesData.length; i++) {
+			if ( seriesData[i].y/total <= minThreshold ) {
+				miniValue += seriesData[i].y;
+				miniLabel = miniLabel.concat(seriesData[i].name+": "+seriesData[i].y+"<br>");
 			} else {
-				passedValues.push(line);
+				passedValues.push(seriesData[i]);
 			}
-		});
+		};
 
 		if (i == 1) {
 			passedValues.sort(compare);
@@ -71,7 +69,7 @@ $(document).ready(function () {
 
 	// execs
 
-	$('body').append("<style type=\"text/css\">.chart .data { display: none; }</style>");
+	$('body').append("<style type=\"text/css\">.chart > .data { display: none; }</style>");
 
 	$('.chart.chart-pie').each(function(){
 		var options = {
