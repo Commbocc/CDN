@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hillsborough County Communications &amp; Digital Media - </title>
+
+	<!-- Bootstrap -->
+	<link href="/css/main.css" rel="stylesheet">
+
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		function youtube_parser(url){
+			var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+			var match = url.match(regExp);
+			if (match&&match[7].length==11){
+				return match[7];
+			}else{
+				alert("Url incorrect");
+			}
+		}
+
+		$('#skate-tabs li a').click(function(event){
+			event.preventDefault();
+			var embedURL = "https://www.youtube.com/embed/"+youtube_parser($(this).attr('href'));
+			$('#skatePlayer iframe').attr('src', embedURL);
+		});
+
+	});
+</script>
+
+
+
+<div id="skatePlayer">
+	<div class="player-container">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/cJErdAjy5NQ" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<ul id="skate-tabs" class="btn-group-justified">
+		<li><a href="http://youtu.be/cJErdAjy5NQ" target="_blank">Know Your Stance</a></li>
+		<li><a href="http://youtu.be/BNtCc0uU_mg" target="_blank">How to Fall</a></li>
+		<li><a href="https://www.youtube.com/watch?v=9LXMRp-Egz4" target="_blank">The Ollie</a></li>
+	</ul>
+</div>
+
+<style type="text/css">
+	.player-container {
+		width: 560px;
+		margin: 0 auto;
+	}
+
+	.btn-group-justified {
+		margin: 0;
+		padding: 0;
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: separate;
+	}
+	.btn-group-justified > li {
+		display: table-cell;
+		float: none;
+		width: 1%;
+		text-align: center;
+	}
+
+	.btn-group-justified > li > a {
+		-moz-box-shadow: 0px 10px 14px -7px #276873;
+		-webkit-box-shadow: 0px 10px 14px -7px #276873;
+		box-shadow: 0px 10px 14px -7px #276873;
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+		background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+		background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+		background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+		background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+		background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+		background-color:#599bb3;
+		-moz-border-radius:8px;
+		-webkit-border-radius:8px;
+		border-radius:8px;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:arial;
+		font-size:20px;
+		font-weight:bold;
+		padding:13px 32px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #3d768a;
+	}
+	.btn-group-justified > li > a:hover {
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+		background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+		background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+		background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+		background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+		background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+		background-color:#408c99;
+	}
+	.btn-group-justified > li > a:active {
+		position:relative;
+		top:1px;
+	}
+
+
+
+</style>
+  </div>
+
+</body>
+</html>
