@@ -1,12 +1,16 @@
 $(document).ready(function () {
 
-	var options = {
+	var oneYearAgo = new Date();
+	oneYearAgo.setYear(oneYearAgo.getFullYear()-1);
+
+	var chart = new Highcharts.Chart({
+	// var options = {
+		chart: {
+			renderTo: 'allCountyPermits'
+		},
 		data: {
 			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
-			googleSpreadsheetWorksheet: 2,
-			parsed: function (columns) {
-				// console.log(columns);
-			}
+			googleSpreadsheetWorksheet: 2
 		},
 		title: {
 			text: 'Issued Permits - All County'
@@ -16,6 +20,12 @@ $(document).ready(function () {
 		},
 		credits: {
 			enabled: false
+		},
+		scrollbar: {
+		    enabled: true
+		},
+		xAxis: {
+			min: oneYearAgo.getTime()
 		},
 		yAxis: {
 			title: {
@@ -51,9 +61,9 @@ $(document).ready(function () {
 				fillColor: 'white'			
 			}
 		}]
-	};
+	});
 
-	$('.chart.chart-google').highcharts(options);
+	// $('.chart.chart-google').highcharts(options);
 
 	var allData = Highcharts.data({
 		googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
