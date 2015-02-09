@@ -2,7 +2,8 @@ $(document).ready(function () {
 
 	var d = new Date();
 	var oneYearAgo = new Date( d.getMonth()+"/"+d.getDate()+"/"+(d.getFullYear()-1)).getTime();
-	if (navigator.appVersion.indexOf("MSIE")!=-1) { oneYearAgo = null; };
+	var scrollbar = true;
+	if (navigator.appVersion.indexOf("MSIE")!=-1 || navigator.appVersion.indexOf("AppleWebKit")!=-1) { oneYearAgo = null; scrollbar = false; }
 
 	var chart = new Highcharts.Chart({
 		chart: {
@@ -22,7 +23,7 @@ $(document).ready(function () {
 			enabled: false
 		},
 		scrollbar: {
-		    enabled: false
+		    enabled: scrollbar
 		},
 		xAxis: {
 			min: oneYearAgo
