@@ -1551,17 +1551,17 @@
 }
 @media (min-width: 768px) {
   .bs .container {
-    width: 750px;
+    width: 480px;
   }
 }
 @media (min-width: 992px) {
   .bs .container {
-    width: 970px;
+    width: 720px;
   }
 }
 @media (min-width: 1200px) {
   .bs .container {
-    width: 1170px;
+    width: 940px;
   }
 }
 .bs .container-fluid {
