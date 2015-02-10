@@ -1,5 +1,3 @@
-.bs { max-width: 940px; margin: 0 auto; }
-
 .bs article,
 .bs aside,
 .bs details,
@@ -1550,6 +1548,21 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+@media (min-width: 768px) {
+  .bs .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .bs .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .bs .container {
+    width: 1170px;
+  }
 }
 .bs .container-fluid {
   padding-right: 15px;
