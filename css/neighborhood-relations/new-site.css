@@ -43,3 +43,17 @@
 	background-color: rgba(0,0,0,0.55);
 	border-radius: 10px ;
 }
+
+.btn-group > ul {
+	margin: 0;
+}
+
+.bs .dropdown-menu {
+	padding: 5px 0 !important;
+	margin: 2px 0 0!important;
+}
+
+.bs .dropdown-menu a, .bs .dropdown-menu a:hover {
+	color: #fff !important;
+	text-decoration: none !important;
+}

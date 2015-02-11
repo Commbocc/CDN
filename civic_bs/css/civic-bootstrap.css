@@ -6548,9 +6548,11 @@
   }
 }
 
-.bs .col-xs-1, .bs .col-xs-2, .bs .col-xs-3, .bs .col-xs-4, .bs .col-xs-5, .bs .col-xs-6, .bs .col-xs-7, .bs .col-xs-8, .bs .col-xs-9, .bs .col-xs-10, .bs .col-xs-11, .bs .col-xs-12,
-.bs .col-sm-1, .bs .col-sm-2, .bs .col-sm-3, .bs .col-sm-4, .bs .col-sm-5, .bs .col-sm-6, .bs .col-sm-7, .bs .col-sm-8, .bs .col-sm-9, .bs .col-sm-10, .bs .col-sm-11, .bs .col-sm-12,
-.bs .col-md-1, .bs .col-md-2, .bs .col-md-3, .bs .col-md-4, .bs .col-md-5, .bs .col-md-6, .bs .col-md-7, .bs .col-md-8, .bs .col-md-9, .bs .col-md-10, .bs .col-md-11, .bs .col-md-12,
-.bs .col-lg-1, .bs .col-lg-2, .bs .col-lg-3, .bs .col-lg-4, .bs .col-lg-5, .bs .col-lg-6, .bs .col-lg-7, .bs .col-lg-8, .bs .col-lg-9, .bs .col-lg-10, .bs .col-lg-11, .bs .col-lg-12 {
-  display: table-cell;
+@media (min-width: 992px){
+  .bs .col-xs-1, .bs .col-xs-2, .bs .col-xs-3, .bs .col-xs-4, .bs .col-xs-5, .bs .col-xs-6, .bs .col-xs-7, .bs .col-xs-8, .bs .col-xs-9, .bs .col-xs-10, .bs .col-xs-11, .bs .col-xs-12,
+  .bs .col-sm-1, .bs .col-sm-2, .bs .col-sm-3, .bs .col-sm-4, .bs .col-sm-5, .bs .col-sm-6, .bs .col-sm-7, .bs .col-sm-8, .bs .col-sm-9, .bs .col-sm-10, .bs .col-sm-11, .bs .col-sm-12,
+  .bs .col-md-1, .bs .col-md-2, .bs .col-md-3, .bs .col-md-4, .bs .col-md-5, .bs .col-md-6, .bs .col-md-7, .bs .col-md-8, .bs .col-md-9, .bs .col-md-10, .bs .col-md-11, .bs .col-md-12,
+  .bs .col-lg-1, .bs .col-lg-2, .bs .col-lg-3, .bs .col-lg-4, .bs .col-lg-5, .bs .col-lg-6, .bs .col-lg-7, .bs .col-lg-8, .bs .col-lg-9, .bs .col-lg-10, .bs .col-lg-11, .bs .col-lg-12 {
+    display: table-cell;
+  }
 }
