@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->	
+<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap-theme-yeti.css">
 
-</head>
-<body style="background-color: #efefef;">
+<link rel="stylesheet" type="text/css" href="../css/neighborhood-relations/new-site.css">
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/neighborhood-relations/functions.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->	
+
+<div style="background-color: #efefef;">
 
 	<div style="width: 950px; background-color: #fff; margin: 0 auto;">
 
@@ -67,34 +73,11 @@
 				</a>
 			</div>
 
+
 			<div class="btn-group btn-group-justified">
-				<div class="btn-group">
-					<a type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#go_here">
-						Resources <span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</div>
-				<div class="btn-group">
-					<a type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-						Training <span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="#">Training</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</div>
-				<a href="#" class="btn btn-info" role="button">Community Calendar</a>
-				<a href="#" class="btn btn-info" role="button">Spec. Taxing Districts</a>
-				<a href="#" class="btn btn-info" role="button">Special Events</a>
+				<script type="text/javascript">
+					loadMenu();
+				</script>
 			</div>
 
 			<br>
@@ -156,68 +139,4 @@
 
 	</div>
 
-
-	<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap-theme-yeti.css">
-
-	<style type="text/css">
-		#logo {
-			width: 313px;
-			height: 132px;
-			background: url('http://commbocc.github.io/CDN/images/neighbor-relations/logo.png') no-repeat;
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-		}
-		.carousel-control {
-			z-index: 2;
-		}
-
-
-		@media (min-width: 768px){
-			.navbar-nav{
-				margin: 0 auto;
-				display: table;
-				table-layout: fixed;
-				float:none;
-			}
-		}
-
-		@media (max-width: 991px) {
-			.bs .btn-group-justified > .btn, .bs .btn-group-justified > .btn-group {
-				float: left !important;
-				clear: both !important;
-				width: 100% !important;
-			}
-		}
-
-		.bs .nav-tabs .caret {
-			border-top-color: #fff;
-			border-bottom-color: #fff;
-		}
-
-		.btn-group:hover > .dropdown-menu {
-			display: block;
-		}
-
-		.bs .carousel-caption {
-			background-color: #000;
-			background-color: rgba(0,0,0,0.55);
-			border-radius: 10px ;
-		}
-	</style>
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-	<script type="text/javascript">
-		$(".btn-group > .dropdown-toggle").click(function () {
-			window.location = $(this).attr('href') || '#no_link';
-		});
-	</script>
-
-</body>
-</html>
+</div>
