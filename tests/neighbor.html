@@ -10,20 +10,7 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
-	<style type="text/css">
-		#logo {
-			width: 382px;
-			height: 200px;
-			background: url('../images/neighbor-relations/logo.png');
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-		}
-		.carousel-control {
-			z-index: 2;
-		}
-	</style>
+	
 
 </head>
 <body style="background-color: #efefef;">
@@ -35,15 +22,15 @@
 
 		<div class="bs">
 
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<div id="neighborhood-slider" class="carousel slide hidden-sm hidden-xs" data-ride="carousel">
 				<div id="logo"></div>
 				<ol class="carousel-indicators">
-					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="3"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="4"></li>
-					<li data-target="#carousel-example-generic" data-slide-to="5"></li>
+					<li data-target="#neighborhood-slider" data-slide-to="0" class="active"></li>
+					<li data-target="#neighborhood-slider" data-slide-to="1" class=""></li>
+					<li data-target="#neighborhood-slider" data-slide-to="2"></li>
+					<li data-target="#neighborhood-slider" data-slide-to="3"></li>
+					<li data-target="#neighborhood-slider" data-slide-to="4"></li>
+					<li data-target="#neighborhood-slider" data-slide-to="5"></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
@@ -63,26 +50,47 @@
 					</div>
 					<div class="item">
 						<img src="http://commbocc.github.io/CDN/images/neighbor-relations/slide-glu.jpg">
+						<div class="carousel-caption">
+							<h5>Government Leadership University</h5>
+							<p>
+								Each year two dozen citizens take a peek behind the scenes of government during this 10-week interactive program that aims to create better informed residents.
+							</p>
+						</div>
 					</div>
 
 				</div>
-				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-					<!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+				<a class="left carousel-control" href="#neighborhood-slider" role="button" data-slide="prev">
+					<span class="" aria-hidden="true">&nbsp;</span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-					<!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+				<a class="right carousel-control" href="#neighborhood-slider" role="button" data-slide="next">
+					<span class="" aria-hidden="true">&nbsp;</span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
 
-			<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
-				<a href="#" class="btn btn-info" role="button">Neighborhood Relations</a>
+			<!-- <div class="btn-group btn-group-justified" role="group" aria-label="Justified button group">
+				<a href="#" class="btn btn-info" role="button">Neighborhood Resources</a>
 				<a href="#" class="btn btn-info" role="button">Training</a>
 				<a href="#" class="btn btn-info" role="button">Community Calendar</a>
 				<a href="#" class="btn btn-info" role="button">Special Taxing Districts</a>
 				<a href="#" class="btn btn-info" role="button">Special Events</a>
-			</div>
+			</div> -->
+
+			<ul class="nav nav-tabs nav-pills nav-justified" id="myTab">
+				<li class=""><a href="#">Neighborhood Resources</a></li>
+				<li class=""> <a href="#">Training</a></li>
+				<li class=""> <a href="#">Community Calendar</a></li>
+				<li class=""> <a href="#">Taxing Districts</a></li>
+				<li class=""> <a href="#">Special Events</a></li>
+				<!-- <li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#tab3">Action</a></li>
+						<li><a href="#tab4">Another action</a></li>
+					</ul>
+				</li> -->
+			</ul>
 
 			<br>
 
@@ -110,29 +118,6 @@
 					</ul>
 
 					<br>
-
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="thumbnail">
-								<img data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
-								<div class="caption">
-									<h3>Thumbnail label</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="thumbnail">
-								<img data-src="holder.js/100%x200" alt="100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjkzIiB5PSIxMDAiIHN0eWxlPSJmaWxsOiNBQUFBQUE7Zm9udC13ZWlnaHQ6Ym9sZDtmb250LWZhbWlseTpBcmlhbCwgSGVsdmV0aWNhLCBPcGVuIFNhbnMsIHNhbnMtc2VyaWYsIG1vbm9zcGFjZTtmb250LXNpemU6MTFwdDtkb21pbmFudC1iYXNlbGluZTpjZW50cmFsIj4yNDJ4MjAwPC90ZXh0PjwvZz48L3N2Zz4=" data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
-								<div class="caption">
-									<h3>Thumbnail label</h3>
-									<p>...</p>
-									<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-								</div>
-							</div>
-						</div>
-					</div>
 
 				</div>
 				<div class="col-md-4">
@@ -167,6 +152,57 @@
 
 	<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../civic_bs/css/civic-bootstrap-theme-yeti.css">
+
+	<style type="text/css">
+		#logo {
+			width: 306px;
+			height: 132px;
+			background: url('http://commbocc.github.io/CDN/images/neighbor-relations/logo.png');
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.carousel-control {
+			z-index: 2;
+		}
+
+
+		@media (min-width: 768px){
+			.navbar-nav{
+				margin: 0 auto;
+				display: table;
+				table-layout: fixed;
+				float:none;
+			}
+		}
+
+
+		@media (max-width: 991px) {
+			.bs .btn-group-justified > .btn, .bs .btn-group-justified > .btn-group {
+				float: left !important;
+				clear: both !important;
+				width: 100% !important;
+			}
+		}
+
+		.bs .nav-tabs > li > a {
+			background-color: #5bc0de;
+			border-color: #46b8da;
+			color: #fff;
+		}
+
+		.bs .nav-tabs > li > a:hover {
+			background-color: #31b0d5;
+			border-color: #269abc;
+		}
+
+		.bs .carousel-caption {
+			background-color: #000;
+			background-color: rgba(0,0,0,0.55);
+			border-radius: 10px ;
+		}
+	</style>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
