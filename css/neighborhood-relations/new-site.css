@@ -50,7 +50,7 @@
 
 .bs .dropdown-menu {
 	padding: 5px 0 !important;
-	margin: 2px 0 0!important;
+	margin: 0 !important;
 }
 
 .bs .dropdown-menu a, .bs .dropdown-menu a:hover {
