@@ -1,0 +1,45 @@
+#logo {
+	width: 313px;
+	height: 132px;
+	background: url('http://commbocc.github.io/CDN/images/neighbor-relations/logo.png') no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.carousel-control {
+	z-index: 2;
+}
+
+
+@media (min-width: 768px){
+	.navbar-nav{
+		margin: 0 auto;
+		display: table;
+		table-layout: fixed;
+		float:none;
+	}
+}
+
+@media (max-width: 991px) {
+	.bs .btn-group-justified > .btn, .bs .btn-group-justified > .btn-group {
+		float: left !important;
+		clear: both !important;
+		width: 100% !important;
+	}
+}
+
+.bs .nav-tabs .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+}
+
+.btn-group:hover > .dropdown-menu {
+	display: block;
+}
+
+.bs .carousel-caption {
+	background-color: #000;
+	background-color: rgba(0,0,0,0.55);
+	border-radius: 10px ;
+}
