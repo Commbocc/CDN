@@ -1,0 +1,82 @@
+[
+  {
+    "label": "Resources",
+    "nid": 3758,
+    "submenu": [
+      {
+        "label": "2015 Neighborhood Conference",
+        "nid": 3769
+      },
+      {
+        "label": "Community Calendar",
+        "nid": 3761
+      },
+      {
+        "label": "Disaster Prep.",
+        "nid": 3771
+      },
+      {
+        "label": "Neighborhood Awards",
+        "nid": 3772
+      },
+      {
+        "label": "Neighborhood Grants",
+        "nid": 3774
+      },
+      {
+        "label": "Neighborhood Listings",
+        "nid": 3775
+      },
+      {
+        "label": "Association Form",
+        "nid": 3780
+      },
+      {
+        "label": "Zoning Notification Registry",
+        "nid": 3781
+      }
+    ]
+  },
+  {
+    "label": "Training",
+    "nid": 3759,
+    "submenu": [
+      {
+        "label": "2015 Neighborhood Conference",
+        "nid": 3769
+      },
+      {
+        "label": "Disaster Prep.",
+        "nid": 3771
+      },
+      {
+        "label": "Government Leadership University (GLU)",
+        "nid": 3765
+      }
+    ]
+  },
+  {
+    "label": "Community Calendar",
+    "nid": 3761,
+    "submenu": null
+  },
+  {
+    "label": "Special Taxing Districts",
+    "nid": 3762,
+    "submenu": null
+  },
+  {
+    "label": "Special Events",
+    "nid": 3763,
+    "submenu": [
+      {
+        "label": "2015 Neighborhood Conference",
+        "nid": 3769
+      },
+      {
+        "label": "Government Leadership University (GLU)",
+        "nid": 3765
+      }
+    ]
+  }
+]
