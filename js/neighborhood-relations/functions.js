@@ -1,6 +1,6 @@
 $(document).ready(function ($) {
 
-	$(".btn-group > .dropdown-toggle").click(function () {
+	$("#navMenu").on( 'click', ".btn-group > .dropdown-toggle", function() {
 		window.location = $(this).attr('href') || '#no_link';
 	});
 
