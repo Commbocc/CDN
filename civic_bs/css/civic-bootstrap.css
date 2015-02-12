@@ -2210,6 +2210,33 @@
     margin-left: 0;
   }
 }
+
+/* five (5) column support */
+.bs .col-xs-15,
+.bs .col-sm-15,
+.bs .col-md-15,
+.bs .col-lg-15 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px; }
+.bs .col-xs-15 {
+  width: 20%;
+  float: left; }
+@media (min-width: 768px) {
+  .bs .col-sm-15 {
+    width: 20%;
+    float: left; } }
+@media (min-width: 992px) {
+  .bs .col-md-15 {
+    width: 20%;
+    float: left; } }
+@media (min-width: 1200px) {
+  .bs .col-lg-15 {
+    width: 20%;
+    float: left; } }
+
+
 .bs table {
   background-color: transparent;
 }
