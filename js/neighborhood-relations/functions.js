@@ -96,7 +96,7 @@ $(document).ready(function ($) {
 				out += "<a type=\"button\" class=\"btn btn-info dropdown-toggle\" data-toggle=\"dropdown\" href=\"/?nid="+menu[i].nid+"\">";
 				out += menu[i].label+" <span class=\"caret\"></span></a><ul class=\"dropdown-menu\" role=\"menu\">";
 				for (var si = 0; si < menu[i].submenu.length; si++) {
-					out += "<li><a href=\""+menu[i].submenu[si].nid+"\">"+menu[i].submenu[si].label+"</a></li>";
+					out += "<li><a href=\"/?nid="+menu[i].submenu[si].nid+"\">"+menu[i].submenu[si].label+"</a></li>";
 				};
 				out += "</ul></div>";
 			} else {
