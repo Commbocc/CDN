@@ -1,10 +1,5 @@
 $(document).ready(function () {
-
-	var d = new Date();
-	var oneYearAgo = new Date( d.getMonth()+"/"+d.getDate()+"/"+(d.getFullYear()-1)).getTime();
-	var scrollbar = true;
-	if (navigator.appVersion.indexOf("MSIE")!=-1 || navigator.appVersion.indexOf("Mobile")!=-1) { oneYearAgo = null; scrollbar = false; }
-
+	
 	var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'allCountyPermits',
@@ -22,12 +17,6 @@ $(document).ready(function () {
 		},
 		credits: {
 			enabled: false
-		},
-		scrollbar: {
-			enabled: false
-		},
-		xAxis: {
-			min: null
 		},
 		yAxis: {
 			title: {
