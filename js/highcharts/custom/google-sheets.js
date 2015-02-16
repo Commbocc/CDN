@@ -5,8 +5,6 @@ $(document).ready(function () {
 	var scrollbar = true;
 	if (navigator.appVersion.indexOf("MSIE")!=-1 || navigator.appVersion.indexOf("Mobile")!=-1) { oneYearAgo = null; scrollbar = false; }
 
-	// alert(navigator.appVersion);
-
 	var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'allCountyPermits'
@@ -25,10 +23,10 @@ $(document).ready(function () {
 			enabled: false
 		},
 		scrollbar: {
-		    enabled: scrollbar
+			enabled: false
 		},
 		xAxis: {
-			min: oneYearAgo
+			min: null
 		},
 		yAxis: {
 			title: {
@@ -66,14 +64,12 @@ $(document).ready(function () {
 		}]
 	});
 
-	// $('#allCountyPermits').highcharts(options);
-
 	var allData = Highcharts.data({
 		googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
 		googleSpreadsheetWorksheet: 1
 	});	
 
-	function pointClick() {
+	function pointClick(columns) {
 		var $div = $('<div></div>').dialog({
 			title: this.name,
 			width: '60%',
