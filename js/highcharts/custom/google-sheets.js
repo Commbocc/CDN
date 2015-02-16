@@ -7,7 +7,8 @@ $(document).ready(function () {
 
 	var chart = new Highcharts.Chart({
 		chart: {
-			renderTo: 'allCountyPermits'
+			renderTo: 'allCountyPermits',
+			zoomType: 'x'
 		},
 		data: {
 			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
