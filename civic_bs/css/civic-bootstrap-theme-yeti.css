@@ -4788,6 +4788,9 @@
   background-color: #4A7997;
   border-radius: 10px;
 }
+.bs .badge.badge-danger {
+  background-color: #B62B2E;
+}
 .bs .badge:empty {
   display: none;
 }
