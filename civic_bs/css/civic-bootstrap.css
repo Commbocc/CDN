@@ -3159,10 +3159,10 @@
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-.bs .btn-success .badge {
+/*.bs .btn-success .badge {
   color: #5cb85c !important;
   background-color: #fff;
-}
+}*/
 .bs .btn-info {
   color: #fff !important;
   background-color: #5bc0de;
