@@ -3048,7 +3048,7 @@
 .bs .btn-primary {
   color: #ffffff;
   background-color: #4A7997;
-  border-color: #0079a1;
+  border-color: #92afc1;
 }
 .bs .btn-primary:hover,
 .bs .btn-primary:focus,
@@ -3084,7 +3084,7 @@
 .bs .btn-primary[disabled].active,
 .bs fieldset[disabled] .btn-primary.active {
   background-color: #4A7997;
-  border-color: #0079a1;
+  border-color: #92afc1;
 }
 .bs .btn-primary .badge {
   color: #4A7997;
@@ -6646,7 +6646,7 @@
 }
 .bs .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu {
   background-color: #4A7997;
-  border-color: #0079a1;
+  border-color: #92afc1;
 }
 .bs .btn-group .dropdown-toggle.btn-primary ~ .dropdown-menu > li > a {
   color: #ffffff;
