@@ -1312,7 +1312,7 @@
   color: #4A7997;
 }
 .bs a.text-primary:hover {
-  color: #006687;
+  color: #315065;
 }
 .bs .text-success {
   color: #89a54e;
@@ -1343,7 +1343,7 @@
   background-color: #4A7997;
 }
 .bs a.bg-primary:hover {
-  background-color: #006687;
+  background-color: #315065;
 }
 .bs .bg-success {
   background-color: #dff0d8;
@@ -3057,7 +3057,7 @@
 .bs .btn-primary.active,
 .bs .open > .dropdown-toggle.btn-primary {
   color: #ffffff;
-  background-color: #006687;
+  background-color: #315065;
   border-color: #004b63;
 }
 .bs .btn-primary:active,
@@ -4458,7 +4458,7 @@
 }
 .bs .navbar-inverse {
   background-color: #4A7997;
-  border-color: #006687;
+  border-color: #315065;
 }
 .bs .navbar-inverse .navbar-brand {
   color: #ffffff;
@@ -4477,13 +4477,13 @@
 .bs .navbar-inverse .navbar-nav > li > a:hover,
 .bs .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: #006687;
+  background-color: #315065;
 }
 .bs .navbar-inverse .navbar-nav > .active > a,
 .bs .navbar-inverse .navbar-nav > .active > a:hover,
 .bs .navbar-inverse .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #006687;
+  background-color: #315065;
 }
 .bs .navbar-inverse .navbar-nav > .disabled > a,
 .bs .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -4508,15 +4508,15 @@
 .bs .navbar-inverse .navbar-nav > .open > a,
 .bs .navbar-inverse .navbar-nav > .open > a:hover,
 .bs .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #006687;
+  background-color: #315065;
   color: #ffffff;
 }
 @media (max-width: 767px) {
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #006687;
+    border-color: #315065;
   }
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #006687;
+    background-color: #315065;
   }
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #ffffff;
@@ -4524,13 +4524,13 @@
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #ffffff;
-    background-color: #006687;
+    background-color: #315065;
   }
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #006687;
+    background-color: #315065;
   }
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .bs .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -4744,7 +4744,7 @@
 }
 .bs .label-primary[href]:hover,
 .bs .label-primary[href]:focus {
-  background-color: #006687;
+  background-color: #315065;
 }
 .bs .label-success {
   background-color: #89a54e;
@@ -6608,7 +6608,7 @@
 .bs .navbar-inverse .dropdown-menu > li > a:hover,
 .bs .navbar-inverse .dropdown-menu > .active > a,
 .bs .navbar-inverse .dropdown-menu > .active > a:hover {
-  background-color: #006687;
+  background-color: #315065;
 }
 .bs .btn {
   padding: 8px 12px;
