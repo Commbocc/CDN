@@ -5518,22 +5518,22 @@
   border-bottom-color: #dddddd;
 }
 .bs .panel-primary {
-  border-color: #008cba;
+  border-color: #4A7997;
 }
 .bs .panel-primary > .panel-heading {
   color: #ffffff;
-  background-color: #008cba;
-  border-color: #008cba;
+  background-color: #4A7997;
+  border-color: #4A7997;
 }
 .bs .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #008cba;
+  border-top-color: #4A7997;
 }
 .bs .panel-primary > .panel-heading .badge {
-  color: #008cba;
+  color: #4A7997;
   background-color: #ffffff;
 }
 .bs .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #008cba;
+  border-bottom-color: #4A7997;
 }
 .bs .panel-success {
   border-color: #3c9a5f;
