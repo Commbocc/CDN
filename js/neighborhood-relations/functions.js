@@ -100,7 +100,7 @@ $(document).ready(function ($) {
 				};
 				out += "</ul></div>";
 			} else {
-				out += "<a href=\"/?nid="+menu[i].nid+"\" class=\"btn btn-info\" role=\"button\">"+menu[i].label+"</a>";
+				out += "<a href=\"/?nid="+menu[i].nid+"\" class=\"btn btn-primary\" role=\"button\">"+menu[i].label+"</a>";
 			}
 		}
 		return out;
