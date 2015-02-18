@@ -25,4 +25,23 @@
 		display: block;
 	}
 
+	@media (max-width: 991px) {
+		.btn-group-justified > .btn, .btn-group-justified > .btn-group {
+			float: left !important;
+			clear: both !important;
+			width: 100% !important;
+		}
+	}
+
+	.carousel-caption {
+		background-color: #000;
+		background-color: rgba(0,0,0,0.55);
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+	.carousel-control {
+		z-index: 2;
+	}
+
 }
