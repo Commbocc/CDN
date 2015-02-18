@@ -8,7 +8,7 @@ $ ->
 
 	$("#navWrapper").on
 		mouseover: ->
-			console.log $(this).closest("#navWrapper").html()
+			console.log $(this).closest(".wrapper").html()
 			# $(this).siblings(".wrapper").find(".subCat").each ->
 			# 	secondTier.push $(this).text()
 			# 	console.log $(this).text()
