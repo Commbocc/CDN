@@ -8,10 +8,11 @@ $ ->
 
 	$("#navWrapper").on
 		mouseover: ->
-			$(this).siblings(".wrapper").find(".subCat").each ->
-				secondTier.push $(this).text()
-				console.log $(this).text()
-				return
+			console.log $(this).closest("#navWrapper").html()
+			# $(this).siblings(".wrapper").find(".subCat").each ->
+			# 	secondTier.push $(this).text()
+			# 	console.log $(this).text()
+			# 	return
 			return
 	, "a.Cat"
 
