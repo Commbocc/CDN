@@ -17,7 +17,7 @@ $ ->
 
 	$("#navWrapper a.Cat").each ->
 		firstTier.push $(this).text()
-		$(this).closest(".navtext").trigger("mouseover")
+		$(this).trigger("mouseover")
 		
 		return
 
