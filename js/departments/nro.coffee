@@ -11,10 +11,12 @@ $ ->
 
 		parentDiv = $(this).closest(".navtext")
 
-		$("#navWrapper").on 'mouseover', 'a.Cat' ->
-			$(this).find(".subCat").each ->
-				secondTier.push $(this).text()
-				return
+		$("#navWrapper").on
+			mouseover: ->
+				$(this).find(".subCat").each ->
+					secondTier.push $(this).text()
+					return
+		, "a.Cat"
 
 		parentDiv.trigger("mouseover")
 		
