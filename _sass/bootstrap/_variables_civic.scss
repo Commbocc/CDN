@@ -244,7 +244,7 @@ $dropdown-divider-bg:            rgba(0,0,0,.2);
 //** Dropdown link text color.
 $dropdown-link-color:            $btn-primary-color;
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      darken($gray-dark, 5%);
+$dropdown-link-hover-color:      darken($btn-primary-color, 5%);
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:         #eee;
 
