@@ -1,0 +1,16 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+.bs {
+	#logo {
+		width: 313px;
+		height: 132px;
+		background: url('http://commbocc.github.io/CDN/images/neighbor-relations/logo.png') no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+}
