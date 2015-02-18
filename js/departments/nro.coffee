@@ -16,7 +16,7 @@ $ ->
 				$(this).find(".subCat").each ->
 					secondTier.push $(this).text()
 					return
-		, "a.Cat"
+		, ".navtext"
 
 		parentDiv.trigger("mouseover")
 		
