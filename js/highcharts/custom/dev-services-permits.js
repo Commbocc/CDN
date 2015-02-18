@@ -1,5 +1,21 @@
 $(document).ready(function () {
-	
+
+	function googleData(sheet) {
+		sheet = sheet || 1;
+		var theData = Highcharts.data({
+			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
+			googleSpreadsheetWorksheet: sheet
+		});
+		return theData;
+	}
+
+	var allValueData = Highcharts.data({
+		googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
+		googleSpreadsheetWorksheet: 1
+	});	
+
+	console.log(googleData(1));
+
 	var chart = new Highcharts.Chart({
 		chart: {
 			renderTo: 'allCountyPermits',
@@ -7,7 +23,10 @@ $(document).ready(function () {
 		},
 		data: {
 			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
-			googleSpreadsheetWorksheet: 2
+			googleSpreadsheetWorksheet: 2,
+			parsed: function (columns) {
+				generateTable(columns);
+			}
 		},
 		title: {
 			text: 'Issued Permits - All County'
@@ -54,19 +73,14 @@ $(document).ready(function () {
 		}]
 	});
 
-	var allData = Highcharts.data({
-		googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
-		googleSpreadsheetWorksheet: 1
-	});	
-
-	function pointClick(columns) {
+	function pointClick() {
 		var $div = $('<div></div>').dialog({
 			title: this.name,
 			width: '60%',
 			height: 450
 		});
 
-		var dataColumn = allData.columns[this.index+3]
+		var dataColumn = allValueData.columns[this.index+3]
 
 		var eoMonth = this.x;
 		var eoMonthName = dataColumn[0];
@@ -74,9 +88,9 @@ $(document).ready(function () {
 
 		var monthData = [];
 		for (var i = 0; i < dataColumn.length; i++) {
-			var category = allData.columns[0][i]
+			var category = allValueData.columns[0][i]
 			if ( category && dataColumn[i] && category.indexOf(serieName) > -1 ) {
-				monthData.push({name: allData.columns[2][i], y: dataColumn[i]});
+				monthData.push({name: allValueData.columns[2][i], y: dataColumn[i]});
 			};
 		};
 
@@ -99,7 +113,30 @@ $(document).ready(function () {
 				data: minisculeValues(monthData)
 			}]
 		});
+	}
 
+	function generateTable(data) {
+		var lastRowIndex = data[0].length - 1,
+		monthsArray = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		d = new Date(data[0][lastRowIndex]),
+		month = monthsArray[d.getMonth()+1],
+		year = d.getFullYear(),
+		latestMonth = month + ". " + year;
+
+		$("#lastMonthStats").append('<div class="bs">');
+		$table = $("#lastMonthStats > div.bs");
+
+		$table.append('<table class="table table-striped"><thead><tr><th>Permit Types</th><th>No. Issued '+latestMonth+'</th><th>Value of Permits Issued</th><th>Charts</th></tr></thead><tbody>');
+
+		
+
+		for (var i = 0; i < data.length; i++) {
+			if (i == 0) continue;
+
+			var chartLink = (i < data.length - 1 ? '<a href="#" class="generateChart" data-series="'+allValueData+'">View Chart</a>' : '');
+
+			$table.find('tbody').append('<tr><td>'+data[i][0]+'</td><td>'+data[i][lastRowIndex]+'</td><td></td><td>'+chartLink+'</td>');
+		}
 	}
 
 	function minisculeValues(seriesData) {
@@ -146,5 +183,38 @@ $(document).ready(function () {
 			return 1;
 		return 0;
 	}
+
+	$('body').on('click', 'a.generateChart', function(){
+		var $div = $('<div></div>').dialog({
+			width: '60%',
+			height: 450
+		});
+
+		window.chart = new Highcharts.Chart({
+			chart: {
+				renderTo: $div[0],
+				type: 'pie'
+			},
+			title: {
+				text: 'title'
+			},
+			tooltip: {
+				// pointFormat: '{point.tooltip}{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)'
+			},
+			credits: {
+				enabled: false
+			},
+			series: [{
+            type: 'pie',
+            data: [
+                ['Firefox',   45.0],
+                ['IE',       26.8],
+                ['Safari',    8.5],
+                ['Opera',     6.2],
+                ['Others',   0.7]
+            ]
+        }]
+		});
+	});
 
 });
