@@ -12,4 +12,8 @@
 	@import "bootstrap_civic";
 	@import "bootswatch";
 
+	.btn, .btn:hover, .dropdown-menu a, .dropdown-menu a:hover {
+		color: $link-color !important;
+	}
+
 }
