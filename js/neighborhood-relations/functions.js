@@ -92,7 +92,7 @@ $(document).ready(function ($) {
 
 		for (var i = 0; i < menu.length; i++) {
 			if (menu[i].submenu) {
-				out += "<div class=\"btn-group\">";
+				out += "<div class=\"btn-group hover\">";
 				out += "<a type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" href=\"/?nid="+menu[i].nid+"\">";
 				out += menu[i].label+" <span class=\"caret\"></span></a><ul class=\"dropdown-menu\" role=\"menu\">";
 				for (var si = 0; si < menu[i].submenu.length; si++) {
