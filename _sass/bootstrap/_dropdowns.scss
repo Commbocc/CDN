@@ -67,7 +67,7 @@
     clear: both;
     font-weight: normal;
     line-height: $line-height-base;
-    color: $dropdown-link-color;
+    color: $dropdown-link-color !important;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
   }
 }
@@ -77,7 +77,7 @@
   &:hover,
   &:focus {
     text-decoration: none;
-    color: $dropdown-link-hover-color;
+    color: $dropdown-link-hover-color !important;
     background-color: $dropdown-link-hover-bg;
   }
 }
@@ -87,7 +87,7 @@
   &,
   &:hover,
   &:focus {
-    color: $dropdown-link-active-color;
+    color: $dropdown-link-active-color !important;
     text-decoration: none;
     outline: 0;
     background-color: $dropdown-link-active-bg;
@@ -102,7 +102,7 @@
   &,
   &:hover,
   &:focus {
-    color: $dropdown-link-disabled-color;
+    color: $dropdown-link-disabled-color !important;
   }
 
   // Nuke hover/focus effects
@@ -154,7 +154,7 @@
   padding: 3px 20px;
   font-size: $font-size-small;
   line-height: $line-height-base;
-  color: $dropdown-header-color;
+  color: $dropdown-header-color !important;
   white-space: nowrap; // as with > li > a
 }
 
