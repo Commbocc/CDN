@@ -6,19 +6,17 @@ $ ->
 	firstTier = []
 	secondTier = []
 
+	$("#navWrapper").on
+		mouseover: ->
+			$(this).find(".subCat").each ->
+				secondTier.push $(this).text()
+				console.log $(this).text()
+				return
+	, ".navtext"
+
 	$("#navWrapper a.Cat").each ->
 		firstTier.push $(this).text()
-
-		parentDiv = $(this).closest(".navtext")
-
-		$("#navWrapper").on
-			mouseover: ->
-				$(this).find(".subCat").each ->
-					secondTier.push $(this).text()
-					return
-		, ".navtext"
-
-		parentDiv.trigger("mouseover")
+		$(this).closest(".navtext").trigger("mouseover")
 		
 		return
 
