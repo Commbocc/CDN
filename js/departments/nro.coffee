@@ -7,13 +7,13 @@ $ ->
 	secondTier = []
 
 	$("#navWrapper").on
-		addSubMenuSide: ->
+		mouseover: ->
 			$(this).find(".subCat").each ->
 				secondTier.push $(this).text()
 				return
 			console.log $(this).html()
 			return
-	, ".navtext"
+	, "a.Cat"
 
 	$("#navWrapper a.Cat").each ->
 		firstTier.push $(this).text()
