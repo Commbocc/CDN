@@ -11,7 +11,7 @@ $ ->
 
 		parentDiv = $(this).closest(".navtext")
 
-		parentDiv.on 'mouseover', ->
+		$("#navWrapper").on 'mouseover', 'a.Cat' ->
 			$(this).find(".subCat").each ->
 				secondTier.push $(this).text()
 				return
