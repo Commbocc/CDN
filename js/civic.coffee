@@ -5,9 +5,7 @@ $ ->
 
 	# load menu dynamically from civic's hidden sidebar
 	loadMenu = ->
-
 		nav = []
-
 		$("#navWrapper").on
 			mouseover: (e) ->
 				item = {}
@@ -32,8 +30,6 @@ $ ->
 			$(this).trigger("mouseover")
 			# $(this).trigger("mouseout")
 			return
-
-		console.log nav
 
 		out = ''
 		i = 0
