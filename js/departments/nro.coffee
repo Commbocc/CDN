@@ -8,11 +8,16 @@ $ ->
 
 	$("#navWrapper a.Cat").each ->
 		firstTier.push $(this).text()
-		$(this).closest(".navtext").trigger("mouseover")
-		# $("#navWrapper").on()
-		$(this).find(".subCat").each ->
-			secondTier.push $(this).text()
-			return
+
+		parentDiv = $(this).closest(".navtext")
+
+		parentDiv.on 'mouseover', ->
+			$(this).find(".subCat").each ->
+				secondTier.push $(this).text()
+				return
+
+		parentDiv.trigger("mouseover")
+		
 		return
 
 	console.log firstTier
