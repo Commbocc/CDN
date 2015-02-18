@@ -3,9 +3,6 @@
 
 $ ->
 
-	$('#navMenu').html loadMenu()
-	
-
 	# load menu dynamically from civic's hidden sidebar
 	loadMenu = ->
 
@@ -56,3 +53,4 @@ $ ->
 				out += '<a href="' + nav[i].href + '" target="' + target + '" class="btn btn-primary" role="button">' + nav[i].text + '</a>'
 			i++
 		out
+	$('#navMenu').html loadMenu()
