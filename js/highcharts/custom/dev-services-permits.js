@@ -126,16 +126,14 @@ $(document).ready(function () {
 		$("#lastMonthStats").append('<div class="bs">');
 		$table = $("#lastMonthStats > div.bs");
 
-		$table.append('<table class="table table-striped"><thead><tr><th>Permit Types</th><th>No. Issued '+latestMonth+'</th><th>Value of Permits Issued</th><th>Charts</th></tr></thead><tbody>');
-
-		
+		$table.append('<table class="table table-striped"><thead><tr><th>Permit Types</th><th>No. Issued '+latestMonth+'</th><th>Value of Permits Issued</th></tr></thead><tbody>');
 
 		for (var i = 0; i < data.length; i++) {
 			if (i == 0) continue;
 
-			var chartLink = (i < data.length - 1 ? '<a href="#" class="generateChart" data-series="'+allValueData+'">View Chart</a>' : '');
+			var chartLink = (i < data.length - 1 ? ' <small>(<a href="#" class="generateChart" data-series="'+allValueData+'">View Chart</a>)</small>' : '');
 
-			$table.find('tbody').append('<tr><td>'+data[i][0]+'</td><td>'+data[i][lastRowIndex]+'</td><td></td><td>'+chartLink+'</td>');
+			$table.find('tbody').append('<tr><td>'+data[i][0]+'</td><td>'+data[i][lastRowIndex]+chartLink+'</td><td></td>');
 		}
 	}
 
