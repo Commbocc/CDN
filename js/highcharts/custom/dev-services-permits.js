@@ -1,20 +1,11 @@
 $(document).ready(function () {
 
-	function googleData(sheet) {
-		sheet = sheet || 1;
-		var theData = Highcharts.data({
-			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
-			googleSpreadsheetWorksheet: sheet
-		});
-		return theData;
-	}
+	var googleSheetKey = "1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE";
 
 	var allValueData = Highcharts.data({
-		googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
+		googleSpreadsheetKey: googleSheetKey,
 		googleSpreadsheetWorksheet: 1
 	});	
-
-	// console.log(googleData(1));
 
 	var chart = new Highcharts.Chart({
 		chart: {
@@ -22,7 +13,7 @@ $(document).ready(function () {
 			zoomType: 'x'
 		},
 		data: {
-			googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
+			googleSpreadsheetKey: googleSheetKey,
 			googleSpreadsheetWorksheet: 2,
 			parsed: function (columns) {
 				generateTable(columns);
@@ -130,10 +121,8 @@ $(document).ready(function () {
 
 		for (var i = 0; i < data.length; i++) {
 			if (i == 0) continue;
-
-			var chartLink = (i < data.length - 1 ? ' <small>(<a href="#" class="generateChart" data-series="'+allValueData+'">View Chart</a>)</small>' : '');
-
-			$table.find('tbody').append('<tr><td>'+data[i][0]+'</td><td>'+data[i][lastRowIndex]+chartLink+'</td><td></td>');
+			// var chartLink = (i < data.length - 1 ? ' <small>(<a href="#" class="generateChart" data-series="'+allValueData+'">View Chart</a>)</small>' : '');
+			$table.find('tbody').append('<tr><td>'+data[i][0]+'</td><td>'+data[i][lastRowIndex]+'</td><td></td>');
 		}
 	}
 
@@ -182,131 +171,89 @@ $(document).ready(function () {
 		return 0;
 	}
 
-	$('body').on('click', 'a.generateChart', function(){
-		var $div = $('<div></div>').dialog({
-			width: '60%',
-			height: 450
-		});
-
-		window.chart = new Highcharts.Chart({
-			chart: {
-				renderTo: $div[0],
-				type: 'pie'
-			},
-			title: {
-				text: 'title'
-			},
-			tooltip: {
-				// pointFormat: '{point.tooltip}{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)'
-			},
-			credits: {
-				enabled: false
-			},
-			series: [{
-            type: 'pie',
-            data: [
-                ['Firefox',   45.0],
-                ['IE',       26.8],
-                ['Safari',    8.5],
-                ['Opera',     6.2],
-                ['Others',   0.7]
-            ]
-        }]
-		});
-	});
-
-
-	 Highcharts.data({
-        googleSpreadsheetKey: '1z-LA9Htodmj4G5Eq82myGKbaxElYEr_BC994PFsNujE',
+	// drillIssued chart
+	Highcharts.data({
+		googleSpreadsheetKey: googleSheetKey,
 		googleSpreadsheetWorksheet: 3,
-        parsed: function (columns) {
+		parsed: function (columns) {
+			var categories = {},
+			categoriesData = [],
+			types = {},
+			drilldownSeries = [];
 
-            var categories = {},
-                categoriesData = [],
-                types = {},
-                drilldownSeries = [];
-            
-            $.each(columns[0], function (i, cat) {
-                
-                var type = columns[2][i];
+			$.each(columns[0], function (i, cat) {
+				var type = columns[2][i];
+				if (i > 0) {
 
-                if (i > 0) {
+					// Create the main data
+					if (!categories[cat]) {
+						categories[cat] = columns[3][i];
+					} else {
+						if (columns[3][i]) {
+							categories[cat] += columns[3][i];
+						}
+					}
 
-                    // Create the main data
-                    if (!categories[cat]) {
-                        categories[cat] = columns[3][i];
-                    } else {
-                        if (columns[3][i]) {
-                            categories[cat] += columns[3][i];
-                        }
-                    }
-                    
-                    // create drilldown data
-                    if (type) {
-                        if (!types[cat]) {
-                            types[cat] = [];
-                        }
-                        if (columns[3][i] > 0) {
-                            types[cat].push([type, columns[3][i]]);
-                        }
-                    }
-                    
-                }
+					// create drilldown data
+					if (type) {
+						if (!types[cat]) {
+							types[cat] = [];
+						}
+						if (columns[3][i] > 0) {
+							types[cat].push([type, columns[3][i]]);
+						}
+					}
+				}
+			});
 
-            });
-            
-            // assign data
-            $.each(categories, function (name, y) {
-                categoriesData.push({
-                    name: name,
-                    y: y,
-                    drilldown: types[name] ? name : null
-                });
-            });
-            $.each(types, function (key, value) {
-                drilldownSeries.push({
-                    name: key,
-                    id: key,
-                    data: value
-                });
-            });
-            
-            // Create the chart
-            $('#drillIssued').highcharts({
-                chart: {
-                    type: 'pie'
-                },
-                title: {
-                    text: 'Permits Issued: ' + columns[3][0]
-                },
-                subtitle: {
-                    text: 'Click a slice to view a breakdown of the permits in that category.'
-                },
-                plotOptions: {
-                    series: {
-                        dataLabels: {
-                            enabled: true,
-                            format: '{point.name}: {point.y}'
-                        }
-                    }
-                },
+			// assign data
+			$.each(categories, function (name, y) {
+				categoriesData.push({
+					name: name,
+					y: y,
+					drilldown: types[name] ? name : null
+				});
+			});
+			$.each(types, function (key, value) {
+				drilldownSeries.push({
+					name: key,
+					id: key,
+					data: value
+				});
+			});
 
-                tooltip: {
-                    headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-                    pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of total<br/>'
-                },
-
-                series: [{
-                    name: 'Categories',
-                    colorByPoint: true,
-                    data: categoriesData
-                }],
-                drilldown: {
-                    series: drilldownSeries
-                }
-            });
-           
-        }
-    });
-
+			// Create the chart
+			$('#drillIssued').highcharts({
+				chart: {
+					type: 'pie'
+				},
+				title: {
+					text: 'Permits Issued: ' + columns[3][0]
+				},
+				subtitle: {
+					text: 'Click a slice to view a breakdown of the permits in that category.'
+				},
+				plotOptions: {
+					series: {
+						dataLabels: {
+							enabled: true,
+							format: '{point.name}: {point.y}'
+						}
+					}
+				},
+				tooltip: {
+					headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+					pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y}</b> of total<br/>'
+				},
+				series: [{
+					name: 'Categories',
+					colorByPoint: true,
+					data: categoriesData
+				}],
+				drilldown: {
+					series: drilldownSeries
+				}
+			});
+		}
+	});
 });
