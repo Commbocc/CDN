@@ -11,17 +11,17 @@ $(function () {
 
     var issuedData = Highcharts.data({
         googleSpreadsheetKey: googleSheetKey,
-        googleSpreadsheetWorksheet: 1
+        googleSpreadsheetWorksheet: 1 // Permit Issued
     });
 
     var valuesData = Highcharts.data({
         googleSpreadsheetKey: googleSheetKey,
-        googleSpreadsheetWorksheet: 5
+        googleSpreadsheetWorksheet: 2 // Permit Values
     });
 
     Highcharts.data({
         googleSpreadsheetKey: googleSheetKey,
-        googleSpreadsheetWorksheet: 4,
+        googleSpreadsheetWorksheet: 3, // Summary
         parsed: function (columns) {
             var months = [],
                 issuedTotals = [],
