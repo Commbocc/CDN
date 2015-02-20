@@ -322,12 +322,12 @@ $(function () {
         return 0;
     }
 
-    $('#permitsTable').on('click', '.chart', function () {
+    $('#permitsTable').on('click', '.chart', function (event) {
+        event.preventDefault();
         var series = $(this).data('series');
         var last = allCountyPermits.series[series].data.length - 1;
         allCountyPermits.series[series].data[last].firePointEvent('click');
     });
-
 
 
 });
