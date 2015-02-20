@@ -229,6 +229,7 @@ $(function () {
                     type: 'area',
                     yAxis: 1,
                     index: -1,
+                    legendIndex: 99,
                     data: valuesTotals,
                     fillOpacity: 0.1,
                     tooltip: {
