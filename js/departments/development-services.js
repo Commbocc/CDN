@@ -1,5 +1,6 @@
 $(function () {
     var allCountyPermits;
+
     var permitsTable = $('#permitsTable > tbody > tr').map(function () {
         return $(this).children().map(function () {
             return $(this);
@@ -30,28 +31,36 @@ $(function () {
                 year,
                 monthsArray = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'];
 
-            $.each(columns[0], function (i, month) {
+            for (var i = 0; i < columns[0].length; i++) {
+
+                var month = columns[0][i];
+                var issued = columns[4][i];
+                var value = columns[8][i];
+                
+                if ( !isNaN(month) ) {
+                    var date = new Date(month);
+                    var year = date.getMonth() == 11 ? date.getFullYear() + 1 : date.getFullYear();
+                    var month = monthsArray[date.getMonth()] + ', ' + year;   
+                }
+
                 if (i > 0) {
-                    date = new Date(month);
-                    year = date.getMonth() == 11 ? date.getFullYear() + 1 : date.getFullYear();
-                    month = monthsArray[date.getMonth()] + ', ' + year;
 
                     // create month array
                     months.push(month);
 
                     // Create issued data
                     issuedTotals.push({
-                        "name": month,
-                            "y": columns[4][i]
+                        name: month,
+                        y: issued
                     });
 
                     // create value data
                     valuesTotals.push({
-                        "name": month,
-                            "y": columns[8][i]
+                        name: month,
+                        y: value
                     });
                 }
-            });
+            }
 
             var lastRow = columns[4].length - 1;
 
@@ -66,8 +75,9 @@ $(function () {
             $('#permitsTable').find('th').first().text(months[months.length-1] + ' Permits');
 
             function shiftColumn(column) {
-                column.shift();
-                return column;
+                var arr = column.slice(0);
+                arr.shift();
+                return arr
             }
 
             function clickIssued() {
