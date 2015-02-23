@@ -13,4 +13,8 @@
 		left: 0;
 		z-index: 1;
 	}
+
+	.badge.badge-danger {
+		background-color: $brand-danger;
+	}
 }
