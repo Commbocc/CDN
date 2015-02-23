@@ -34,8 +34,8 @@ $(function () {
             for (var i = 0; i < columns[0].length; i++) {
 
                 var month = columns[0][i];
-                var issued = columns[4][i];
-                var value = columns[8][i];
+                var issued = columns[6][i];
+                var value = columns[12][i];
                 
                 if ( !isNaN(month) ) {
                     var date = new Date(month);
@@ -62,12 +62,12 @@ $(function () {
                 }
             }
 
-            var lastRow = columns[4].length - 1;
+            var lastRow = columns[0].length - 1;
 
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 6; i++) {
 
-                var issuedCell = i < 3 ? columns[i + 1][lastRow] + ' <small>(<a href="#" class="chart" data-series="' + (i + 2) + '">View Chart</a>)</small>' : columns[i + 1][lastRow];
-                var valueCell = i < 3 ? '$' + columns[i + 5][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' <small>(<a href="#" class="chart" data-series="' + (i + 5) + '">View Chart</a>)</small>' : '$' + columns[i + 5][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                var issuedCell = i < 5 ? columns[i + 1][lastRow] + ' <small>(<a href="#" class="chart" data-series="' + (i + 2) + '">View Chart</a>)</small>' : columns[i + 1][lastRow];
+                var valueCell = i < 5 ? '$' + columns[i + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' <small>(<a href="#" class="chart" data-series="' + (i + 7) + '">View Chart</a>)</small>' : '$' + columns[i + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
                 permitsTable[i][1].html(issuedCell);
                 permitsTable[i][2].html(valueCell);
@@ -80,22 +80,51 @@ $(function () {
                 return arr
             }
 
-            function clickIssued() {
-                var chartTitle = this.series.name + ' Permits Issued - ' + this.category;
+            function clickSeries() {
+
+                var name,
+                    googleDataVar,
+                    groupedBool,
+                    pointPrefix;
+
+                if ( $.inArray( this.series.index, [2,5] ) ) { // grouped issued
+                    name = "Permits Issued";
+                    googleDataVar = issuedData;
+                    groupedBool = true;
+                    pointPrefix = '';
+                } else if( $.inArray( this.series.index, [3,4,6,7,8] ) ) { // sole issued
+                    name = "Permits Issued";
+                    googleDataVar = issuedData;
+                    groupedBool = false;
+                    pointPrefix = '';
+                } else if ( $.inArray( this.series.index, [9,10,11,12,13] ) ) { // sole values
+                    name = "Permits Issued";
+                    googleDataVar = valuesData;
+                    groupedBool = false;
+                    pointPrefix = '$';
+                }
+
+
+                var chartTitle = this.series.name + ' ' + name + ' - ' + this.category;
                 var $div = $('<div></div>').dialog({
                     title: chartTitle,
                     width: '60%',
                     height: 450
                 });
-                var dataColumn = issuedData.columns[this.index + 3];
+                var dataColumn = googleDataVar.columns[this.index + 3];
                 var monthData = [];
+
                 for (var i = 0; i < dataColumn.length; i++) {
-                    var category = issuedData.columns[0][i]
-                    if (category && dataColumn[i] && category.indexOf(this.series.name) > -1) {
-                        monthData.push({
-                            name: issuedData.columns[2][i],
-                            y: dataColumn[i]
-                        });
+                    var category = googleDataVar.columns[0][i];
+                    if (category && dataColumn[i]) {
+                        var testAgainstCat = ( groupedBool ? category.indexOf(this.series.name) > -1 : category == this.series.name);
+
+                        if (testAgainstCat) {
+                            monthData.push({
+                                name: googleDataVar.columns[2][i],
+                                y: dataColumn[i]
+                            });
+                        }
                     };
                 };
 
@@ -105,10 +134,10 @@ $(function () {
                         type: 'pie'
                     },
                     title: {
-                        text: chartTitle,
+                        text: chartTitle
                     },
                     tooltip: {
-                        pointFormat: '{point.tooltip}{series.name}: <b>{point.y}</b> ({point.percentage:.1f}%)'
+                        pointFormat: '{point.tooltip}{series.name}: <b>'+pointPrefix+'{point.y}</b> ({point.percentage:.1f}%)'
                     },
                     credits: {
                         enabled: false
@@ -118,48 +147,6 @@ $(function () {
                         data: minisculeValues(monthData)
                     }]
                 });
-
-            }
-
-            function clickValue() {
-                var chartTitle = this.series.name + ' Permit Values - ' + this.category;
-                var $div = $('<div></div>').dialog({
-                    title: chartTitle,
-                    width: '60%',
-                    height: 450
-                });
-                var dataColumn = valuesData.columns[this.index + 3];
-                var monthData = [];
-                for (var i = 0; i < dataColumn.length; i++) {
-                    var category = issuedData.columns[0][i]
-                    if (category && dataColumn[i] && category.indexOf(this.series.name) > -1) {
-                        monthData.push({
-                            name: issuedData.columns[2][i],
-                            y: dataColumn[i]
-                        });
-                    };
-                };
-
-                window.chart = new Highcharts.Chart({
-                    chart: {
-                        renderTo: $div[0],
-                        type: 'pie'
-                    },
-                    title: {
-                        text: chartTitle,
-                    },
-                    tooltip: {
-                        pointFormat: '{point.tooltip}{series.name}: <b>${point.y}</b> ({point.percentage:.1f}%)'
-                    },
-                    credits: {
-                        enabled: false
-                    },
-                    series: [{
-                        name: 'Permits Issued',
-                        data: minisculeValues(monthData)
-                    }]
-                });
-
             }
 
             allCountyPermits = new Highcharts.Chart({
@@ -199,80 +186,104 @@ $(function () {
                     opposite: true
                 }],
                 series: [{
-                    name: 'Issued',
+                    name: 'Permits Issued', // total issued
                     type: 'spline',
                     data: issuedTotals,
                     tooltip: {}
 
                 }, {
-                    name: columns[1][0],
+                    name: columns[1][0], // residential combined
+                    type: 'column',
+                    data: shiftColumn(columns[1]).SumArray(shiftColumn(columns[2])),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[1][0], // residential
                     type: 'column',
                     data: shiftColumn(columns[1]),
+                    visible: false,
+                    showInLegend: false,
                     point: {
                         events: {
-                            click: clickIssued
+                            click: clickSeries
                         }
                     },
                     cursor: 'pointer'
                 }, {
-                    name: columns[2][0],
+                    name: columns[2][0], // residential other
                     type: 'column',
                     data: shiftColumn(columns[2]),
+                    visible: false,
+                    showInLegend: false,
                     point: {
                         events: {
-                            click: clickIssued
+                            click: clickSeries
                         }
                     },
                     cursor: 'pointer'
                 }, {
-                    name: columns[3][0],
+                    name: columns[3][0], // commercial combined
+                    type: 'column',
+                    data: shiftColumn(columns[3]).SumArray(shiftColumn(columns[4])),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[3][0], // commercial
                     type: 'column',
                     data: shiftColumn(columns[3]),
+                    visible: false,
+                    showInLegend: false,
                     point: {
                         events: {
-                            click: clickIssued
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                },  {
+                    name: columns[4][0], // commercial other
+                    type: 'column',
+                    data: shiftColumn(columns[4]),
+                    visible: false,
+                    showInLegend: false,
+                    point: {
+                        events: {
+                            click: clickSeries
                         }
                     },
                     cursor: 'pointer'
                 }, {
-                    name: 'Permit Values',
+                    name: columns[5][0], // other
+                    type: 'column',
+                    data: shiftColumn(columns[5]),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: 'Permit Values', // total values
                     type: 'area',
                     yAxis: 1,
                     index: -1,
                     legendIndex: 99,
+                    visible: false,
+                    showInLegend: false,
                     data: valuesTotals,
                     fillOpacity: 0.1,
                     tooltip: {
                         pointFormat: "Value: ${point.y:,.2f}"
                     }
                 }, {
-                    name: columns[5][0],
-                    type: 'column',
-                    yAxis: 1,
-                    visible: false,
-                    showInLegend: false,
-                    data: shiftColumn(columns[5]),
-                    point: {
-                        events: {
-                            click: clickValue
-                        }
-                    },
-                    cursor: 'pointer'
-                }, {
-                    name: columns[6][0],
-                    type: 'column',
-                    yAxis: 1,
-                    visible: false,
-                    showInLegend: false,
-                    data: shiftColumn(columns[6]),
-                    point: {
-                        events: {
-                            click: clickValue
-                        }
-                    },
-                    cursor: 'pointer'
-                }, {
-                    name: columns[7][0],
+                    name: columns[7][0], // residential (9)
                     type: 'column',
                     yAxis: 1,
                     visible: false,
@@ -280,7 +291,59 @@ $(function () {
                     data: shiftColumn(columns[7]),
                     point: {
                         events: {
-                            click: clickValue
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[8][0], // residential other
+                    type: 'column',
+                    yAxis: 1,
+                    visible: false,
+                    showInLegend: false,
+                    data: shiftColumn(columns[8]),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[9][0], // commerical
+                    type: 'column',
+                    yAxis: 1,
+                    visible: false,
+                    showInLegend: false,
+                    data: shiftColumn(columns[9]),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[10][0], // commerical other
+                    type: 'column',
+                    yAxis: 1,
+                    visible: false,
+                    showInLegend: false,
+                    data: shiftColumn(columns[10]),
+                    point: {
+                        events: {
+                            click: clickSeries
+                        }
+                    },
+                    cursor: 'pointer'
+                }, {
+                    name: columns[11][0], // other
+                    type: 'column',
+                    yAxis: 1,
+                    visible: false,
+                    showInLegend: false,
+                    data: shiftColumn(columns[11]),
+                    point: {
+                        events: {
+                            click: clickSeries
                         }
                     },
                     cursor: 'pointer'
@@ -289,6 +352,16 @@ $(function () {
 
         }
     });
+
+    Array.prototype.SumArray = function (arr) {
+        var sum = [];
+        if (arr != null && this.length == arr.length) {
+            for (var i = 0; i < arr.length; i++) {
+                sum.push(this[i] + arr[i]);
+            }
+        }
+        return sum;
+    }
 
     function minisculeValues(seriesData) {
         var minThreshold = .035;
@@ -318,7 +391,7 @@ $(function () {
 
         if (miniValue > 0) {
             passedValues.push({
-                name: "Misc. ≤ " + (minThreshold * 100).toFixed(1) + "%",
+                name: "Misc. < " + (minThreshold * 100).toFixed(1) + "%",
                 tooltip: miniLabel,
                 y: miniValue
             });
