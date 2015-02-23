@@ -44,7 +44,8 @@
 // Includes an extra `.active` modifier class for showing selected items.
 
 a.list-group-item {
-  color: $list-group-link-color;
+  color: $list-group-link-color !important;
+  text-decoration: none !important;
 
   .list-group-item-heading {
     color: $list-group-link-heading-color;
