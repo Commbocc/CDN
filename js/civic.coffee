@@ -11,6 +11,7 @@ $ ->
 		for a of ignoreNIDs
 			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
 
+		console.log menuDiv.data('ignore')
 		console.log ignoreNIDs
 
 		$("#navWrapper").on
