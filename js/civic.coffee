@@ -62,5 +62,4 @@ $ ->
 				out += '<a href="' + nav[i].href + '" target="' + target + '" class="btn btn-primary" role="button">' + nav[i].text + '</a>'
 			i++
 		out
-	$('#navMenu').html ->
-		return loadMenu $(this)
+	$('#navMenu').html loadMenu $('#navMenu')
