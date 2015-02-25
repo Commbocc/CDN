@@ -7,7 +7,7 @@ $ ->
 	loadMenu = (menuDiv) ->
 		nav = []
 		# ignoreNIDs = if menuDiv.data('ignore') then menuDiv.data('ignore').split(',') else []
-		ignoreNIDs = []
+		ignoreNIDs = [3578]
 
 		for a of ignoreNIDs
 			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
@@ -23,6 +23,8 @@ $ ->
 				item.target = $(this).attr('target')
 				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)
 				item.subItems = []
+
+				console.log item.nid
 
 				$(this).siblings(".wrapper").find(".SubCat").each ->
 					subItem = {}
