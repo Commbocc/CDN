@@ -6,14 +6,10 @@ $ ->
 	# load menu dynamically from civic's hidden sidebar
 	loadMenu = (menuDiv) ->
 		nav = []
-		ignoreNIDs = if menuDiv.data('ignore') != undefined then menuDiv.data('ignore').split(',') else []
-		# ignoreNIDs = [3578]
+		ignoreNIDs = if typeof menuDiv.data('ignore') != 'undefined' then menuDiv.data('ignore').split(',') else []
 
 		for a of ignoreNIDs
 			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
-
-		console.log menuDiv.data('ignore')
-		console.log ignoreNIDs
 
 		$("#navWrapper").on
 			mouseover: (e) ->
@@ -23,8 +19,6 @@ $ ->
 				item.target = $(this).attr('target')
 				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)
 				item.subItems = []
-
-				console.log item.nid
 
 				$(this).siblings(".wrapper").find(".SubCat").each ->
 					subItem = {}
