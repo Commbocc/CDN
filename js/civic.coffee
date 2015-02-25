@@ -11,13 +11,15 @@ $ ->
 		for a of ignoreNIDs
 			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
 
+		console.log ignoreNIDs
+
 		$("#navWrapper").on
 			mouseover: (e) ->
 				item = {}
 				item.text = $(this).text()
 				item.href = $(this).attr('href')
 				item.target = $(this).attr('target')
-				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)[2]
+				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)
 				item.subItems = []
 
 				$(this).siblings(".wrapper").find(".SubCat").each ->
@@ -25,13 +27,13 @@ $ ->
 					subItem.text = $(this).text()
 					subItem.href = $(this).attr('href')
 					subItem.target = $(this).attr('target')
-					subItem.nid = subItem.href.match(/([^\?]*)\?NID=(\d*)/)[2]
+					subItem.nid = subItem.href.match(/([^\?]*)\?NID=(\d*)/)
 
-					unless $.inArray subItem.nid, ignoreNIDs
+					unless $.inArray subItem.nid[2], ignoreNIDs
 						item.subItems.push subItem
 					return
 					
-				unless $.inArray item.nid, ignoreNIDs
+				unless $.inArray item.nid[2], ignoreNIDs
 					nav.push item
 				return
 		, "a.Cat"
