@@ -4,14 +4,20 @@
 $ ->
 
 	# load menu dynamically from civic's hidden sidebar
-	loadMenu = ->
+	loadMenu = (menuDiv) ->
 		nav = []
+		ignoreNIDs = menuDiv.data('ignore').split(",")
+
+		for a of ignoreNIDs
+			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
+
 		$("#navWrapper").on
 			mouseover: (e) ->
 				item = {}
 				item.text = $(this).text()
 				item.href = $(this).attr('href')
 				item.target = $(this).attr('target')
+				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)[2]
 				item.subItems = []
 
 				$(this).siblings(".wrapper").find(".SubCat").each ->
@@ -19,10 +25,14 @@ $ ->
 					subItem.text = $(this).text()
 					subItem.href = $(this).attr('href')
 					subItem.target = $(this).attr('target')
+					subItem.nid = subItem.href.match(/([^\?]*)\?NID=(\d*)/)[2]
 
-					item.subItems.push subItem
+					unless $.inArray subItem.nid, ignoreNIDs
+						item.subItems.push subItem
 					return
-				nav.push item
+					
+				unless $.inArray item.nid, ignoreNIDs
+					nav.push item
 				return
 		, "a.Cat"
 
@@ -49,4 +59,6 @@ $ ->
 				out += '<a href="' + nav[i].href + '" target="' + target + '" class="btn btn-primary" role="button">' + nav[i].text + '</a>'
 			i++
 		out
-	$('#navMenu').html loadMenu()
+	$('#navMenu').html ->
+		loadMenu $(this)
+		return
