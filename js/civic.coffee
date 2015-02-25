@@ -6,7 +6,7 @@ $ ->
 	# load menu dynamically from civic's hidden sidebar
 	loadMenu = (menuDiv) ->
 		nav = []
-		ignoreNIDs = menuDiv.data('ignore').split(",")
+		ignoreNIDs = if menuDiv.data('ignore') then menuDiv.data('ignore').split(',') else []
 
 		for a of ignoreNIDs
 			ignoreNIDs[a] = parseInt(ignoreNIDs[a])
