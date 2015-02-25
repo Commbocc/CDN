@@ -33,11 +33,11 @@ $ ->
 					subItem.target = $(this).attr('target')
 					subItem.nid = subItem.href.match(/([^\?]*)\?NID=(\d*)/)
 
-					unless $.inArray subItem.nid[2], ignoreNIDs
+					unless $.inArray parseInt((subItem.nid[2]), ignoreNIDs
 						item.subItems.push subItem
 					return
 					
-				unless $.inArray item.nid[2], ignoreNIDs
+				unless $.inArray parseInt((item.nid[2]), ignoreNIDs
 					nav.push item
 				return
 		, "a.Cat"
