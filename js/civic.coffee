@@ -62,5 +62,4 @@ $ ->
 			i++
 		out
 	$('#navMenu').html ->
-		loadMenu $(this)
-		return
+		return loadMenu $(this)
