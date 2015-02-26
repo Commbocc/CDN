@@ -251,8 +251,6 @@ $(function () {
                     groupedBool,
                     pointPrefix;
 
-                    console.log(this.series.index);
-
                 if ( $.inArray( this.series.index, [] ) >= 0 ) { // grouped issued
                     name = "Permits Issued";
                     googleDataVar = issuedData;
@@ -286,7 +284,6 @@ $(function () {
                         // var testAgainstCat = groupedBool ? (category.indexOf(this.series.name) > -1) : (category === this.series.name);
 
                         if (category === this.series.name) {
-                            console.log(this.series.name);
                             monthData.push({
                                 name: googleDataVar.columns[2][i],
                                 y: dataColumn[i]
