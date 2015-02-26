@@ -37,11 +37,11 @@ $(function () {
                 var month = columns[0][i];
                 var issued = columns[6][i];
                 var value = columns[12][i];
-                
-                if ( !isNaN(month) ) {
+
+                if (!isNaN(month)) {
                     var date = new Date(month);
                     var year = date.getMonth() == 11 ? date.getFullYear() + 1 : date.getFullYear();
-                    var month = monthsArray[date.getMonth()] + ', ' + year;   
+                    var month = monthsArray[date.getMonth()] + ', ' + year;
                 }
 
                 if (i > 0) {
@@ -64,7 +64,7 @@ $(function () {
             }
 
 
-             var seriesArr = [{
+            var seriesArr = [{
                 name: 'Permits Issued', // total issued
                 type: 'spline',
                 data: issuedTotals,
@@ -223,7 +223,7 @@ $(function () {
             var lastMonthsData = []
             for (var i = 0; i < seriesArr.length; i++) {
                 if (seriesArr[i].inTable) {
-                    i < 5 ? lastMonthsData.push(i+1) : lastMonthsData.push(i);
+                    i < 5 ? lastMonthsData.push(i + 1) : lastMonthsData.push(i);
                 }
             }
 
@@ -231,12 +231,12 @@ $(function () {
             for (var ti = 0; ti < 6; ti++) {
 
                 var issuedCell = ti < 5 ? columns[ti + 1][lastRow] + ' <small>(<a href="#" class="chart" data-series="' + lastMonthsData[ti] + '">View Chart</a>)</small>' : columns[ti + 1][lastRow];
-                var valueCell = ti < 5 ? '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' <small>(<a href="#" class="chart" data-series="' + lastMonthsData[ti+5] + '">View Chart</a>)</small>' : '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                var valueCell = ti < 5 ? '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' <small>(<a href="#" class="chart" data-series="' + lastMonthsData[ti + 5] + '">View Chart</a>)</small>' : '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
                 permitsTable[ti][1].html(issuedCell);
                 permitsTable[ti][2].html(valueCell);
             };
-            $('#permitsTable').find('th').first().text(months[months.length-1] + ' Permits');
+            $('#permitsTable').find('th').first().text(months[months.length - 1] + ' Permits');
 
             function shiftColumn(column) {
                 var arr = column.slice(0);
@@ -247,21 +247,21 @@ $(function () {
             function clickSeries() {
 
                 var name,
-                    googleDataVar,
-                    groupedBool,
-                    pointPrefix;
+                googleDataVar,
+                groupedBool,
+                pointPrefix;
 
-                if ( $.inArray( this.series.index, [] ) >= 0 ) { // grouped issued
+                if ($.inArray(this.series.index, []) >= 0) { // grouped issued
                     name = "Permits Issued";
                     googleDataVar = issuedData;
                     groupedBool = true;
                     pointPrefix = '';
-                } else if( $.inArray( this.series.index, [2,3,4,5,6] ) >= 0 ) { // sole issued
+                } else if ($.inArray(this.series.index, [2, 3, 4, 5, 6]) >= 0) { // sole issued
                     name = "Permits Issued";
                     googleDataVar = issuedData;
                     groupedBool = false;
                     pointPrefix = '';
-                } else if ( $.inArray( this.series.index, [7,8,9,10,11] ) >= 0 ) { // sole values
+                } else if ($.inArray(this.series.index, [7, 8, 9, 10, 11]) >= 0) { // sole values
                     name = "Permit Values";
                     googleDataVar = valuesData;
                     groupedBool = false;
@@ -301,7 +301,7 @@ $(function () {
                         text: chartTitle
                     },
                     tooltip: {
-                        pointFormat: '{point.tooltip}{series.name}: <b>'+pointPrefix+'{point.y}</b> ({point.percentage:.1f}%)'
+                        pointFormat: '{point.tooltip}{series.name}: <b>' + pointPrefix + '{point.y}</b> ({point.percentage:.1f}%)'
                     },
                     credits: {
                         enabled: false
