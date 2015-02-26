@@ -19,7 +19,7 @@ $ ->
 				item.text = $(this).text()
 				item.href = $(this).attr('href')
 				item.target = $(this).attr('target')
-				item.nid = item.href.match(/([^\?]*)\?NID=(\d*)/)
+				item.nid = parseInt($(this).closest('.navText').attr('id').replace(/\D/g,''))
 				item.subItems = []
 
 				$(this).siblings(".wrapper").find(".SubCat").each ->
@@ -27,13 +27,13 @@ $ ->
 					subItem.text = $(this).text()
 					subItem.href = $(this).attr('href')
 					subItem.target = $(this).attr('target')
-					subItem.nid = subItem.href.match(/([^\?]*)\?NID=(\d*)/)
+					subItem.nid = parseInt($(this).closest('.navText').attr('id').replace(/\D/g,''))
 
-					if $.inArray(parseInt(subItem.nid[2]), ignoreNIDs) < 0
+					if $.inArray(parseInt(subItem.nid), ignoreNIDs) < 0
 						item.subItems.push subItem
 					return
 					
-				if $.inArray(parseInt(item.nid[2]), ignoreNIDs) < 0
+				if $.inArray(item.nid, ignoreNIDs) < 0
 					nav.push item
 				return
 		, "a.Cat"
