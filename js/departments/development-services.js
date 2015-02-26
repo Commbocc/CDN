@@ -227,11 +227,23 @@ $(function () {
                 }
             }
 
+            function inputGroup(dataPoint, series) {
+                out = "<div class=\"input-group\">";
+                out += "<input type=\"text\" class=\"form-control text-center\" readonly value=\""+dataPoint+"\">";
+                out += "<span class=\"input-group-btn\">";
+                out += "<a href=\"#\" class=\"chart btn btn-default\" data-series=\""+series+"\" title=\"View Chart\">";
+                out += "&nbsp;<i class=\"fa fa-fw fa-pie-chart\"></i>";
+                out += "</a>";
+                out += "</span>";
+                out += "</div>";
+                return out;
+            }
+
             var lastRow = columns[0].length - 1;
             for (var ti = 0; ti < 6; ti++) {
 
-                var issuedCell = ti < 5 ? columns[ti + 1][lastRow] + ' <small>(<a href="#" class="chart" data-series="' + lastMonthsData[ti] + '">View Chart</a>)</small>' : columns[ti + 1][lastRow];
-                var valueCell = ti < 5 ? '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + ' <small>(<a href="#" class="chart" data-series="' + lastMonthsData[ti+5] + '">View Chart</a>)</small>' : '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+                var issuedCell = ti < 5 ? inputGroup(columns[ti + 1][lastRow], lastMonthsData[ti]) : columns[ti + 1][lastRow];
+                var valueCell = ti < 5 ? inputGroup('$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'), lastMonthsData[ti+5]) : '$' + columns[ti + 7][lastRow].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 
                 permitsTable[ti][1].html(issuedCell);
                 permitsTable[ti][2].html(valueCell);
