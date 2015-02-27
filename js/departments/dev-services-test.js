@@ -341,14 +341,17 @@ $(function () {
                     },
                     // max: 4000,
                     type: 'logarithmic',
-                    // minorTickInterval: 'auto',
+                    minorTickInterval: 'auto',
                     title: {
-                        text: 'Permits Issued'
+                        text: 'Permits Issued - Categorical <br> <small>Logarithmic</small>'
                     },
                     opposite: true
                 }, {
                      labels: {
-                        format: '{value}'
+                        format: '{value}',
+                        style: {
+                    		color: chartColors[0]
+                    	}
                     },
                     // max: 5000,
                     // type: 'logarithmic',
