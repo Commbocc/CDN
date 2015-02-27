@@ -34,10 +34,6 @@
 	border-bottom-color: #fff;
 }
 
-.bs .nav-tabs .caret {
-	color: #eee !important;
-}
-
 .btn-group:hover > .dropdown-menu {
 	display: block;
 }
@@ -46,6 +42,10 @@
 	background-color: #000;
 	background-color: rgba(0,0,0,0.55);
 	border-radius: 10px ;
+}
+
+.bs .carousel-caption {
+	color: #eee !important;
 }
 
 .btn-group > ul {
