@@ -20,7 +20,17 @@
 		background-color: $brand-danger;
 	}
 
-	.carousel-caption a {
-		color: #eee !important;
+	.carousel-caption {
+
+		h4 > a {
+			font-size: 19px !important;
+			color: #fff !important;
+			text-decoration: none !important;
+		}
+
+		a {
+			color: #eee !important;
+		}
+
 	}
 }
