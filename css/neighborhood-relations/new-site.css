@@ -44,7 +44,7 @@
 	border-radius: 10px ;
 }
 
-.bs .carousel-caption {
+.bs .carousel-caption a {
 	color: #eee !important;
 }
 
