@@ -49,7 +49,7 @@ $ ->
 			target = unless nav[i].target == undefined then nav[i].target else '_self'
 			unless nav[i].subItems.length == 0
 				out += '<div class="btn-group hover">'
-				out += '<a href="' + nav[i].href + '" target="' + target + '" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">'
+				out += '<a href="' + nav[i].href + '" target="' + target + '" type="button" class="btn btn-primary dropdown-toggle">'
 				out += nav[i].text + ' <span class="caret"></span></a><ul class="dropdown-menu" role="menu">'
 				si = 0
 				while si < nav[i].subItems.length
