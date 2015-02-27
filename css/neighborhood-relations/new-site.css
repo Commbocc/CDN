@@ -34,6 +34,10 @@
 	border-bottom-color: #fff;
 }
 
+.bs .nav-tabs .caret {
+	color: #eee !important;
+}
+
 .btn-group:hover > .dropdown-menu {
 	display: block;
 }
