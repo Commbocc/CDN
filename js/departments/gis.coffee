@@ -23,3 +23,7 @@ $ ->
 	$('.gis-thumb').each ->
 		bgimg = $(this).data('bgimg') or 'http://images.fineartamerica.com/images-medium-large-5/3-london-england-street-map-michael-tompsett.jpg'
 		$(this).css 'background-image', 'url(' + bgimg + ')'
+
+	$('.gis-media').each ->
+		bgimg = $(this).find('.media-object').attr('src') or 'http://images.fineartamerica.com/images-medium-large-5/3-london-england-street-map-michael-tompsett.jpg'
+		$(this).find('a').css 'background-image', 'url(' + bgimg + ')'
