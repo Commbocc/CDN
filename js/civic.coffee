@@ -3,10 +3,6 @@
 
 $ ->
 
-	# check for auto height function, if so apply
-	if typeof responsiveEqualHeightGrid == 'function'
-		$('.auto-height').responsiveEqualHeightGrid()
-
 	# load menu dynamically from civic's hidden sidebar
 	loadMenu = (menuDiv) ->
 		nav = []
