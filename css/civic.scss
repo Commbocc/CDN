@@ -9,8 +9,9 @@
 // Import partials from `sass_dir` (defaults to `_sass`)
 .bs{
 
+	@import "bootstrap/variables_civic";
 	@import "bootstrap_civic";
-	@import "bootswatch";
+	@import "bootswatch/yeti";
 
 	.btn, .btn:hover, .dropdown-menu a, .dropdown-menu a:hover {
 		text-decoration: none !important;
