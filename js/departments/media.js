@@ -164,10 +164,10 @@ $(function () {
 
 			out += '<td>';
 			out += '<ul class="list-unstyled">';
-			if (contacts[i].email) { out += '<li><a href="mailto:'+contacts[i].email+'"><i class="fa fa-fw fa-envelope"></i> Email</a></li>'; }
-			if (contacts[i].officePhone) { out += '<li><a href="tel:'+contacts[i].officePhone+'"><i class="fa fa-fw fa-phone"></i> '+contacts[i].officePhone+'</a></li>'; }
-			if (contacts[i].mobilePhone) { out += '<li><a href="tel:'+contacts[i].mobilePhone+'"><i class="fa fa-fw fa-mobile"></i> '+contacts[i].mobilePhone+'</a></li>'; }
-			if (contacts[i].vcardURL) { out += '<li><a href="'+contacts[i].vcardURL+'" target="_blank"><i class="fa fa-fw fa-user"></i> vCard</a></li>'; }
+			if (contacts[i].email) { out += '<li><i class="fa fa-fw fa-envelope"></i> <a href="mailto:'+contacts[i].email+'">Email</a></li>'; }
+			if (contacts[i].officePhone) { out += '<li><i class="fa fa-fw fa-phone"></i> <a href="tel:'+contacts[i].officePhone+'">'+contacts[i].officePhone+'</a></li>'; }
+			if (contacts[i].mobilePhone) { out += '<li><i class="fa fa-fw fa-mobile"></i> <a href="tel:'+contacts[i].mobilePhone+'">'+contacts[i].mobilePhone+'</a></li>'; }
+			if (contacts[i].vcardURL) { out += '<li><i class="fa fa-fw fa-user"></i> <a href="'+contacts[i].vcardURL+'" target="_blank">vCard</a></li>'; }
 			out += '</ul>';
 			out += '</td>';
 
