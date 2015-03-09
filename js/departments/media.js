@@ -1,6 +1,19 @@
 $(function () {
 	var contacts = [
 	{
+		name: 'Adrienne Frucci',
+		email: 'FrucciA@hillsboroughcounty.org',
+		officePhone: '813-635-5469',
+		mobilePhone: '813-334-2055',
+		vcardURL: 'http://www.hillsboroughcounty.org/DocumentCenter/View/11798',
+		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Adrienne%20Frucci%2001%20.jpg',
+		departments: [
+		"Regional Parks and Environmental Lands Management",
+		"Recreation, Athletics, and Neighborhood Parks",
+		"Medical Examiner",
+		"Operations & Legislative Affairs"
+		]
+	},{
 		name: 'Aleshia Jones',
 		email: 'JonesAS@hillsboroughcounty.org',
 		officePhone: '813-274-6787',
@@ -13,21 +26,8 @@ $(function () {
 		"Strategic Planning & Grants Management",
 		"Real Estate & Facilities Services",
 		"Citizen & Communications Support",
-		"Fleet Management"
-		]
-	},{
-		name: 'Adrienne Frucci',
-		email: 'FrucciA@hillsboroughcounty.org',
-		officePhone: '813-635-5469',
-		mobilePhone: '813-334-2055',
-		vcardURL: 'http://www.hillsboroughcounty.org/DocumentCenter/View/11798',
-		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Adrienne%20Frucci%2001%20.jpg',
-		departments: [
-		"Regional Parks and Environmental Lands Management",
-		"Parks and Recreation",
-		"Community Affairs",
-		"Medical Examiner",
-		"Operations & Legislative Affairs"
+		"Fleet Management",
+		"Management & Budget"
 		]
 	},{
 		name: 'Andrea Roshaven',
@@ -38,7 +38,8 @@ $(function () {
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/AndreaRoshaven%2002.jpg',
 		departments: [
 		"Public Works",
-		"Information & Technology Services"
+		"Information & Technology Services",
+		"Enterprise Solutions & Quality Assurance"
 		]
 	},{
 		name: 'Crystal Pruitt',
@@ -49,11 +50,10 @@ $(function () {
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Crystal%20Pruitt%2001.jpg',
 		departments: [
 		"Economic Development",
-		"Development Services",
 		"Extension Service",
-		"Community Redevelopment",
 		"Affordable Housing",
-		"9-1-1 Agency"
+		"9-1-1 Agency",
+		"Procurement Services"
 		]
 	},{
 		name: 'Julie Watkinson',
@@ -64,7 +64,6 @@ $(function () {
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Julie%20Watkinson%201.jpg',
 		departments: [
 		"Aging Services",
-		"Head Start",
 		"Health Care Services",
 		"Children & Youth Services",
 		"Social Services",
@@ -80,7 +79,8 @@ $(function () {
 		vcardURL: 'http://www.hillsboroughcounty.org/DocumentCenter/View/11806',
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Ryan%20Marti%2001.jpg',
 		departments: [
-		"Pet Resources"
+		"Pet Resources",
+		"Events & Media Pitching"
 		]
 	},{
 		name: 'Michelle VanDyke',
@@ -91,21 +91,19 @@ $(function () {
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/vandyke01.jpg',
 		departments: [
 		"Fire Rescue",
-		"Code Enforcement",
 		"Library Services",
 		"Law Library"
 		]
 	},{
-		name: 'TBD',
-		email: null,
-		officePhone: null,
+		name: 'Tom Iovino',
+		email: 'IovinoT@HillsboroughCounty.org',
+		officePhone: '813-274-2409',
 		mobilePhone: null,
 		vcardURL: null,
 		photoURL: null,
 		departments: [
-		"Procurement",
-		"Fiscal Services",
-		"Management & Budget",
+		"Code Enforcement",
+		"Development Services",
 		"Public Utilities"
 		]
 	},{
