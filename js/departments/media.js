@@ -72,15 +72,14 @@ $(function () {
 		"Trauma Agency"
 		]
 	},{
-		name: 'Marty Ryan',
+		name: 'Marti Ryan',
 		email: 'RyanM@hillsboroughcounty.org',
 		officePhone: '813-272-6699',
 		mobilePhone: '813-356-9711',
 		vcardURL: 'http://www.hillsboroughcounty.org/DocumentCenter/View/11806',
 		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/Ryan%20Marti%2001.jpg',
 		departments: [
-		"Pet Resources",
-		"Events & Media Pitching"
+		"Pet Resources"
 		]
 	},{
 		name: 'Michelle VanDyke',
@@ -98,7 +97,7 @@ $(function () {
 		name: 'Tom Iovino',
 		email: 'IovinoT@HillsboroughCounty.org',
 		officePhone: '813-274-2409',
-		mobilePhone: null,
+		mobilePhone: '813-373-1023',
 		vcardURL: null,
 		photoURL: null,
 		departments: [
