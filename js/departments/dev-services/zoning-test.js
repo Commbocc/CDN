@@ -121,7 +121,7 @@
                  type: 'column'
              },
              title: {
-                 text: 'Zoning Applications'
+                 text: 'Community Development and Zoning Applications'
              },
              subtitle: {
                  text: 'Click a data column for more information.'

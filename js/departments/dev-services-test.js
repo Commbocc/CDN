@@ -345,7 +345,7 @@ $(function () {
                     title: {
                         text: 'Permits Issued - Categorical <br> <small>Logarithmic</small>'
                     },
-                    opposite: true
+                    opposite: false
                 }, {
                      labels: {
                         format: '{value}',
@@ -359,8 +359,8 @@ $(function () {
                     title: {
                         text: 'Total Permits Issued'
                     },
-                    gridLineColor: chartColors[0]
-                    // opposite: true
+                    gridLineColor: chartColors[0],
+                    opposite: true
                 }, { // values yAxis
                     title: {
                         text: ''
