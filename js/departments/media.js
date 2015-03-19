@@ -39,7 +39,8 @@ $(function () {
 		departments: [
 		"Public Works",
 		"Information & Technology Services",
-		"Enterprise Solutions & Quality Assurance"
+		"Enterprise Solutions & Quality Assurance",
+		"Enterprise Project Management Office"
 		]
 	},{
 		name: 'Crystal Pruitt',
