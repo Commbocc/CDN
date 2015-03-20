@@ -3,25 +3,76 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+
+
+	.thumbnail{
+		position: relative;
+		background-repeat: none;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.thumbnail:before{
+		content: "";
+		display: block;
+		height: 25%;
+	}
+	
+	.caption {
+		text-align: left;
+		font-size: 2.5vmin;
+		color: #fff !important;
+		white-space: nowrap;
+		position: absolute;
+		bottom: 5%;
+		left: 0;
+		background-color: rgba(0,0,0,.6);
+		z-index: 2;
+		width: 85%;
+	}
+
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function($){
+		$('.thumbnail').each(function(){
+			bgimg = $(this).data('bgimg');
+			$(this).css('background-image', 'url(' + bgimg + ')');
+		});
+	});
+
+</script>
+
 <div class="bs">
 
 
 	<div class="row">
 		
 		<div class="col-sm-20">
-			<div class="well">img</div>
+			<a href="#" class="thumbnail" data-bgimg="../../images/cemp/cemp_adultdaycare.jpg">
+				<span class="caption">Adult Daycare</span>
+			</a>
 		</div>
 		<div class="col-sm-20">
-			<div class="well">img</div>
+			<a href="#" class="thumbnail" data-bgimg="../../images/cemp/cemp_assistedliving.jpg">
+				<span class="caption">Asssited Living</span>
+			</a>
 		</div>
 		<div class="col-sm-20">
-			<div class="well">img</div>
+			<a href="#" class="thumbnail" data-bgimg="../../images/cemp/cemp_hospital.jpg">
+				<span class="caption">Hospital</span>
+			</a>
 		</div>
 		<div class="col-sm-20">
-			<div class="well">img</div>
+			<a href="#" class="thumbnail" data-bgimg="../../images/cemp/cemp_nursinghome.jpg">
+				<span class="caption">Nursing Home</span>
+			</a>
 		</div>
 		<div class="col-sm-20">
-			<div class="well">img</div>
+			<a href="#" class="thumbnail" data-bgimg="../../images/cemp/cemp_surgical.jpg">
+				<span class="caption">Surgical</span>
+			</a>
 		</div>
 
 	</div>
