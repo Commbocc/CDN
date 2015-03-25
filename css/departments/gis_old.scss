@@ -1,0 +1,93 @@
+---
+---
+
+@charset "utf-8";
+
+@import "bootstrap/variables_civic";
+@import "mixins";
+
+@media (min-width: 768px) {
+
+	.media { margin-top: 0 !important; }
+
+	.gis-media {
+
+		$caption-bg-color: rgba(0,0,0,0.6);
+
+		margin-top: 0 !important;
+		position: relative;
+
+		.media-left {
+			
+			display: block !important;
+
+			padding: 0;
+
+			.media-object { display: none; }
+
+			a {
+				background-size: cover;
+				background-position: center;
+				height: 200px;
+				border: solid 1px #000;
+				overflow: hidden;
+				display: block;
+			}
+		}
+
+		.media-body {
+			display: block !important;
+			background-color: $caption-bg-color;
+			position: absolute;
+			color: #FFF;
+			bottom: -80%;
+			height: 100%;
+			padding: 10px;
+			font-size: 80%;
+
+			width: 100% !important;
+
+			overflow: scroll;
+			&::-webkit-scrollbar { display: none; }
+
+			i.fa.fa-info-circle.pull-right { margin-top: 10px; }
+
+			h1, h2, h3, h4, h5, h6 {
+				margin-top: 5px !important;
+				margin-bottom: 5px !important;
+				width: 80%;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+			}
+
+			@include transition-duration(1.5s);
+
+			// &:before {
+			// 	content:"";
+			// 	position: absolute;
+			// 	bottom: 100%;
+			// 	right: 5%;
+			// 	border-bottom: 20px solid $caption-bg-color;
+			// 	border-right: 20px solid transparent;
+			// 	border-left: 20px solid transparent;
+			// }
+
+			&:hover {
+				-webkit-transform: translateY(-80%); 
+				-moz-transform: translateY(-80%); 
+				-ms-transform: translateY(-80%); 
+				transform: translateY(-80%);
+
+				@include transition-duration(1.5s);
+			}
+		}
+
+		&-sm {
+			height: 150px;
+
+			.media-body { padding-top: 0; }
+			
+		}
+	}
+}
