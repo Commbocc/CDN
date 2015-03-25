@@ -1,3 +1,5 @@
+---
+---
 <link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -75,54 +77,27 @@
 
 	<hr>
 
-	<div class="row">
-		
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://static1.squarespace.com/static/511526cde4b067782b69109c/517aa359e4b0ab81ac8d931c/517aa38ee4b0aef614c6765d/1366991895612/01-corporate-headshot-photo-130405-9660.JPG-1500px.JPG"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://www.philsimon.com/wp-content/uploads/2011/10/natalie-square-headshot.jpg"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://www.artsjournal.com/condemned/wp-content/uploads/2013/01/headshot-smirk_small.jpg"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://www.philsimon.com/wp-content/uploads/2011/10/natalie-square-headshot.jpg"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://www.philsimon.com/wp-content/uploads/2011/10/natalie-square-headshot.jpg"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
-		</div>
-		<div class="col-sm-6 col-md-4 text-center auto-height">
-			<a href="#" class="headshot text-center" data-bgimg="http://www.philsimon.com/wp-content/uploads/2011/10/natalie-square-headshot.jpg"></a>
-			<h4>Name</h4>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			</p>
+	<div id="presentations">
+		{% for pres in site.data.women_in_tech %}
+
+		<h4>{{pres.section}}</h4>
+
+		<p>{{pres.description}}</p>
+
+		<div class="row">
+			{% for speaker in pres.speakers %}
+
+			<div class="col-sm-6 col-md-4 text-center auto-height">
+				<a href="{{speaker.url}}" target="_blank" class="headshot text-center" data-bgimg="{{speaker.image_src}}"></a>
+				<h5>{{speaker.name}}</h5>
+				<p>
+					{{speaker.bio}}
+				</p>
+			</div>
+			{% endfor %}
 		</div>
 
+		{% endfor %}	
 	</div>
-
-	
 	
 </div>

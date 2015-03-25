@@ -1,0 +1,99 @@
+- section: Pecha Kucha
+  description: This is a description for the presentation
+  speakers:
+    - name: Cheryl Wolfe
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/CherylWolfe.png'
+      url: "#" 
+      bio: 
+    - name: Diana Rendina
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/DianaRendina.png'
+      url: "#" 
+      bio: 
+    - name: Luisa Bracamonte
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/LuisaBracamonte.png'
+      url: "#" 
+      bio: 
+    - name: Priya
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/Priya.png'
+      url: "#" 
+      bio: 
+    - name: Deborah Neff
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/DeborahNeff.png'
+      url: "#" 
+      bio: 
+
+- section: Learn to Code!
+  description: This is a description for the presentation
+  speakers:
+    - name: Ayesha Hackman
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/AyeshaHackman.png'
+      url: "#" 
+      bio: 
+    - name: Phoebe Monereau
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/PhoebeMonereau.png'
+      url: "#" 
+      bio: 
+
+- section: Speed Networking
+  description: This is a description for the presentation
+  speakers:
+    - name: Caitlin Wills
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/CaitlinWills.png'
+      url: "#" 
+      bio: 
+    - name: Christy Bebeau
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/ChristyBebeau.png'
+      url: "#" 
+      bio: 
+    - name: Desh Bagley
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/DeshBagley.png'
+      url: "#" 
+      bio: 
+    - name: Patricia K. Gehant
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/PatriciaGehant.png'
+      url: "#" 
+      bio: 
+    - name: Sabrina Calhoun
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/SabrinaCalhoun.png'
+      url: "#" 
+      bio: 
+    - name: Sylvia Martinez
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/SylviaMartinez.png'
+      url: "#" 
+      bio: 
+    - name: Terri Willingham
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/TerriWillingham.png'
+      url: "#" 
+      bio: 
+    - name: Toni Aliberti
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/ToniAliberti.png'
+      url: "#" 
+      bio: 
+
+- section: Interactive Panel
+  description: This is a description for the presentation
+  speakers:
+    - name: Jennifer Whelihan (Moderator)
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/JenniferWhelihan.png'
+      url: "#" 
+      bio: 
+    - name: Dr. Stephanie Tripp
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/DrStephanieTripp.png'
+      url: "#" 
+      bio: 
+    - name: Marisol Casablanca
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/MarisolCasablanca.png'
+      url: "#" 
+      bio: 
+    - name: Nina Sanka
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/NinaSanka.png'
+      url: "#" 
+      bio: 
+    - name: Stephanie Ashley
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/StephanieAshley.png'
+      url: "#" 
+      bio: 
+    - name: Yael Alex Monereau
+      image_src: 'http://commbocc.github.io/CDN/images/events/women-in-tech/YaelMonereau.png'
+      url: "#" 
+      bio: 
