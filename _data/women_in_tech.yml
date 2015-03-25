@@ -1,4 +1,4 @@
-- section: Pecha Kucha-Style Presentation
+- heading: Pecha Kucha-Style Presentation
   description: "A highly engaging series of concise, fast-paced, and visual presentations delivered in 20 slides with 20 seconds devoted to each slide. Presenters from a variety of backgrounds will speak to their personal experiences and knowledge related to women working in technology."
   speakers:
     - name: Cheryl Wolfe
@@ -22,7 +22,7 @@
       url: "#" 
       bio: 
 
-- section: Learn to Code!
+- heading: Learn to Code!
   description: "Girls will put the pieces of coding together testing their high order thinking skills. The code experience will be one that introduces girls to coding as well as enhance their prior knowledge."
   speakers:
     - name: Ayesha Hackman
@@ -34,7 +34,7 @@
       url: "#" 
       bio: 
 
-- section: Tech Careers Speed Networking
+- heading: Tech Careers Speed Networking
   description: "This networking is organized in a structured opportunity for participants to meet each other in a fun environment and will help build networks and connections among women professionals, students, and others in tech careers."
   speakers:
     - name: Caitlin Wills
@@ -70,7 +70,7 @@
       url: "#" 
       bio: 
 
-- section: Interactive Panel – Hillsborough Women in Tech
+- heading: Interactive Panel – Hillsborough Women in Tech
   description: "The panel discussion will include the sharing of new ideas, different perspectives, and a coming together of different groups to improve ideas in an educational format and including question and answers to enhance interactivity. The learning objective is knowledge through discussion."
   speakers:
     - name: Jennifer Whelihan (Moderator)
