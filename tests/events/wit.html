@@ -1,4 +1,5 @@
 ---
+layout: bootstrap
 ---
 <link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -56,40 +57,21 @@
 		The free event is part of a collaborative effort to highlight, teach, and inspire young women to pursue careers in technology through shared connections and resources. Join us for a local learning opportunity to highlight, teach, and inspire through shared connections and resources.
 	</p>
 
-	<h3 class="">This event will include:</h3>
-	<ul class="">
-		<li>Tech Meet and Greet</li>
-		<li>Pecha Kucha - Style Presentations</li>
-		<li>Break Out Sessions incllude:</li>
-		<li>Learn to Code!</li>
-		<li>Tech Careers Speed Networking </li>
-		<li>Interactive Panel </li>
-	</ul>
-
-	<h3 class="">Panel members include:</h3>
-	<ul class="">
-		<li>Marisol Casablanca, IT consultant at PCNet Corserva</li>
-		<li>Dr. Stephanie Tripp, digital media and associate professor at University of Tampa</li>
-		<li>Stephanie Ashley, director of innovation and incubation programs at University of South Florida Connect</li>
-		<li>Yael Monereau, engineer at National Society of Black Engineers</li>
-		<li>Nina Sanka, systems engineer at Customers Bank</li>
-	</ul>
-
 	<hr>
 
 	<div id="presentations">
 		{% for pres in site.data.women_in_tech %}
 
-		<h4>{{pres.section}}</h4>
+		<h3 class="text-center">{{pres.section}}</h3>
 
-		<p>{{pres.description}}</p>
+		<p class="lead">{{pres.description}}</p>
 
 		<div class="row">
 			{% for speaker in pres.speakers %}
 
 			<div class="col-sm-6 col-md-4 text-center auto-height">
 				<a href="{{speaker.url}}" target="_blank" class="headshot text-center" data-bgimg="{{speaker.image_src}}"></a>
-				<h5>{{speaker.name}}</h5>
+				<h4>{{speaker.name}}</h4>
 				<p>
 					{{speaker.bio}}
 				</p>
@@ -97,7 +79,8 @@
 			{% endfor %}
 		</div>
 
-		{% endfor %}	
+		<hr>
+		{% endfor %}
 	</div>
 	
 </div>
