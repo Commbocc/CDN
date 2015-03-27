@@ -9,7 +9,7 @@ layout: bootstrap
 <script src="../../js/events/wit.js"></script>
 <!-- http://commbocc.github.io/CDN/js/events/wit.js -->
 
-<script type="text/javascript" src="../../js/iframeResizer/iframeResizer.contentWindow.min.js"></script>
+<script src="../../js/iframeResizer/iframeResizer.contentWindow.min.js"></script>
 
 <style type="text/css">
 	
@@ -41,9 +41,9 @@ layout: bootstrap
 		<div class="row">
 			{% for speaker in pres.speakers %}
 
-			<div class="col-sm-6 col-md-4 text-center auto-height">
+			<div class="col-sm-6 auto-height">
 				<a href="{{speaker.url}}" target="_blank" class="headshot text-center" data-bgimg="{{speaker.image_src}}"></a>
-				<h4>{{speaker.name}}</h4>
+				<h4 class="text-center">{{speaker.name}}</h4>
 				<p>
 					{{speaker.bio}}
 				</p>
