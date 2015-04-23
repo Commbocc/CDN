@@ -66,8 +66,11 @@ $(function () {
 
             var seriesArr = [{
                 name: 'Permits Issued', // total issued
-                type: 'spline',
+                type: 'areaspline',
                 data: issuedTotals,
+                fillOpacity: 0.1,
+                yAxis: 1,
+                // index: 99,
                 tooltip: {}
 
             }, {
@@ -138,7 +141,7 @@ $(function () {
             }, {
                 name: 'Permit Values', // total values
                 type: 'area',
-                yAxis: 1,
+                yAxis: 2,
                 index: -1,
                 legendIndex: 99,
                 visible: false,
@@ -151,7 +154,7 @@ $(function () {
             }, {
                 name: columns[7][0], // residential (8?)
                 type: 'column',
-                yAxis: 1,
+                yAxis: 2,
                 visible: false,
                 showInLegend: false,
                 inTable: true,
@@ -165,7 +168,7 @@ $(function () {
             }, {
                 name: columns[8][0], // residential other
                 type: 'column',
-                yAxis: 1,
+                yAxis: 2,
                 visible: false,
                 showInLegend: false,
                 inTable: true,
@@ -179,7 +182,7 @@ $(function () {
             }, {
                 name: columns[9][0], // commerical
                 type: 'column',
-                yAxis: 1,
+                yAxis: 2,
                 visible: false,
                 showInLegend: false,
                 inTable: true,
@@ -193,7 +196,7 @@ $(function () {
             }, {
                 name: columns[10][0], // commerical other
                 type: 'column',
-                yAxis: 1,
+                yAxis: 2,
                 visible: false,
                 showInLegend: false,
                 inTable: true,
@@ -207,7 +210,7 @@ $(function () {
             }, {
                 name: columns[11][0], // other
                 type: 'column',
-                yAxis: 1,
+                yAxis: 2,
                 visible: false,
                 showInLegend: false,
                 inTable: true,
@@ -332,17 +335,36 @@ $(function () {
                 xAxis: [{
                     categories: months
                 }],
-                yAxis: [{ // Primary yAxis
+                yAxis: [{ // issued yAxis
                     labels: {
                         format: '{value}'
                     },
+                    // max: 4000,
                     type: 'logarithmic',
+                    minorTickInterval: 'auto',
                     title: {
-                        text: 'Permits Issued'
-                    }
-                }, { // Secondary yAxis
+                        text: 'Permits Issued - Categorical <br> <small>Logarithmic</small>'
+                    },
+                    opposite: false
+                }, {
+                     labels: {
+                        format: '{value}',
+                        style: {
+                            color: chartColors[0]
+                        }
+                    },
+                    // max: 5000,
+                    // type: 'logarithmic',
+                    // minorTickInterval: 'auto',
                     title: {
-                        text: 'Permit Values'
+                        text: 'Total Permits Issued'
+                    },
+                    gridLineColor: chartColors[0],
+                    opposite: true
+                }, { // values yAxis
+                    title: {
+                        text: ''
+                        // text: 'Total Permit Values'
                     },
                     labels: {
                         formatter: function () {
@@ -350,7 +372,8 @@ $(function () {
                         }
                     },
                     opposite: true
-                }],
+                }
+                ],
                 series: seriesArr
             });
 
