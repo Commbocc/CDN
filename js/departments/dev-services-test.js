@@ -226,7 +226,7 @@ $(function () {
             var lastMonthsData = []
             for (var i = 0; i < seriesArr.length; i++) {
                 if (seriesArr[i].inTable) {
-                    i < 5 ? lastMonthsData.push(i + 1) : lastMonthsData.push(i);
+                    i < 6 ? lastMonthsData.push(i + 1) : lastMonthsData.push(i);
                 }
             }
 
