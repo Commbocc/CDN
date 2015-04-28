@@ -14,7 +14,10 @@ var addDateBlock = function(group, time, dateStr) {
 		).append( $('<div id="group'+time+'" class="panel-collapse collapse in '+past+'"></div>') );
 
 	for (var i = 0; i < group.length; i++) {
-		dateGroupPanel.find('.panel-collapse').append( addScheduleEvent(group[i]) );
+
+		appendage = group[i].excerpt ? addScheduleEvent(group[i]) : $('<div/>', {'class': 'panel-body'}).text('Available');
+
+		dateGroupPanel.find('.panel-collapse').append( appendage );
 	}
 
 	$('#scheduledEvents').append(dateGroupPanel).trigger('toggle-past-panels');
