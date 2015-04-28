@@ -16,7 +16,7 @@ var addDateBlock = function(group, time, dateStr) {
 	for (var i = 0; i < group.length; i++) {
 		dateGroupPanel.find('.panel-collapse').append( addScheduleEvent(group[i]) );
 	}
-	
+
 	$('#scheduledEvents').append(dateGroupPanel).trigger('toggle-past-panels');
 }
 
@@ -35,8 +35,11 @@ Highcharts.data({
 	googleSpreadsheetKey: googleSheetKey,
 	googleSpreadsheetWorksheet: 1,
 	parsed: function(columns) {
-		
-		var dateGroups = {};
+
+		var dateGroups = {},
+		dateModified = columns[5][0];
+
+		$('#dateModified').text(dateModified);
 
 		for (var i = 1; i < columns[0].length; i++) {
 			var date = columns[0][i];
@@ -51,15 +54,15 @@ Highcharts.data({
 			dateGroups[date].push(row);
 		}
 
-			// dateGroups.sort();
+		// dateGroups.sort();
 
-			for (date in dateGroups) {
-				groupDate = new Date(parseInt(date)+86400000);
-				addDateBlock(dateGroups[date], parseInt(date), groupDate.toDateString());
-			}
-
+		for (date in dateGroups) {
+			groupDate = new Date(parseInt(date)+86400000);
+			addDateBlock(dateGroups[date], parseInt(date), groupDate.toDateString());
 		}
-	});
+
+	}
+});
 
 $('body').on('toggle-past-panels', '#scheduledEvents', function (event) {
 	$('.past').each(function(){
