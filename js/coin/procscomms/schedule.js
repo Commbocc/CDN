@@ -6,13 +6,7 @@
 
 		var addDateBlock = function(group, time, dateStr, quarterly) {
 
-			if (quarterly) {
-				panelClass = 'warning';
-			} else if (time+86400000 >= new Date()) {
-				panelClass = 'info';
-			} else {
-				panelClass = 'default';
-			}
+			panelClass = time+86400000 < new Date() ? 'default' : 'info';
 
 			qAwards = quarterly ? ' (Quarterly Awards)' : ''
 
