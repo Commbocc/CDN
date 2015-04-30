@@ -1,17 +1,28 @@
 (function() {
 	$(function() {
+		
 		var googleSheetKey = "1eDdkXaIT7ik77UAb_U2jCne53ah54qxkXOm5yRS23kk";
 		var googleSheetIndex = $('#scheduledEvents').data('gsheet') || 1;
 
-		var addDateBlock = function(group, time, dateStr) {
+		var addDateBlock = function(group, time, dateStr, quarterly) {
 
-			panelClass = time+86400000 < new Date() ? 'default' : 'info';
+			if (quarterly) {
+				panelClass = 'warning';
+			} else if (time+86400000 >= new Date()) {
+				panelClass = 'info';
+			} else {
+				panelClass = 'default';
+			}
+
+			qAwards = quarterly ? ' (Quarterly Awards)' : ''
+
+			// panelClass = time+86400000 < new Date() ? 'default' : 'info';
 			past = time+86400000 < new Date() ? 'past' : null;
 
 			dateGroupPanel = $('<div class="panel panel-'+panelClass+'">').append(
 				$('<div/>', {'class': 'panel-heading'}).append(
 					$('<h4/>', {'class': 'panel-title'}).append(
-						$('<a/>', {'data-toggle': 'collapse', text: dateStr, href: '#group'+time})
+						$('<a/>', {'data-toggle': 'collapse', text: dateStr+qAwards, href: '#group'+time})
 						)
 					)
 				).append( $('<div id="group'+time+'" class="panel-collapse collapse in '+past+'"></div>') );
@@ -28,7 +39,12 @@
 
 		var addScheduleEvent = function(row) {
 
-			content = $('<ul>').append('<li>Type: '+row.eventType+'</li><li>Commissioner: '+row.commissioner+'</li>');
+			content = $('<ul>').append('<li>Type: '+row.eventType+'</li>');
+			
+			if (row.commissioner) {
+				content.append('<li>Commissioner: '+row.commissioner+'</li>');
+			}
+
 			if (row.pending) {
 				content.prepend('<li>PENDING</li>');
 			}
@@ -42,8 +58,9 @@
 			googleSpreadsheetWorksheet: parseInt(googleSheetIndex),
 			parsed: function(columns) {
 
-				var dateGroups = {},
-				dateModified = columns[5][0];
+				var dateGroups = {}
+				quarterlyDays = [],
+				dateModified = columns[6][0];
 
 				$('#dateModified').text(dateModified);
 
@@ -54,17 +71,25 @@
 						eventType: columns[1][i],
 						excerpt: columns[2][i],
 						commissioner: columns[3][i],
-						pending: columns[4][i]
+						pending: columns[4][i],
+						quarterly: columns[5][i]
 					};
 					dateGroups[date] = dateGroups[date] || [];
 					dateGroups[date].push(row);
+
+					if (row.quarterly) {
+						if ( quarterlyDays.indexOf(date) == -1 ) {
+							quarterlyDays.push(date);
+						}
+					}
 				}
 
 				// dateGroups.sort();
 
 				for (date in dateGroups) {
 					groupDate = new Date(parseInt(date)+86400000);
-					addDateBlock(dateGroups[date], parseInt(date), groupDate.toDateString());
+					quarterly = (quarterlyDays.indexOf(parseInt(date)) > -1) ? true : false;
+					addDateBlock(dateGroups[date], parseInt(date), groupDate.toDateString(), quarterly);
 				}
 
 			}
@@ -77,5 +102,4 @@
 		});
 
 	});
-
 }).call(this);
