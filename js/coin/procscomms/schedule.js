@@ -56,7 +56,7 @@
 				}
 
 				if (row.pending) {
-					 content.prepend('<li>PENDING</li>');
+					 content.prepend('<li>Pending submission of COIN request.</li>');
 				}
 
 				scheduledEvent = $('<div class="list-group-item">').text(row.excerpt).append(content);
