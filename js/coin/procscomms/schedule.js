@@ -56,7 +56,7 @@
 				}
 
 				if (row.pending) {
-					 content.prepend('<li>Pending submission of COIN request.</li>');
+					 content.prepend('<li><em>Pending submission of COIN request.</em></li>');
 				}
 
 				scheduledEvent = $('<div class="list-group-item">').text(row.excerpt).append(content);
@@ -68,7 +68,7 @@
 				googleSpreadsheetWorksheet: parseInt(googleSheetIndex),
 				parsed: function (columns) {
 
-					 var dateGroups = {},
+					 var dateGroups = [],
 					 quarterlyDays = [],
 					 dateModified = columns[6][0];
 
