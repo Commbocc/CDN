@@ -21,9 +21,7 @@
 		/*border-bottom: solid 3px #6b70a8 !important;*/
 		text-decoration: none !important;
 	}
-
 	#servicesModel ul { padding-left: 0px !important;}
-
 	.loading {
 		margin-top: 50px;
 		color: #ccc;
@@ -50,8 +48,15 @@
 		});
 	});
 </script>
+<!--[if lt IE 9]>
+<script type="text/javascript">
+	$(function () {
+		$('#graphContainer').html('<h4 class="text-danger">Unable to load. Please use a modern browser.</h4>');
+	});
+</script>
+<![endif]-->
 <div class="bs">
-	<a href="#home" data-toggle="tab">
+	<a href="#brchome" data-toggle="tab">
 		<img src="http://www.hillsboroughcounty.org/images/pages/N3904/BRCCS-Banner.png" class="img-responsive center-block" alt="Blue Ribbon Committee Banner">
 	</a>
 	<p>
@@ -64,22 +69,29 @@
 		<li><a href="https://commbocc.herokuapp.com/child_fatalities">Facts and Figures</a></li>
 		<li><a data-toggle="tab" href="#partners">Community Partners</a></li>
 	</ul>
-
 	<div class="tab-content">
-		<div role="tabpanel" class="tab-pane active" id="home">
+		<div role="tabpanel" class="tab-pane active" id="brchome">
 			<div class="row">
 				<div class="col-sm-8">
 					<h3>
 						<span class="label label-info">Our Vision</span>
 					</h3>
-
 					<img src="http://www.hillsboroughcounty.org/images/pages/N3904/murman.jpg" class="col-sm-5 img-responsive pull-right" style="margin-right: 10px;" alt="Commissioner Murman">
-
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+						Develop a coordinated and collaborative approach to children's service in Hillsborough County. Assuring that children, youth and families live in a safe and stable environment, while applying effective use of resources and programs. To engage a broad array of community partners to work together to meet the needs of Hillsborough County's children. Create a foundation for relationships between partner agencies by eliminating any duplication of services, and utilizing resources in the most efficient and effective manner.
 					</p>
 					<p>
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+					</p>
+					<h4>Objectives</h4>
+					<ul>
+						<li>Map coordination and collaboration between existing resources and programs that effectively meet the needs of children and families.</li>
+						<li>Determine the current level of investment in services for Hillsborough County's children and family services.</li>
+						<li>Evaluate the community environment, identify the gaps in services to children and families.</li>
+						<li>Collaboration between agencies to prepare staff of County departments, community-based organizations, foster and kinship care providers and family members to work together.</li>
+						<li>Shared planning facilitated through existing structure (or other County departments, agencies, etc.)</li>
+						<li>Inter-agency teamwork, information sharing, coordinated training and capacity development should be strengthened to assure that families experience continuity of care across first, second and third levels of prevention and intervention services whenever possible.</li>
+					</ul>
+					<p><br />
 					</p>
 				</div>
 				<div class="col-sm-4">
@@ -149,8 +161,250 @@
 				</div>
 			</div>
 		</div>
-		<div role="tabpanel" class="tab-pane" id="members">members</div>
-		<div role="tabpanel" class="tab-pane" id="materials">materials</div>
+		<div role="tabpanel" class="tab-pane" id="members">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Email</td>
+						<td>Title</td>
+						<td>Occupation</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Chris Card</td>
+						<td>cjcard1@aol.com</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Craig Latimer</td>
+						<td>clatimer@hcsoe.com</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Debra Faulk</td>
+						<td><a href="mailto:Debra.Faulk@wellsfargo.com">Debra.Faulk@wellsfargo.com</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Det. Richard Griner</td>
+						<td><a href="mailto:Richard.griner@tampagov.net">Richard.griner@tampagov.net</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Dr. Phillip Harris</td>
+						<td><a href="mailto:harrisp@hillsboroughcounty.org">harrisp@hillsboroughcounty.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Emery Ivery</td>
+						<td>eivery@wtb.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Gabriela Reece</td>
+						<td><a href="mailto:gabriela.reece@myflfamilies.com">gabriela.reece@myflfamilies.com</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Carl Harness</td>
+						<td><a href="mailto:HarnessC@hillsboroughcounty.org">HarnessC@hillsboroughcounty.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Jennifer Kuhn</td>
+						<td><a href="mailto:Jennifer.Kuhn@MyFLFamilies.com">Jennifer.Kuhn@MyFLFamilies.com</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>John Guzina</td>
+						<td><a href="mailto:John.Guzina@tampagov.net">John.Guzina@tampagov.net</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>John Luff</td>
+						<td>jluff@yfainc.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Judge Ralph C. Stoddard</td>
+						<td><a href="mailto:STODDARC@fljud13.org">STODDARC@fljud13.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Judith Tilton</td>
+						<td>jtilton@uwtb.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Kathleen Cowan</td>
+						<td>kcowan@eckerdCBC-C13.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Kelley Parris</td>
+						<td><a href="mailto:parrisk@childrensboard.org">parrisk@childrensboard.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Ken Conley</td>
+						<td>kconley@yfainc.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Kenneth Gaughan, Ed.D.</td>
+						<td><a href="mailto:Ken.gaughan@sdhc.k12.fl.us">Ken.gaughan@sdhc.k12.fl.us</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Keri Eisenbeis</td>
+						<td><a href="mailto:keri.eisenbeis@baycare.org">keri.eisenbeis@baycare.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Khalilah Daniels</td>
+						<td>khalilah.daniels@djj.state.fl.us kyle</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Kyle Teague</td>
+						<td>Teague@myflfamilies.com</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Lindsey D. Parks</td>
+						<td>lparks@tampabay.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Lisa Mayrose</td>
+						<td><a href="mailto:lisa_Mayrose@dcf.state.fl.us">lisa_Mayrose@dcf.state.fl.us</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Liana Lopez</td>
+						<td>LopezLia@hillsboroughcounty.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Mark Wickham</td>
+						<td><a href="mailto:MWickham@yfainc.org">MWickham@yfainc.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Sandra Murman</td>
+						<td><a href="mailto:MurmanS@hillsboroughcounty.org">MurmanS@hillsboroughcounty.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Nina Eichorn</td>
+						<td><a href="mailto:eichornn@childrensboard.org">eichornn@childrensboard.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Racqual Piper</td>
+						<td>piperrh@fljud13.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Ramin Kouzehkanani</td>
+						<td><a href="mailto:ramink@hillsboroughcounty.org">ramink@hillsboroughcounty.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>JoAnn Rollins</td>
+						<td><a href="mailto:RollinsJ@hillsboroughcounty.org">RollinsJ@hillsboroughcounty.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Nancy Russ</td>
+						<td><a href="mailto:RussN@HillsboroughCounty.ORG">RussN@HillsboroughCounty.ORG</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Ryan Higgins</td>
+						<td><a href="mailto:ryanhiggins@ryanhigginsus.com">ryanhiggins@ryanhigginsus.com</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Sgt. Jesse Warren</td>
+						<td><a href="mailto:jwarren@hcso.tampa.fl.us">jwarren@hcso.tampa.fl.us</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Suzanne McCormick</td>
+						<td><a href="mailto:smccormick@uwsuncoast.org">smccormick@uwsuncoast.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Terri Fernandez</td>
+						<td><a href="mailto:tfernandez@tampabay.org">tfernandez@tampabay.org</a></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Tracy Wingatt</td>
+						<td>wingattm@fljud13.org</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="materials">
+			<p>
+				Welcome to the Blue Ribbon Committee for Children&rsquo;s Services in Hillsborough County. The Committee is comprised of public, corporate and non-profit community members.
+			</p>
+			<p>
+				All meetings will be held from XX PM to XX PM on XX in Conference Room AB at County Center, 601 E. Kennedy Blvd., Tampa, FL 33602, unless otherwise noticed.
+			</p>
+			<p>
+				Recent Meetings:
+			</p>
+			<ul>
+				<li>
+					April 20, 2015
+					<ul>
+						<li><a href="http://www.hillsboroughcounty.org/DocumentCenter/View/15610" target="_blank">Meeting Agenda</a></li>
+						<li><a href="http://www.hillsboroughcounty.org/DocumentCenter/View/15612" target="_blank">Minutes</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 		<div role="tabpanel" class="tab-pane" id="services">
 			<div id="servicesModel" class="row">
 				<div class="col-sm-3">
@@ -226,12 +480,9 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="docs">docs</div>
 		<div role="tabpanel" class="tab-pane" id="partners">partners</div>
 	</div>
-
-
 </div>
