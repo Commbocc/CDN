@@ -7,7 +7,7 @@ $ ->
 	get_bio_content = (bio) ->
 		tmp = null
 		$.ajax
-			'url': '/tests/blue-ribbon/bios/'+bio+'.html'
+			'url': 'http://commbocc.github.io/CDN/tests/blue-ribbon/bios/'+bio+'.html'
 			'async': false
 			'global': false
 			'dataType': 'html'
