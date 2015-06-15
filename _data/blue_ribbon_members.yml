@@ -1,3 +1,9 @@
+- name: Sandra Murman
+  email: MurmanS@hillsboroughcounty.org
+  title: Hillsborough County Commissioner District 1
+  pic: sandra_murman.jpg
+  bio_link: http://hillsboroughcounty.org/index.aspx?nid=1128
+
 - name: Chris Card
   email: cjcard1@aol.com
   title: Chief Operating Officer for Lutheran Services Florida
@@ -141,12 +147,6 @@
   title: Chief Executive Officer of Youth and Family Alternatives
   pic: mark_wickham.png
   bio: mark_wickham
-
-- name: Sandra Murman
-  email: MurmanS@hillsboroughcounty.org
-  title: Hillsborough County Commissioner District 1
-  pic: sandra_murman.jpg
-  bio_link: http://hillsboroughcounty.org/index.aspx?nid=1128
 
 - name: Nina Eichorn
   email: eichornn@childrensboard.org
