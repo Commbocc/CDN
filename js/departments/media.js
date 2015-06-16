@@ -106,15 +106,17 @@ $(function () {
 		"Development Services",
 		"Public Utilities"
 		]
-	},{
-		name: 'Leah Saunders',
-		email: 'SaundersL@HillsboroughCounty.org',
-		officePhone: '813-274-6947',
-		mobilePhone: '813-373-0687',
-		vcardURL: null,
-		photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/LeahSaunders1.jpg',
-		position: 'PR & Marketing Manager'
-	},{
+	},
+	// {
+	// 	name: 'Leah Saunders',
+	// 	email: 'SaundersL@HillsboroughCounty.org',
+	// 	officePhone: '813-274-6947',
+	// 	mobilePhone: '813-373-0687',
+	// 	vcardURL: null,
+	// 	photoURL: 'http://hillsboroughcounty.org/images/pages/N3649/LeahSaunders1.jpg',
+	// 	position: 'PR & Marketing Manager'
+	// },
+	{
 		name: 'Jennifer Rothenberg',
 		email: 'RothenbergJ@hillsboroughcounty.org',
 		officePhone: '813-276-2681',
