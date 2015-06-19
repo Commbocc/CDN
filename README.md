@@ -14,3 +14,4 @@ Paste the following into CivicPlus to gain access to Twitter Bootstrap classes a
 	
 </div>
 ```
+[Twitter Bootstrap Documentation](http://getbootstrap.com/)
