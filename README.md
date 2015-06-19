@@ -1,6 +1,6 @@
 # Communications & Digital Media Content Delivery Network
 
-Paste the following into CivicPlus to gain access to Twitter Bootstrap classes and functions.
+Paste the following into CivicPlus to gain access to Twitter Bootstrap classes and functions as well as FontAwesome icons.
 
 ```html
 <link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
@@ -14,4 +14,5 @@ Paste the following into CivicPlus to gain access to Twitter Bootstrap classes a
 	
 </div>
 ```
-[Twitter Bootstrap Documentation](http://getbootstrap.com/)
+* [Twitter Bootstrap Documentation](http://getbootstrap.com/)
+* [FontAwesome Documentation](http://fortawesome.github.io/Font-Awesome/examples/)
