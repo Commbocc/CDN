@@ -22,12 +22,24 @@
 		/*border-bottom: solid 3px #6b70a8 !important;*/
 		text-decoration: none !important;
 	}
-	#servicesModel ul { padding-left: 0px !important;}
-	.fa-5x.fa-user { color: #ddd; }
+	#services ul { padding-left: 0px !important;}
+	.fa-5x.fa-user { color: #ccc; }
 	.loading {
 		margin-top: 50px;
 		color: #ccc;
 	}
+
+	.rotate-left {
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+	.rotate-right {
+		-ms-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+	}
+
 	.spin {
 		-webkit-animation:spin 3s linear infinite;
 		-moz-animation:spin 3s linear infinite;
@@ -41,7 +53,7 @@
 	// graphContainer
 	$(function () {
 		var priorYear = new Date().getFullYear()-1;
-		var graphURL = 'https://commbocc.herokuapp.com/child_fatalities/graph?byCause=1&year=' + priorYear;
+		var graphURL = 'http://www.hillsboroughcdms.org/blue_ribbon/child_fatalities/graph?byCause=1&year=' + priorYear;
 		$('#priorYear').text(priorYear);
 		$.ajax({
 			url: graphURL
@@ -68,7 +80,7 @@
 		<li><a data-toggle="tab" href="#materials">Meeting Materials</a></li>
 		<li><a data-toggle="tab" href="#services">Model of Services</a></li>
 		<li><a data-toggle="tab" href="#docs">Docs and Info</a></li>
-		<li><a href="https://commbocc.herokuapp.com/child_fatalities" target="_blank">Facts &amp; Figures</a></li>
+		<li><a href="http://www.hillsboroughcdms.org/blue_ribbon/child_fatalities" target="_blank">Facts &amp; Figures</a></li>
 		<li><a href="http://hillsboroughcounty.org/DocumentCenter/View/15627" target="_blank">Community Partners</a></li>
 	</ul>
 	<div class="tab-content">
@@ -109,7 +121,7 @@
 				</div>
 			</div>
 		</div>
-		<div role="tabpanel" class="tab-pane" id="members">
+		<div role="tabpanel" class="tab-pane " id="members">
 			<div class="table-responsive">
 				<table id="brcMembers" class="table table-striped">
 					<thead>
@@ -126,7 +138,7 @@
 				</table>
 			</div>
 		</div>
-		<div role="tabpanel" class="tab-pane" id="materials">
+		<div role="tabpanel" class="tab-pane " id="materials">
 			<p class="lead">
 				Welcome to the Blue Ribbon Committee for Children's Services in Hillsborough County. The Committee is comprised of public, corporate and non-profit community members. Meetings are held monthly in Conference Room AB at County Center, 601 E. Kennedy Blvd., Tampa, FL 33602.
 			</p>
@@ -142,36 +154,10 @@
 				</li>
 			</ul>
 		</div>
-		<div role="tabpanel" class="tab-pane" id="services">
-			<div id="servicesModel" class="row">
-				<div class="col-sm-3">
-					<div class="panel panel-info">
-						<div class="panel-heading">
-							<h3 class="panel-title">Core Functions</h3>
-						</div>
-						<div class="panel-body text-info">
-							<ul>
-								<li>Build parent partnerships</li>
-								<li>Deepen knowledge and understanding</li>
-								<li>Shift practice, policy and systems</li>
-								<li>Ensure accountability</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<h3 class="panel-title">Program Practice</h3>
-						</div>
-						<div class="panel-body text-primary">
-							<ul>
-								<li>Shift organization culture to value and build upon families' strengths</li>
-								<li>Make policy changes to support changes in worker practice</li>
-								<li>Implement everyday actions that support families in building protective factors</li>
-							</ul>
-						</div>
-					</div>
+		<div role="tabpanel" class="tab-pane " id="services">
+
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3">
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							<h3 class="panel-title">Data and Analytics</h3>
@@ -187,7 +173,55 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3">
+			</div>
+
+			<div class="row hidden-xs" style="margin-bottom: 21px;">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="row">
+						<div class="col-sm-4 text-center text-success">
+							<i class="fa fa-fw fa-2x fa-arrow-down rotate-left"></i>
+						</div>
+						<div class="col-sm-4 text-center text-success">
+							<i class="fa fa-fw fa-2x fa-arrow-down"></i>
+						</div>
+						<div class="col-sm-4 text-center text-success">
+							<i class="fa fa-fw fa-2x fa-arrow-down rotate-right"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="panel-title">Core Functions</h3>
+						</div>
+						<div class="panel-body text-info">
+							<ul>
+								<li>Build parent partnerships</li>
+								<li>Deepen knowledge and understanding</li>
+								<li>Shift practice, policy and systems</li>
+								<li>Ensure accountability</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Program Practice</h3>
+						</div>
+						<div class="panel-body text-primary">
+							<ul>
+								<li>Shift organization culture to value and build upon families' strengths</li>
+								<li>Make policy changes to support changes in worker practice</li>
+								<li>Implement everyday actions that support families in building protective factors</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
 					<div class="panel panel-danger">
 						<div class="panel-heading">
 							<h3 class="panel-title">Challenges</h3>
@@ -203,7 +237,26 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3">
+			</div>
+
+			<div class="row hidden-xs" style="margin-bottom: 21px;">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="row">
+						<div class="col-sm-4 text-center text-warning">
+							<i class="fa fa-fw fa-2x fa-arrow-down rotate-right"></i>
+						</div>
+						<div class="col-sm-4 text-center text-warning">
+							<i class="fa fa-fw fa-2x fa-arrow-down"></i>
+						</div>
+						<div class="col-sm-4 text-center text-warning">
+							<i class="fa fa-fw fa-2x fa-arrow-down rotate-left"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
 					<div class="panel panel-warning">
 						<div class="panel-heading">
 							<h3 class="panel-title">Results</h3>
@@ -218,20 +271,16 @@
 					</div>
 				</div>
 			</div>
+
 		</div>
-		<div role="tabpanel" class="tab-pane" id="docs">
-
+		<div role="tabpanel" class="tab-pane " id="docs">
 			<p class="lead">Here you will find useful documents and resources.</p>
-
 			<h4>Documents</h4>
-
 			<ul>
 				<li><a href="http://hillsboroughcounty.org/DocumentCenter/View/15629" target="blank">2014 Florida Child Welfare Services Gap Analysis Report</a></li>
 				<li><a href="http://hillsboroughcounty.org/DocumentCenter/View/15630" target="blanik">County Health Ranking &amp; Roadmaps for Hillsborough County</a></li>
 			</ul>
-
 			<h4>Templates</h4>
-
 			<ul>
 				<li><a href="http://hillsboroughcounty.org/DocumentCenter/View/15628" target="blank">Data Collection</a></li>
 			</ul>

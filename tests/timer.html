@@ -1,0 +1,82 @@
+
+<link href="http://commbocc.github.io/CDN/css/civic.css" rel="stylesheet" />
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><script>
+
+var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function countup(yr,m,d){
+	var today=new Date();
+	var todayy=today.getYear();
+	if (todayy < 1000);
+	todayy+=1900;
+	var todaym=today.getMonth();
+	var todayd=today.getDate();
+	var todaystring=montharray[todaym]+" "+todayd+", "+todayy;
+	var paststring=montharray[m-1]+" "+d+", "+yr;
+
+	var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1);
+
+	return difference;
+}
+
+</script>
+<div class="bs">
+	<p class="lead">Here you will find useful information to make your job safer. For more information contact David Braxton, Safety Manager for the Public Works Department at 813-307-1739.</p>
+
+	<div class="row">
+		<div class="col-sm-8">
+			<h3>Documents</h3>
+
+			<ul>
+				<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4421">Public Works Department Safety Manual</a></li>
+				<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4420">Incident Reporting Checklists</a></li>
+			</ul>
+
+			<h3>Safety Performance Measurements</h3>
+
+			<ul>
+				<li>Safety Advisor</li>
+				<li>Second Quarter Safety Report Injuries</li>
+				<li>Second Quarter Safety Report Property Damage</li>
+			</ul>
+
+			<h3>Safety Videos</h3>
+
+			<ul>
+				<li>Tool Box Safety Talks: &quot;Chemical Safety&quot;</li>
+				<li>&quot;Working Around Construction Equipment Safety&quot;</li>
+				<li>ISRI Safety - Good Driving Behaviors</li>
+				<li>Safety Video: Vehicle Safety Inspection</li>
+				<li>Safety Video: Slips, Trips and Falls</li>
+				<li>ISRI Safety - Forklift Basics</li>
+			</ul>
+
+			<h3>Important Links</h3>
+
+			<ul>
+				<li>Occupational Safety and Health</li>
+				<li>Tool Box Safety Meetings</li>
+				<li>Caterpillar Construction Equipment Safety</li>
+				<li>Caterpillar Construction Equipment Inspection Checklists</li>
+				<li>Center for Disease Control</li>
+				<li>National Safety Council</li>
+			</ul>
+
+			<h3>Frequently Asked Questions</h3>
+
+			<ul>
+				<li>Public Works Department&#39;s Safety Program</li>
+			</ul>
+		</div>
+
+		<div class="col-sm-4">
+			<div class="alert alert-warning text-center" style="color: #000;">
+				<h2>Public Works employees have worked</h2>
+
+				<h1><script type="text/javascript">document.write( countup(2015,1,1) )</script>day(s)</h1>
+
+				<h4>without an injury requiring a medical visit.</h4>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	
+	.nav.nav-pills.nav-justified {
+		margin: 15px 0 !important;
+		padding: 0 !important;
+	}
+
+	.nav.nav-pills.nav-justified a {
+		background-color: #f1f1f1 !important;
+		margin: 0 10px !important;
+		color: #111 !important;
+		border-bottom: solid 3px #ccc !important;
+		text-decoration: none !important;
+	}
+
+	.nav.nav-pills.nav-justified a:hover {
+		background-color: #ccc !important;
+		border-bottom: solid 3px #6b70a8 !important;
+		text-decoration: none !important;
+	}
+
+</style>
+
+<script type="text/javascript">
+	$(function () {
+
+		$.ajax({
+			url: 'http://www.hillsboroughcdms.org/employees/contact_table'
+		}).done(function(html) {
+			$("#contactList").html(html);
+		});
+
+	});
+</script>
+
+<img src="http://hillsboroughcounty.org/images/pages/N3649/cdmBanners.jpg">
+
+<div class="bs">
+
+	<p class="row">
+		<ul class="nav nav-pills nav-justified">
+			<li><a href="#prs" target="_self" class="Hyperlink">Media Contacts</a></li>
+			<li><a href="http://www.hillsboroughcounty.org/index.aspx?nid=2565" target="_self" class="Hyperlink">Agendas &amp; Minutes</a></li>
+			<li><a href="/htv" target="_self" class="Hyperlink">Watch HTV</a></li>
+			<li><a href="http://www.hillsboroughcounty.org/CivicAlerts.aspx" target="_self" class="Hyperlink">News Releases</a></li>
+			<li><a href="http://www.hillsboroughcounty.org/calendar.aspx" target="_self" class="Hyperlink">County Calendar</a></li>
+		</ul>
+	</p>
+
+	<div class="row">
+
+		<div class="col-sm-7">
+			<p class="lead">
+				Hillsborough County's Communications and Digital Media Engagement team work to craft key messaging of County services, respond to media needs, and promote vital County programs utilizing traditional and modern methods of communication including news releases, special events, the County website and social media, along with the County's award-winning television station HTV.
+			</p>
+		</div>
+
+		<div class="col-sm-5">
+			<p>
+				<a href="http://hillsboroughcounty.us5.list-manage2.com/subscribe?u=25be437fec610a7fad7518885&id=1b259a7fbd" target="_blank" class="btn btn-block btn-warning btn-lg" title="Sign Up For Hillsborough County News">Subscribe <i class="fa fa-fw fa-rss"></i><br><small>Hillsborough County News</small></a>
+			</p>
+
+			<p id="social" class="well well-sm text-center">
+				<a href="http://www.facebook.com/HillsboroughFL/" target="_blank"><img src="http://hillsboroughcounty.org/images/pages/N3649/fb.gif" alt="Facebook" style=""></a>&nbsp; &nbsp;
+				<a href="http://twitter.com/HillsboroughFL" target="_blank"><img src="http://hillsboroughcounty.org/images/pages/N3649/tt.gif" alt="Twitter" style=""></a>&nbsp; &nbsp;
+				<a href="http://www.youtube.com/HillsboroughCounty" target="_blank"><img src="http://hillsboroughcounty.org/images/pages/N3649/yt.gif" alt="YouTube" style=""></a>&nbsp; &nbsp;
+				<a href="https://www.linkedin.com/company/hillsborough-county" target="_blank"><img src="http://hillsboroughcounty.org/images/pages/N3649/li.gif" alt="LinkeIn" style=""></a>&nbsp; &nbsp;
+				<a href="http://instagram.com/hillsboroughfl" target="_blank"><img src="http://hillsboroughcounty.org/images/pages/N3649/instagram.gif" alt="Instagram" style=""></a>
+			</p>
+		</div>
+
+	</div>
+
+	<h2 id="prs">Media Contacts</h2>
+
+	<div class="col-sm-9">
+
+		<div id="contactList">
+		</div>
+		<!--[if lt IE 9]>
+		<iframe src="http://www.hillsboroughcdms.org/employees/contact_table" border="0" width="100%" height="600"></iframe>
+		<![endif]-->
+	</div>
+
+	<div class="col-sm-3 text-center">
+		<div class="row">
+			<p class="col-xs-6 col-sm-12">
+				<a class="twitter-timeline" width="215" height="550" data-dnt="true" href="https://twitter.com/HillsboroughFL" data-widget-id="385835017135333376">Tweets by @HillsboroughFL</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</p>
+			<p class="col-xs-6 col-sm-12">
+				<iframe src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FHillsboroughFL&amp;width=215&amp;height=395&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:215px; height:395px;" allowTransparency="true"></iframe>
+			</p>
+		</div>
+	</div>
+
+
+</div>
