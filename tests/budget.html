@@ -1,0 +1,281 @@
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<style type="text/css">
+
+	.bs {
+		font-family: arial, sans-serif !important;
+		font-size: 1.2em;
+	}
+
+	.text-primary {
+		color: #1e3467 !important;
+	}
+
+	.text-info {
+		color: #20bbd2 !important;
+	}
+
+	.text-warning {
+		color: #fcc540 !important;
+	}
+
+	.label-info {
+		background-color: #20bbd2 !important;
+	}
+
+	.alert a {
+		color: #fff !important;
+	}
+
+	.alert-info {
+		background-color: #20bbd2 !important;
+		border: none !important;
+	}
+
+	.alert-warning {
+		background-color: #fcc540 !important;
+		border: none !important;
+	}
+	
+	#maintenance li {
+		margin-bottom: 10px;
+	}
+
+	#homelessness.row {
+		position: relative;
+		margin-top: 40px;
+		margin-bottom: 25px;
+	}
+
+	img#skyline {
+		position: absolute;
+		/*bottom: 0;*/
+		left: -40px;
+		top: -23px;
+	}
+
+</style>
+
+<script type="text/javascript">
+	$(function () {
+		$('#budgetPie').highcharts({
+			credits: {
+				enabled: false
+			},
+			title: {
+				text: 'HIllsborough County Budget 16/17'
+			},
+			legend: {
+				layout: 'horizontal'
+			},
+			tooltip: {
+				pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			},
+			plotOptions: {
+				pie: {
+					allowPointSelect: true,
+					cursor: 'pointer',
+					colors: ['#20bbd2', '#fcc540'],
+					showInLegend: true,
+					dataLabels: {
+						enabled: false
+					}
+				}
+			},
+			series: [{
+				type: 'pie',
+				name: 'Source',
+				data: [
+				['Fund Balance', 1644.8],
+				['Licenses/Fines/Permits', 75.4],
+				['Ad Valorem Taxes', 657.8],
+				['Other Non-Revenues', 314.1],
+				['Other Taxes', 320.7],
+				['Transfers', 801.8],
+				['Intergovernmental Revenue', 327.2],
+				['Charges For Services', 546.6],
+				['Miscellaneous', 29.8]
+				]
+			}]
+		});
+	});
+</script>
+
+<div class="bs">
+
+
+	<h1 class="text-center">Understanding the Budget</h1>
+
+	<div class="alert alert-info text-center">
+		<h4>
+			<em>
+				Our Residents' Guide to How the Budget Works & Where the Money Goes
+			</em>
+		</h4>
+	</div>
+
+	<div class="lead">
+		<p>
+			The budget process for a large local government like Hillsborough County has a lot of moving parts. Money flows in from various places, including your tax dollars, and is divided among constitutionally-mandated offices like Tax Collector, Sheriff's Office, Board of County Commissioners, etc.
+		</p>
+		
+		<p class="text-center">
+			<span class="text-success">
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+			</span>
+			<span class="text-info">
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+			</span>
+			<span class="text-warning">
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+			</span>
+			<span class="text-danger">
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+			</span>
+			<span class="text-primary">
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+				<i class="fa fa-user fa-2x"></i>
+			</span>
+		</p>
+
+		<p>
+			Not only that, but money that comes from certain sources (i.e. federal grants, specific tax initiatives) has restrictions on how it can be spent. There are strings attached that must be accounted for!
+		</p>
+		<p>
+			That said, there are 3 steps to understanding where our budget comes from, where it goes, and how we spend it.
+		</p>
+	</div>
+
+	<h2 class="text-center">WHERE THE MONEY COMES FROM</h2>
+
+	<div class="row">
+		<div class="col-sm-5">
+			The County's budget for FY 2016/2017 is $4.72 Billion, but it's helpful to note where that number comes from. It includes non-cash sources (like reserves and transfers) that cannot be spent. <strong>The cash budget (a.k.a. what we really have to work with) comes to $1.83 billion.</strong>
+		</div>
+		<div class="col-sm-7">
+			<div id="budgetPie" style="width: 100%; height: 400px; max-width: 600px; margin: 0 auto"></div>
+		</div>
+	</div>
+
+	<h2 class="text-center">WHERE THE MONEY GOES</h2>
+
+	<div class="row">
+		<div class="col-sm-7 col-sm-push-5 text-right">
+			Hillsborough County consists of 9 constitutionally mandated offices, and that $1.83 billion cash budget is divided between them. After all is said and done, <strong>the County Administrator's share of that budget is $376.1 million</strong>, which is further <a href="http://hillsboroughcounty.org/images/pages/N3913/Vertical-org-chart.gif" alt="Organization Chart" target="_balnk">divided among our many departments</a>.
+		</div>
+		<div class="col-sm-5 col-sm-pull-7">
+			<a href="http://hillsboroughcounty.org/images/pages/N3913/Vertical-org-chart.gif" alt="Organization Chart" target="_balnk">
+				<img src="http://commbocc.github.io/CDN/images/budget/org-chart.gif" class="img-responsive">
+			</a>
+		</div>
+	</div>
+
+	<h2 class="text-center">HOW WE SPEND IT</h2>
+
+	<div class="row">
+		<div class="col-sm-8">
+			Now the good part. <strong>We put those funds to work building an environment and infrastructure that allows YOU to flourish.</strong> In business, life, and fun... this is how we build community prosperity!
+
+			<hr>
+
+			<div class="row">
+				<div class="col-sm-9">
+					<p class="text-info text-right">
+						Consumer Protection fought to get nearly $400,000 returned in money, services and value of goods to consumers.
+					</p>
+				</div>
+				<div class="col-sm-3 hidden-xs">
+					<img src="http://commbocc.github.io/CDN/images/budget/money-bag.png" alt="$40,000 Returned" class="img-responsive center-block">
+				</div>
+			</div>
+
+			<hr>
+		</div>
+		<div class="col-sm-4">
+			<div class="alert alert-warning" style="margin-bottom: 0;">
+				Supported 28 job-generating corporate projects, representing more than <strong>4,000 jobs</strong> and over <strong>$240 million</strong> of new capital investment in the community.
+			</div>
+			<div class="alert alert-info">
+				<h4 class="text-primary">1,100</h4>
+				Negotiated with Citigroup to bring more than <strong>1,100 new jobs</strong> to the interstate 75 corridor and invest more than <strong>$100 million</strong> to update and expand its existing facilities in the county.
+			</div>
+		</div>
+	</div>
+
+	<div id="homelessness" class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="row">
+				<div class="col-sm-7">
+					<div class="alert alert-info">
+						<h3>Overall 30% decrease in homelessness.</h3>
+					</div>
+				</div>
+				<div class="col-sm-5 hidden-xs">
+					<img src="http://commbocc.github.io/CDN/images/budget/skyline.png" alt="Skyline Image" id="skyline">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-5">
+			<h4>MAINTAINED</h4>
+			<p class="text-info">
+				a large-scale recreation system consisting of:
+			</p>
+			<ul id="maintenance" class="list-unstyled" style="margin-left: 0;">
+				<li class="text-info">
+					<i class="fa fa-fw fa-bicycle"></i>
+					<span class="label label-info">30 miles of paved trails.</span>
+				</li>
+				<li class="text-info">
+					<i class="fa fa-fw fa-road"></i>
+					<span class="label label-info">70 miles of hiking trails.</span>
+				</li>
+				<li class="text-info">
+					<i class="fa fa-fw fa-motorcycle"></i>
+					<span class="label label-info">25 miles of off-road dirt bike trails.</span>
+				</li>
+				<li class="text-info">
+					<i class="fa fa-fw fa-trophy"></i>
+					<span class="label label-info">18 miles of equestrian trails.</span>
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-7">
+			<div class="alert alert-info">
+				<h2 class="text-primary">594,637</h2>
+				<h4>
+					Incinerated approximately <strong>594,637</strong> tons of solid waste and produced energy at our Waste-to-Energy/Resource Recovery Facility to provide enough electricity for approximately <strong>30,000</strong> single-family homes.
+				</h4>
+			</div>
+		</div>
+	</div>
+
+	<h3 class="text-center"><em>But that's just a taste!</em></h3>
+
+	<div class="alert alert-info text-center">
+		<h3>
+			<a href="http://www.hillsboroughcounty.org/DocumentCenter/View/15649" target="_blank">
+				<em>
+					Download the "Budget in Brief" PDF for a full picture of community prosperity in Hillsborough County!
+				</em>
+			</a>
+		</h3>	
+	</div>
+
+</div>
