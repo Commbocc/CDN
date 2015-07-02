@@ -1,82 +1,89 @@
-
-<link href="http://commbocc.github.io/CDN/css/civic.css" rel="stylesheet" />
-<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script><script>
-
-var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
-
-function countup(yr,m,d){
-	var today=new Date();
-	var todayy=today.getYear();
-	if (todayy < 1000);
-	todayy+=1900;
-	var todaym=today.getMonth();
-	var todayd=today.getDate();
-	var todaystring=montharray[todaym]+" "+todayd+", "+todayy;
-	var paststring=montharray[m-1]+" "+d+", "+yr;
-
-	var difference=(Math.round((Date.parse(todaystring)-Date.parse(paststring))/(24*60*60*1000))*1);
-
-	return difference;
-}
-
+<link href="http://commbocc.github.io/CDN/css/civic.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script>
+	function countup(yr,m,d){
+		var today = new Date();
+		var last_incident = new Date(yr,m-1,d);
+		return Math.round((today.getTime()-last_incident.getTime())/(1000*60*60*24));
+	}
 </script>
-<div class="bs">
-	<p class="lead">Here you will find useful information to make your job safer. For more information contact David Braxton, Safety Manager for the Public Works Department at 813-307-1739.</p>
-
-	<div class="row">
-		<div class="col-sm-8">
-			<h3>Documents</h3>
-
-			<ul>
-				<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4421">Public Works Department Safety Manual</a></li>
-				<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4420">Incident Reporting Checklists</a></li>
+<span style="line-height: 21px;"><img src="/images/pages/N866/safetytraining2.jpg" alt="safetytraining2.jpg" style=""><br>
+	&nbsp;<br>
+	<div class="bs">
+		<p class="lead">Here you will find useful information to make your job safer. For more information contact David Braxton, Safety Manager for the Public Works Department at 813-307-1739.</p>
+		<div class="row">
+			<div class="col-xs-8">
+				<h3></h3>
+				<span style="line-height: 21px; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 24px; color: rgb(64, 64, 64);">Documents<br>
+					<br>
+				</span><span style="line-height: 21px; font-size: 13px;"></span>
+				<ul style="font-size: 13.3333330154419px; line-height: 21px;">
+					<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4421" target="_blank" class="Hyperlink">Public Works Department Safety Manual&nbsp;</a></li>
+					<li><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4420" target="_blank" class="Hyperlink">Incident Reporting Checklists</a>&nbsp;</li>
+				</ul>
+				<br style="font-size: 13.3333330154419px; line-height: 21px;">
+				<span style="line-height: 21px; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 13px; color: rgb(64, 64, 64);"><span style="font-size: 24px;">Safety Performance Measurements<br>
+				</span><br>
+			</span><span style="line-height: 21px; font-size: 13px;"></span>
+			<ul style="font-size: 13.3333330154419px; line-height: 21px;">
+				<li><span style="font-size: 10pt;"><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4424" target="_blank" class="Hyperlink">Safety Advisor&nbsp;</a></span></li>
+				<li><span style="font-size: 10pt;"></span><span style="font-size: 10pt;"><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4423" target="_blank" class="Hyperlink">Second Quarter Safety Report Injuries</a>&nbsp;</span></li>
+				<li><span style="font-size: 10pt;"></span><span style="font-size: 10pt;"><a href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4422" target="_blank" class="Hyperlink">Second Quarter Safety Report Property Damage&nbsp;</a></span></li>
 			</ul>
-
-			<h3>Safety Performance Measurements</h3>
-
-			<ul>
-				<li>Safety Advisor</li>
-				<li>Second Quarter Safety Report Injuries</li>
-				<li>Second Quarter Safety Report Property Damage</li>
-			</ul>
-
-			<h3>Safety Videos</h3>
-
-			<ul>
-				<li>Tool Box Safety Talks: &quot;Chemical Safety&quot;</li>
-				<li>&quot;Working Around Construction Equipment Safety&quot;</li>
-				<li>ISRI Safety - Good Driving Behaviors</li>
-				<li>Safety Video: Vehicle Safety Inspection</li>
-				<li>Safety Video: Slips, Trips and Falls</li>
-				<li>ISRI Safety - Forklift Basics</li>
-			</ul>
-
-			<h3>Important Links</h3>
-
-			<ul>
-				<li>Occupational Safety and Health</li>
-				<li>Tool Box Safety Meetings</li>
-				<li>Caterpillar Construction Equipment Safety</li>
-				<li>Caterpillar Construction Equipment Inspection Checklists</li>
-				<li>Center for Disease Control</li>
-				<li>National Safety Council</li>
-			</ul>
-
-			<h3>Frequently Asked Questions</h3>
-
-			<ul>
-				<li>Public Works Department&#39;s Safety Program</li>
-			</ul>
-		</div>
-
-		<div class="col-sm-4">
-			<div class="alert alert-warning text-center" style="color: #000;">
-				<h2>Public Works employees have worked</h2>
-
-				<h1><script type="text/javascript">document.write( countup(2015,1,1) )</script>day(s)</h1>
-
-				<h4>without an injury requiring a medical visit.</h4>
+			<br style="font-size: 13.3333330154419px; line-height: 21px;">
+			<div style="font-size: 13.3333330154419px; line-height: 21px;"><br>
 			</div>
+			<span style="line-height: 21px; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 24px; color: rgb(64, 64, 64);">Safety Videos<br>
+			</span><br style="font-size: 13.3333330154419px; line-height: 21px;">
+			<ul style="font-size: 13.3333330154419px; line-height: 21px;">
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=H7uqeIyh4i4" target="_blank" class="Hyperlink">Tool Box Safety Talks: "Chemical Safety"</a><br>
+				</span></li>
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=xj1wTSkwtWE" target="_blank" class="Hyperlink">"Working Around Construction Equipment Safety"</a><br>
+				</span></li>
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=MAq42rG3tFM" target="_blank" class="Hyperlink">ISRI Safety - Good Driving Behaviors</a><br>
+				</span></li>
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=OAtOt84djzc" target="_blank" class="Hyperlink">Safety Video: Vehicle Safety Inspection</a><br>
+				</span></li>
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=je1wIj92Eyc" target="_blank" class="Hyperlink">Safety Video: Slips, Trips and Falls</a><br>
+				</span></li>
+				<li><span style="line-height: 18.8500003814697px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: rgb(43, 43, 43);"><a href="https://www.youtube.com/watch?v=NVciZFpMw2I" target="_blank" class="Hyperlink">ISRI Safety - Forklift Basics</a><br>
+				</span></li>
+			</ul>
+			<span style="line-height: 21px; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 24px; color: rgb(64, 64, 64);"><br>
+				Important Links<br>
+			</span><span style="line-height: 21px; font-size: 13px;"></span><span style="line-height: 21px; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 24px; color: rgb(64, 64, 64);"><br>
+		</span><span style="line-height: 21px; font-size: 13px;"></span>
+		<ul style="font-size: 13.3333330154419px; line-height: 21px;">
+			<li><a href="https://www.osha.gov/" target="blank" class="Hyperlink">Occupational Safety and Health</a></li>
+			<li><a href="http://safetytoolboxtalks.com/Toolbox-Talks/" target="blank" class="Hyperlink">Tool Box Safety Meetings</a></li>
+			<li><a href="https://safety.cat.com/TBTs" target="blank" class="Hyperlink">Caterpillar Construction Equipment Safety</a></li>
+			<li><a href="https://safety.cat.com/Checklists" target="blank" class="Hyperlink">Caterpillar Construction Equipment Inspection Checklists</a></li>
+			<li><a href="http://www.cdc.gov/" target="blank" class="Hyperlink">Center for Disease Control</a></li>
+			<li><a href="http://www.nsc.org/pages/home.aspx" target="blank" class="Hyperlink">National Safety Council</a></li>
+		</ul>
+		<br style="font-size: 13.3333330154419px; line-height: 21px;">
+		<span style="font-size: x-large; font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; color: rgb(64, 64, 64);">Frequently Asked Questions</span><br>
+		<div style="font-size: 13.3333330154419px; line-height: 21px;"><span style="font-family: 'Myriad Set Pro', 'Helvetica Neue', Helvetica, Arial, Verdana, sans-serif; font-size: 24px; color: rgb(64, 64, 64);"><br>
+		</span>
+		<ul>
+			<li><a href="http://coin.hillsboroughcounty.org/FAQ.aspx?TID=30" target="_blank" class="Hyperlink">Find answers to questions you may have about the Public Works Department's Safety Program</a>&nbsp;</li>
+		</ul>
+		<div><br>
+			<br>
 		</div>
 	</div>
 </div>
+<div class="col-xs-4">
+	<div class="alert alert-success text-center" style="background: #0b6837; color: #fff;">
+		<h2><i class="fa fa-exclamation-triangle"></i> Public Works employees have worked</h2>
+		<h1>
+			<span style="background: #000; color: red; padding: 5px 15px; text-align: center;"><script type="text/javascript">document.write( countup(2015,6,30) )</script></span>
+			day(s)</h1>
+			<h4>without an injury requiring a medical visit.</h4>
+		</div>
+	</div>
+</div>
+</div>
+</span>

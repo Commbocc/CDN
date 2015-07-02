@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="../js/jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
+
+<div class="bs">
+	
+	<p>
+		Open enrollment begins in: <span id="oeBegins"></span>
+	</p>
+
+	<p>
+		Open enrollment ends in: <span id="oeEnds"></span>
+	</p>
+	
+	
+</div>
+
+<script type="text/javascript">
+	$("#oeBegins").countdown("2015/07/27", function(event) {
+		$(this).text(
+			event.strftime('%D days %H Hours %M Minutes %S Seconds')
+			);
+	});
+
+	$("#oeEnds").countdown("2015/07/27", function(event) {
+		$(this).text(
+			event.strftime('%D days %H Hours %M Minutes %S Seconds')
+			);
+	});
+</script>
