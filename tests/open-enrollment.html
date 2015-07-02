@@ -3,31 +3,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="../js/jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
+<script src="http://commbocc.github.io/CDN/js/jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
+
+<script type="text/javascript">
+	$(function () {
+
+		var oeStartDate = "2015/07/27";
+		var oeEndDate = "2015/08/22";
+		var today = new Date();
+
+		var significantDate, str;
+
+		if ( today < new Date(oeStartDate) ) {
+			significantDate = oeStartDate;
+			str = 'starts in:';
+		} else if ( today < new Date(oeEndDate) ) {
+			significantDate = oeEndDate;
+			str = 'ends in:';
+		} else {
+			significantDate = '';
+			str = 'has ended.';
+		}
+
+		if (significantDate.length) {
+			$("#openEnrollmentCounter").countdown(significantDate, function(event) {
+				$(this).html( '<br>' + event.strftime('%D days %H Hours %M Minutes %S Seconds') );
+			});
+		}
+
+		$('#openEnrollmentStr').text(str);
+
+	});
+</script>
 
 <div class="bs">
 	
-	<p>
-		Open enrollment begins in: <span id="oeBegins"></span>
-	</p>
-
-	<p>
-		Open enrollment ends in: <span id="oeEnds"></span>
-	</p>
-	
+	<h3 class="text-center">
+		Open enrollment <span id="openEnrollmentStr"></span>
+		<span class="small" id="openEnrollmentCounter"></span>
+	</h3>
 	
 </div>
-
-<script type="text/javascript">
-	$("#oeBegins").countdown("2015/07/27", function(event) {
-		$(this).text(
-			event.strftime('%D days %H Hours %M Minutes %S Seconds')
-			);
-	});
-
-	$("#oeEnds").countdown("2015/07/27", function(event) {
-		$(this).text(
-			event.strftime('%D days %H Hours %M Minutes %S Seconds')
-			);
-	});
-</script>
