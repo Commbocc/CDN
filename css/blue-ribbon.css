@@ -1,0 +1,40 @@
+.nav.nav-pills.nav-justified {
+	margin: 15px 0 !important;
+	padding: 0 !important;
+}
+.nav.nav-pills.nav-justified a {
+	background-color: #4A7997 !important;
+	margin: 0 1px !important;
+	color: #fff !important;
+	/*border-bottom: solid 3px #ccc !important;*/
+	text-decoration: none !important;
+}
+.nav.nav-pills.nav-justified a:hover {
+	background-color: #395e75 !important;
+	/*border-bottom: solid 3px #6b70a8 !important;*/
+	text-decoration: none !important;
+}
+#services ul { padding-left: 0px !important;}
+.fa-5x.fa-user { color: #ccc; }
+.loading {
+	margin-top: 50px;
+	color: #ccc;
+}
+.rotate-left {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.rotate-right {
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.spin {
+	-webkit-animation:spin 3s linear infinite;
+	-moz-animation:spin 3s linear infinite;
+	animation:spin 3s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
