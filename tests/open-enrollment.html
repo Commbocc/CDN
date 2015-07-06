@@ -5,6 +5,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="http://commbocc.github.io/CDN/js/jquery.countdown-2.0.4/jquery.countdown.min.js"></script>
 
+<style type="text/css">
+	
+	#openEnrollmentCounter {
+		background: #000;
+		padding: 10px;
+		font-size: 25px;
+		color: #f00;
+		font-family: Courier, monospace;
+	}
+
+</style>
+
 <script type="text/javascript">
 	$(function () {
 
@@ -27,7 +39,7 @@
 
 		if (significantDate.length) {
 			$("#openEnrollmentCounter").countdown(significantDate, function(event) {
-				$(this).html( '<br>' + event.strftime('%D days %H Hours %M Minutes %S Seconds') );
+				$(this).html( event.strftime('%D : %H : %M : %S') );
 			});
 		}
 
@@ -38,9 +50,11 @@
 
 <div class="bs">
 	
-	<h3 class="text-center">
+	<h3 class="text-center text-info">
 		Open enrollment <span id="openEnrollmentStr"></span>
-		<span class="small" id="openEnrollmentCounter"></span>
 	</h3>
+	<p class="text-center">
+		<button id="openEnrollmentCounter" disabled></button>
+	</p>
 	
 </div>
