@@ -9,13 +9,13 @@ $(function () {
 	navigation += '</a>';
 	navigation += '</p>';
 
-	navigation += '<ul class="nav nav-pills nav-justified">';
-	navigation += '<li><a href="http://www.hillsboroughcounty.org/index.aspx?nid=3937">Model of Services</a></li>';
-	navigation += '<li><a href="http://www.hillsboroughcounty.org/index.aspx?nid=3939">Resources</a></li>';
-	navigation += '<li><a href="http://www.hillsboroughcdms.org/blue-ribbon/child-fatalities">Facts &amp; Figures</a></li>';
-	navigation += '<li><a href="http://www.hillsboroughcdms.org/blue-ribbon/partners">Community Partners</a></li>';
-	navigation += '<li><a href="http://www.hillsboroughcdms.org/blue-ribbon/members">Members</a></li>';
-	navigation += '</ul>';
+	navigation += '<div class="btn-group btn-group-justified">'
+	navigation += '<a href="http://www.hillsboroughcounty.org/index.aspx?nid=3937" class="btn btn-primary">Model of Services</a>';
+	navigation += '<a href="http://www.hillsboroughcounty.org/index.aspx?nid=3939" class="btn btn-primary">Resources</a>';
+	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/child-fatalities" class="btn btn-primary">Facts &amp; Figures</a>';
+	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/partners" class="btn btn-primary">Community Partners</a>';
+	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/members" class="btn btn-primary">Members</a>';
+	navigation += '</div>'
 
 	$('#blueRibbonNav').html(navigation);
 
