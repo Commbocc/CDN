@@ -9,13 +9,13 @@ $(function () {
 	navigation += '</a>';
 	navigation += '</p>';
 
-	navigation += '<div class="btn-group btn-group-justified">'
+	navigation += '<p class="btn-group btn-group-justified">'
 	navigation += '<a href="http://www.hillsboroughcounty.org/index.aspx?nid=3937" class="btn btn-primary">Model of Services</a>';
 	navigation += '<a href="http://www.hillsboroughcounty.org/index.aspx?nid=3939" class="btn btn-primary">Resources</a>';
 	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/child-fatalities" class="btn btn-primary">Facts &amp; Figures</a>';
 	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/partners" class="btn btn-primary">Community Partners</a>';
 	navigation += '<a href="http://www.hillsboroughcdms.org/blue-ribbon/members" class="btn btn-primary">Members</a>';
-	navigation += '</div>'
+	navigation += '</p>'
 
 	$('#blueRibbonNav').html(navigation);
 
