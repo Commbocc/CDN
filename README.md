@@ -7,9 +7,9 @@ Paste the following into CivicPlus to gain access to Twitter Bootstrap classes a
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
+<script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
 <![endif]-->
 
 <div class="bs">
