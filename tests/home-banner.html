@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="http://commbocc.github.io/CDN/css/civic.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!--[if lt IE 9]>
@@ -7,10 +7,21 @@
 <script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
 <![endif]-->
 
+<script type="text/javascript">
+	$(function () {
+		$.ajax({
+			url: 'http://www.hillsboroughcdms.org/banners/current'
+		}).done(function(html) {
+			$("#currentBanner").html(html);
+		});
+
+	});
+</script>
+
 <div class="bs">
 
 
-	
+	<div id="currentBanner"></div>
 
 	
 </div>
