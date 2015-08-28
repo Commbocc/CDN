@@ -3,7 +3,7 @@
 
 $ ->
 
-	url = 'http://hillsboroughcounty.org/RSSFeed.aspx?ModID=63&CID=Emergency-Alerts-1'
+	url = '/RSSFeed.aspx?ModID=63&CID=Emergency-Alerts-1'
 	$.ajax
 		type: 'GET'
 		url: url
