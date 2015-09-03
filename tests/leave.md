@@ -29,13 +29,18 @@ container_width: 728
 
 			<div class="row">
 				<div class="col-sm-6">
-					<a href="http://coin.hillsboroughcounty.org/FormCenter/HR-Forms-6/Leave-Management-Communication-Form-42" target="_blank" class="btn btn-info btn-sm btn-block">Notice of Leave Form</a>
+					<a href="http://coin.hillsboroughcounty.org/FormCenter/HR-Forms-6/Leave-Management-Communication-Form-42" target="_blank" class="btn btn-info btn-sm btn-block">
+					<i class="fa fa-file-text"></i>
+					Notice of Leave Form
+					</a>
 				</div>
 				<div class="col-sm-6">
-					<a href="http://coin.hillsboroughcounty.org/index.aspx?NID=388" class="btn btn-info btn-sm btn-block">Policies & Procedures</a>
+					<a href="http://coin.hillsboroughcounty.org/index.aspx?NID=388" class="btn btn-info btn-sm btn-block">
+					<i class="fa fa-list"></i>
+					Policies & Procedures
+					</a>
 				</div>
 			</div>
-
 
 		</div>
 		<div class="col-sm-5">
@@ -57,7 +62,7 @@ container_width: 728
 						</li>
 						<li>
 							<a href="/index.aspx?NID=132">Other Types of Leave</a>
-							<ul style="margin: 0px !important; padding: 0px !important;">
+							<ul style="margin: 0px !important;">
 								<li>
 									Floating, Annual, Bereavement, Civic, & Newborn Leave
 								</li>
@@ -85,18 +90,20 @@ container_width: 728
 		</div>
 	</div>
 
+	<p>&nbsp;</p>
+
 	<div class="row">
 		<div class="col-sm-6">
 			<div class="panel panel-default">
 				<header class="panel-heading">
 					<h4 class="panel-title">
-						Requesting a New Leave Case via Kronos
+						Requesting a Leave Case via Kronos
 					</h4>
 				</header>
 
 				<div class="embed-responsive embed-responsive-16by9">
 					<video class="embed-responsive-item" controls><source src="http://coin.hillsboroughcounty.org/images/pages/N111/Employee%20Leave%20Request_v3.mp4" type="video/mp4">
-						Your browser does not support the video tag.
+						Your browser does not support the video tag. Consider using a modern browser.
 					</video>
 				</div>
 
@@ -113,7 +120,7 @@ container_width: 728
 
 				<div class="embed-responsive embed-responsive-16by9">
 					<video class="embed-responsive-item" controls><source src="http://coin.hillsboroughcounty.org/images/pages/N111/Leave Editor.mp4" type="video/mp4">
-						Your browser does not support the video tag.
+						Your browser does not support the video tag. Consider using a modern browser.
 					</video>
 				</div>
 
