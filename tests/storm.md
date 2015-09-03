@@ -8,7 +8,58 @@ container_width: 950
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="/js/rss.js"></script>
+
+<style type="text/css">
+	
+	.panel-default a.list-group-item {
+		color: #ac2a30 !important;
+	}
+
+	.panel-danger .panel-title {
+		color: #fff !important;
+	}
+
+	.panel-default .panel-title {
+		color: #3D96AE !important;
+	}
+
+</style>
+
+<script type="text/javascript">
+	(function() {
+		$(function() {
+
+			var fomattedDate = function(date) {
+				return date.getMonth()+1 + '/' + date.getDate() + '/' + date.getFullYear();
+			}
+
+			$.get("/RSSFeed.aspx?ModID=63&CID=Emergency-Alerts-1", function(data) {
+
+
+				if ($(data).find("item").length > 0) {
+
+					$(data).find("item").each(function() {
+
+						var item = {
+							title:       $(this).find("title").text(),
+							link:        $(this).find("link").text(),
+							pubDate:     new Date( $(this).find("pubDate").text() )
+						};
+
+						list_item = $( '<a class="list-group-item" href="'+item.link+'">').html('<span class="text-danger">'+item.title+'</span> - '+fomattedDate(item.pubDate) );
+
+						$('#emergencyAlerts').append( list_item );
+					});
+				} else {
+					var list_item = $( '<li class="list-group-item">').text("No emergency alerts at this time.");
+					$('#emergencyAlerts').append( list_item );
+				}
+
+			});
+
+		});
+	}).call(this);
+</script>
 <!--[if lt IE 9]>
 <script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
 <script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
@@ -16,36 +67,39 @@ container_width: 950
 
 <div class="bs">
 
-	<h3 class="well text-center">
-		<p>
+	<div class="well text-center">
+		<h3>
 			<small>Current Active Storm(s):</small>
 
 			<span class="text-danger">
-				Erika
+				Remnants of Erika
 			</span>
-		</p>
+		</h3>
 
-		<p>
+		<h4>
 			<small>EOC Activation Status:</small>
 
 			<span class="text-warning">
-				No Activation
+				Partially Activated
 			</span>
-		</p>
-	</h3>
+		</h4>
+	</div>
 
 	<div class="row">
 		<div class="col-sm-6">
 
 			<div class="panel panel-danger">
 				<header class="panel-heading">
+					<a href="http://hillsboroughcounty.org/RSSFeed.aspx?ModID=63&CID=Emergency-Alerts-1" class="btn btn-danger btn-xs pull-right">
+						<i class="fa fa-fw fa-rss"></i> RSS
+					</a>
 					<h4 class="panel-title">Emergency Alerts & News</h4>
 				</header>
 				<!-- <div class="panel-body"></div> -->
-				<div class="list-group">
-					<li class="list-group-item">
+				<div class="list-group" id="emergencyAlerts">
+					<!-- <li class="list-group-item">
 						No Emergency Alerts at this Time.
-					</li>
+					</li> -->
 				</div>
 			</div>
 
@@ -60,7 +114,7 @@ container_width: 950
 				<!-- <div class="panel-body"></div> -->
 				<div class="list-group">
 					<li class="list-group-item">
-						No Evacuation Notices at This Time 
+						No evacuation notices at this time.
 					</li>
 				</div>
 
@@ -70,25 +124,123 @@ container_width: 950
 	</div>
 
 
+	<div class="row text-center">
+		<h4 class="col-sm-2">
+			<a href="http://www.ready.gov/build-a-kit" target="_blank">
+				<i class="fa fa-fw fa-briefcase fa-2x"></i><br>
+				<small>
+					Have an Emergency Kit
+				</small>
+			</a>
+		</h4>
+		<h4 class="col-sm-2">
+			<a href="http://www.ready.gov/make-a-plan" target="_blank">
+				<i class="fa fa-fw fa-list-alt fa-2x"></i><br>
+				<small>
+					Create A Plan
+				</small>
+			</a>
+		</h4>
+		<h4 class="col-sm-2">
+			<a href="http://hillsboroughcounty.org/index.aspx?NID=3999" target="_blank">
+				<i class="fa fa-fw fa-car fa-2x"></i><br>
+				<small>
+					Roads Prone to Flooding
+				</small>
+			</a>
+		</h4>
+		<h4 class="col-sm-2">
+			<a href="http://hillsboroughcounty.org/index.aspx?NID=4000">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-search fa-stack-2x"></i>
+					<i class="fa fa-tint fa-stack-1x"></i>
+				</span><br>
+				<small>
+					Monitored Flood-Prone Areas
+				</small>
+			</a>
+		</h4>
+		<h4 class="col-sm-2">
+			<a href="http://www.sdhc.k12.fl.us/" target="_blank">
+				<i class="fa fa-fw fa-graduation-cap fa-2x"></i><br>
+				<small>
+					School Information
+				</small>
+			</a>
+		</h4>
+		<h4 class="col-sm-2">
+			<a href="http://hillsboroughcounty.org/index.aspx?NID=2890">
+				<i class="fa fa-fw fa-map fa-2x"></i><br>
+				<small>
+					Know Your Evacuation Zone
+				</small>
+			</a>
+		</h4>
+		<p>&nbsp;</p>
+	</div>
+
+
 	<div class="row">
+
 		<div class="col-sm-6">
 
 			<div class="panel panel-default">
 				<header class="panel-heading">
-					<h4 class="panel-title">Report Storm-Related Issues</h4>
+					<h4 class="panel-title">Sandbag Information</h4>
 				</header>
 				<!-- <div class="panel-body"></div> -->
-				<div class="list-group">
-					<a href="https://service.hillsboroughcounty.org/311/median-maintenance/" class="list-group-item">
-						Report downed trees or other storm-related debris
-					</a>
-					<a href="https://service.hillsboroughcounty.org/311/flooding/" class="list-group-item">
-						Report storm-related flooding / drainage problems
-					</a>
+
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th colspan="2">Location</th>
+								<th>Availability</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<a href="https://www.google.com/maps/place/9805+Sheldon+Rd,+Tampa,+FL+33635/data=!4m2!3m1!1s0x88c2ea68db5eec07:0x6da9102cb6230dff?sa=X&ved=0CB4Q8gEwAGoVChMIo8PE3tPTxwIVRioeCh0YpAEh" target="_blank">
+										<i class="fa fa-map"></i>
+									</a>
+								</td>
+								<td>
+									West Service Unit at 9805 Sheldon Road
+								</td>
+								<td>Aug 31 until 4 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="https://www.google.com/maps/place/8718+Old+Big+Bend+Rd,+Gibsonton,+FL+33534/@27.793922,-82.358591,17z/data=!3m1!4b1!4m2!3m1!1s0x88c2d73af5019c11:0x140a68d3c5de9beb" target="_blank">
+										<i class="fa fa-map"></i>
+									</a>
+								</td>
+								<td>
+									South Service Unit at 8718 Old Big Bend Road
+								</td>
+								<td>Aug 31 until 4 PM</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="https://www.google.com/maps/place/4702+Sydney+Rd,+Dover,+FL+33527/@27.8885376,-82.0988133,9.4z/data=!4m2!3m1!1s0x88c2cc8c87b85831:0x415603403bc70ee0" target="_blank">
+										<i class="fa fa-map"></i>
+									</a>
+								</td>
+								<td>
+									East Service Unit at 4702 Sydney Road
+								</td>
+								<td>Aug 31 until 4 PM</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
+
 			</div>
 
 		</div>
+
+		
 		<div class="col-sm-6">
 
 			<div class="panel panel-default">
@@ -103,6 +255,9 @@ container_width: 950
 					<a href="http://www.nhc.noaa.gov/graphics_at1.shtml" target="_blank" class="list-group-item">
 						National Hurricane Center
 					</a>
+					<a class="list-group-item" href="http://radar.weather.gov/radar.php?rid=tbw&amp;product=N0R&amp;overlay=11101111&amp;loop=yes" target="_blank">Local Doppler Radar ‡</a>
+					<a class="list-group-item" href="http://forecast.weather.gov/MapClick.php?zoneid=FLZ051" target="_blank">Local Weather Conditions Forecast ‡</a>
+					<a class="list-group-item" href="http://mobile.weather.gov/index.php?lat=27.90710&amp;lon=-82.35230" target="_blank">Mobile Local Conditions Forecast ‡</a>
 				</div>
 			</div>
 
@@ -111,30 +266,43 @@ container_width: 950
 
 
 	<div class="row">
+		
 		<div class="col-sm-6">
 
 			<div class="panel panel-default">
 				<header class="panel-heading">
-					<h4 class="panel-title">RELATED STORM INFORMATION</h4>
+					<h4 class="panel-title">Report Storm-Related Issues</h4>
 				</header>
 				<!-- <div class="panel-body"></div> -->
 				<div class="list-group">
-					<a class="list-group-item" href="http://radar.weather.gov/radar.php?rid=tbw&amp;product=N0R&amp;overlay=11101111&amp;loop=yes" target="_blank">Local Doppler Radar ‡</a>
-					<a class="list-group-item" href="http://forecast.weather.gov/MapClick.php?zoneid=FLZ051" target="_blank">Local Weather Conditions Forecast ‡</a>
-					<a class="list-group-item" href="http://mobile.weather.gov/index.php?lat=27.90710&amp;lon=-82.35230" target="_blank">Mobile Local Conditions Forecast ‡</a>
+					<a href="https://service.hillsboroughcounty.org/311/median-maintenance/" class="list-group-item">
+						Report downed trees or other storm-related debris
+					</a>
+					<a href="https://service.hillsboroughcounty.org/311/flooding/" class="list-group-item">
+						Report storm-related flooding / drainage problems
+					</a>
+					<a href="https://service.hillsboroughcounty.org/311/roads-sidewalks/" class="list-group-item">
+						Report storm-related road problems
+					</a>
 				</div>
-
 			</div>
 
 		</div>
+
 		<div class="col-sm-6">
 
 			<div class="panel panel-default">
 				<header class="panel-heading">
-					<h4 class="panel-title">PREPAREDNESS LINKS</h4>
+					<h4 class="panel-title">Preparedness Links</h4>
 				</header>
 				<!-- <div class="panel-body"></div> -->
 				<div class="list-group">
+					<a href="http://hillsboroughcounty.org/list.aspx#alertcenter" class="list-group-item" target="_blank">
+						Sign up for Emergency Alerts
+					</a>
+					<a href="http://www.tampaelectric.com/residential/stormsandsafety/stormsafety/" class="list-group-item" target="_blank">
+						Preparedness Tips and Checklist
+					</a>
 					<a href="http://hillsboroughcounty.org/index.aspx?nid=661" class="list-group-item">
 						Tampa Bay Hurricane Guide
 					</a>
@@ -147,49 +315,17 @@ container_width: 950
 					<a href="http://hillsboroughcounty.org/index.aspx?NID=2890" class="list-group-item">
 						Know Your Evacuation Zone
 					</a>
-					<a href="http://hillsboroughcounty.org/alertcenter.aspx" class="list-group-item">
-						Stay Informed
+					<a href="http://hillsboroughcounty.org/index.aspx?NID=3532" class="list-group-item" target="_blank">
+						Protecting Your Pet in a Disaster
+					</a>
+					<a href="http://hillsboroughcounty.org/safety" class="list-group-item">
+						More Tips on How to Stay Safe
 					</a>
 				</div>
 
 			</div>
 
 		</div>
-	</div>
-
-	<div class="row text-center">
-		<h4 class="col-sm-3">
-			<a href="http://hillsboroughcounty.org/index.aspx?NID=2888">
-				<i class="fa fa-fw fa-briefcase fa-2x"></i><br>
-				<small>
-					Have A Disaster Supply Kit
-				</small>
-			</a>
-		</h4>
-		<h4 class="col-sm-3">
-			<a href="http://hillsboroughcounty.org/index.aspx?NID=2889">
-				<i class="fa fa-fw fa-newspaper-o fa-2x"></i><br>
-				<small>
-					Have A Disaster Plan
-				</small>
-			</a>
-		</h4>
-		<h4 class="col-sm-3">
-			<a href="http://hillsboroughcounty.org/index.aspx?NID=2890">
-				<i class="fa fa-fw fa-map fa-2x"></i><br>
-				<small>
-					Know Your Evacuation Zone
-				</small>
-			</a>
-		</h4>
-		<h4 class="col-sm-3">
-			<a href="http://hillsboroughcounty.org/alertcenter.aspx">
-				<i class="fa fa-fw fa-info fa-2x"></i><br>
-				<small>
-					Stay Informed
-				</small>
-			</a>
-		</h4>
 	</div>
 
 </div>
