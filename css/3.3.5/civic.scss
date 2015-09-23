@@ -16,6 +16,10 @@
 	line-height: 21px;
 	font-size: 13px;
 
+	.page-header.top {
+		margin-top: 0;
+	}
+
 	.lead, .lead a {
 		font-size: floor(($font-size-base * 1.15)) !important;
 	}
