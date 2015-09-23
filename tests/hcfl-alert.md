@@ -13,6 +13,10 @@ container_width: 950
 <script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
 <![endif]-->
 
+<style type="text/css">
+	.btn-rounded { border-radius: 4px !important; }
+</style>
+
 <div class="bs">
 
 	<div class="jumbotron" style="background: none; padding-bottom: 0px; margin-bottom: 0px;">
@@ -35,11 +39,11 @@ container_width: 950
 			<p>
 				<a href="https://member.everbridge.net/index/1332612387832180?#/signup" target="_blank" class="btn btn-danger btn-block btn-rounded">
 					SIGN UP<br>
-					<small>for HCFL Alerts</small>
+					<small>for HCFL Alert</small>
 				</a>
 			</p>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			<p class="small">
+				There's no cost to sign up for HCFL Alert. Phone carrier charges may apply to receive alert messages and data; check your plan.
 			</p>
 			<p>
 				<a href="https://member.everbridge.net/index/1332612387832180?#/login" target="_blank" class="btn btn-danger btn-block btn-rounded">
@@ -47,7 +51,7 @@ container_width: 950
 					<small>to Edit Profile</small>
 				</a>
 			</p>
-			<p>
+			<p class="small">
 				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			</p>
 		</div>
@@ -73,11 +77,5 @@ container_width: 950
 			<strong>Informational Messages</strong> – major road work/closures/detours on County roads, aerial spraying for mosquitoes, prescribed burns on County property, large-scale precautionary boil water notices, and other important events that may impact your daily life.
 		</li>
 	</ol>
-
-	<h3 class="text-danger">It's Free to Register</h3>
-
-	<p class="lead">
-		There's no cost to sign up for HCFL Alert. Phone carrier charges may apply to receive alert messages and data; check your plan.
-	</p>
 
 </div>
