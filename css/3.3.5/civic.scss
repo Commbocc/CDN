@@ -126,13 +126,13 @@
 
 	// modals !!!!
 	.modal-dialog {	margin: 50px auto; }
+	.modal-dialog {
+		height: 90%;
+		overflow: auto;
+	}
 
 
 }
 
 // modals !!!!
 div.bannerB_ts { z-index: 1 !important; }
-.modal-content {
-	height: 90%;
-	overflow: auto;
-}
