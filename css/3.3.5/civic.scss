@@ -125,9 +125,14 @@
 	}
 
 	// modals !!!!
-	.modal-dialog {	margin: 50px auto; }
+	.modal {
+		background: rgba(0,0,0, 0.75);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', endColorstr='#73000000',GradientType=0 );
+	}
 	.modal-dialog {
-		height: 90%;
+		margin: 50px auto;
+		height: 85%;
+		max-width: 980px;
 		overflow: auto;
 	}
 
