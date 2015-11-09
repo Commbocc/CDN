@@ -12,35 +12,27 @@ container_width: 728
 <script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
 <script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
 <![endif]-->
-
 <script type="text/javascript">
 	$(function () {
 		$('#hrTransModal').modal('show');
 		// $('#activateModal').hide();
 	});
 </script>
-
 <div class="bs">
-
 	<header class="page-header top">
 		<img src="http://coin.hillsboroughcounty.org/images/pages/N93/header.jpg" alt="Human Resources" class="img-responsive center-block">
 	</header>
-
 	<p>
 		<button id="activateModal" type="button" class="btn btn-warning btn-block" data-toggle="modal" data-target="#hrTransModal">
 			Human Resources Transformation
 		</button>
 	</p>
-	
 	<h2>
 		Welcome to <em>your</em> Human Resources!
 	</h2>
-
 	<p class="lead">
 		We are committed to providing our employees a stable work environment with equal opportunity for learning and personal growth. Creativity and innovation are encouraged for improving the effectiveness of Hillsborough County. Above all, employees will be provided the same concern, respect and caring attitude within the organization that they are expected to share externally with every Hillsborough County customer.
 	</p>
-
-	
 	<div class="panel panel-default" style="width: 500px; margin: 0 auto 21px;">
 		<header class="panel-heading">
 			<h4 class="panel-title text-center">
@@ -55,7 +47,6 @@ container_width: 728
 				<li data-target="#hrCarousel" data-slide-to="2"></li>
 				<li data-target="#hrCarousel" data-slide-to="3"></li>
 			</ol>
-
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
@@ -79,7 +70,6 @@ container_width: 728
 					</a>
 				</div>
 			</div>
-
 			<!-- Controls -->
 			<a class="left carousel-control" href="#hrCarousel" role="button" data-slide="prev">
 				<span class="sr-only">Previous</span>
@@ -89,8 +79,6 @@ container_width: 728
 			</a>
 		</div>
 	</div>
-
-
 	<div class="row">
 		<div class="col-sm-7">
 			<div class="panel panel-default">
@@ -98,21 +86,13 @@ container_width: 728
 					<h4 class="panel-title">Most Frequently Requested HR Info</h4>
 				</header>
 				<div class="list-group">
-					
 					<a class="list-group-item" title="2015 Holiday Schedule" href="http://coin.hillsboroughcounty.org/DocumentCenter/View/3473" target="_blank">Approved 2015 Holiday Schedule</a>
-					
 					<a class="list-group-item" title="Employee Benefits" href="http://coin.hillsboroughcounty.org/index.aspx?NID=769" target="_blank">Insurance Benefits Info</a>
-					
 					<a class="list-group-item" title="Benefits Booklet" href="http://coin.hillsboroughcounty.org/DocumentCenter/View/4591" target="_blank">County Benefits Booklet</a>
-					
 					<a class="list-group-item" title="Employee Assistance Program" href="http://apps.cignabehavioral.com/home.html" target="_blank">Employee Assistance Program (EAP) Information</a>
-					
 					<a class="list-group-item" title="Leave Management" href="http://coin.hillsboroughcounty.org/index.aspx?nid=111" target="_blank">Leave Info</a>
-					
 					<a class="list-group-item" title="Human Resources Policies and Procedures Manual" href="http://coin.hillsboroughcounty.org/index.aspx?NID=388" target="_blank">Policies &amp; Procedures Manual</a>
-					
 					<a class="list-group-item" title="Tuition Reimbursement Policy" href="http://coin.hillsboroughcounty.org/DocumentCenter/View/593" target="_blank">Tuition Reimbursement Info</a>
-					
 				</div>
 			</div>
 		</div>
@@ -129,14 +109,11 @@ container_width: 728
 			</div>
 		</div>
 	</div>
-
 	<p class="text-center">
-		For all Human Resources services please call: <strong>813.272.5130</strong>
+		For all Human Resources services please call: <strong>813-272-5130</strong>
 	</p>
-
-
 	<!-- Modal -->
-	<div class="modal fade" id="hrTransModal" tabindex="-1" role="dialog" aria-labelledby="hrTransModalLabel" >
+	<div class="modal fade" id="hrTransModal" tabindex="-1" role="dialog" aria-labelledby="hrTransModalLabel">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -146,48 +123,56 @@ container_width: 728
 					</h2>
 				</div>
 				<div class="modal-body">
-					<p class="lead">
-						Hillsborough County Human Resources is transforming the way we do business. Civil Service no longer manages the job application process. This change will centralize the HR function and better align services to the goals and strategies of the organization.
-					</p>
+					<div class="row">
+						<div class="col-sm-5">
+							<div class="embed-responsive embed-responsive-16by9">
+								<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/mom5_0jZcNc" frameborder="0" allowfullscreen=""></iframe>
+							</div>
+						</div>
+						<div class="col-sm-7">
+							<p class="lead">
+								Hillsborough County Human Resources is transforming the way we do business. As of October 1, 2015 Civil Service no longer manages the advertisement, job application, skills testing and classifications process for County Administration. These changes will enhance access to services and resources for applicants, hiring managers, and employees. Further details will be shared as these efforts evolve. 
+							</p>
+						</div>
+					</div>
 					<div class="page-header">
 						<h3 class="text-primary">
 							What Does this Mean?
 						</h3>
 					</div>
-
 					<h4 class="text-primary">
-						For Employees
+						For County Administration Employees
 					</h4>
 					<p>
 						Information about your current position or a new opportunity will be more accessible.
 					</p>
 					<p>
-						<ul>
-							<li>New JobAps webpage</li>
-							<li>Civil service rules replaced with new policies and procedures</span></li>
-							<li>Market studies and best practice alignment of classification and compensation</li>
-							<li>Updated COIN page for better access to information</li>
-							<li>Electronic on-boarding processing</li>
-						</ul>
 					</p>
-					<p><br></p>
-
+					<ul>
+						<li>New JobAps webpage</li>
+						<li>Civil service rules replaced with new policies and procedures</li>
+						<li>Market studies and best practice alignment of classification and compensation</li>
+						<li>Updated COIN page for better access to information</li>
+						<li>Electronic on-boarding processing</li>
+					</ul>
+					<p><br />
+					</p>
 					<h4 class="text-primary">
-						For Hiring Managers
+						For County Administration Hiring Managers
 					</h4>
 					<p>
 						You'll experience a more simplified approach to hiring with greater flexibility.
 					</p>
 					<p>
-						<ul>
-							<li>Hiring managers can advertise positions any time without review of existing lists of other departments and agencies</li>
-							<li>HR will screen applicants and refer only top candidates to hiring managers</li>
-							<li>Skill testing is optional and determined by the department Internal candidates promoted may only return to former positions if manager agrees and position is still available</li>
-							<li>Internal candidates promoted may only return to former positions if manager agrees and position is still available</li>
-						</ul>
 					</p>
-					<p><br></p>
-
+					<ul>
+						<li>Hiring managers can advertise positions any time without review of existing lists of other departments and agencies</li>
+						<li>HR will screen applicants and refer only top candidates to hiring managers</li>
+						<li>Skill testing is optional and determined by the department</li>
+						<li>Internal candidates promoted may only return to former positions if manager agrees and position is still available</li>
+					</ul>
+					<p><br />
+					</p>
 					<h4 class="text-primary">
 						New Leadership
 					</h4>
@@ -199,7 +184,10 @@ container_width: 728
 								</div>
 							</div>
 							<div class="col-sm-8">
-								<h4>Meet Peggy Rowe, the new Human Resources Director</h4>
+								<h4>Meet Peggy Rowe
+									<br>
+									<small>Hillsborough County's New Human Resources Director</small>
+								</h4>
 								<p>
 									<strong>What's the best advice you've ever received?</strong>
 								</p>
@@ -248,6 +236,4 @@ container_width: 728
 			</div>
 		</div>
 	</div>
-
-
 </div>
