@@ -24,6 +24,11 @@
 		font-size: floor(($font-size-base * 1.15)) !important;
 	}
 
+	ul.nav {
+		margin-left: 0px !important;
+		padding: 0px !important;
+	}
+
 	> ul {
 		margin-bottom: 20px !important;
 	}
