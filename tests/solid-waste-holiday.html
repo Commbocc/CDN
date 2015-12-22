@@ -24,6 +24,14 @@
 
 <div class="bs">
 
+	<header class="page-header top">
+		<img src="http://hillsboroughcounty.org/images/pages/N3713/banner.jpg" alt="Holiday Trash and Recycling" class="img-responsive center-block" />
+	</header>
+
+	<p class="lead">
+		Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
+	</p>
+
 	{% for item in site.categories.holiday_items reversed %}
 	{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
 	{% if modulo == '1' %}

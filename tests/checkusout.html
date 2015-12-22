@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/3.3.5/civic.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
+<script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
+<![endif]-->
+<div class="bs">
+	<header class="page-header top">
+		<img src="http://www.hillsboroughcounty.org/images/pages/N3877/checkbookRegister.jpg" alt="Checkbook Register" style="">
+	</header>
+	<p>
+		It&rsquo;s time to CHECK us out &ndash; after all, we want to be transparent and accountable for the dollars we spend.  We are introducing the first release of our &ldquo;Online Checkbook Register&rdquo; to provide access to information related to Hillsborough County&rsquo;s spending.
+	</p>
+	<p>
+		In this first release, spending can be viewed by:
+	</p>
+	<ul>
+		<li>Capital Improvements Projects </li>
+		<li>Vendor &amp; Agencies Spending</li>
+		<li>Departments</li>
+	</ul>
+	<p>
+		Developed in partnership with <a href="https://www.hillsclerk.com/publicweb/home.aspx">Hillsborough County's Comptroller &amp; Clerk of the Circuit Court</a>, the custodian of all County records and funds, Hillsborough County government will ensure the public is able to view how funds are disbursed and spent.
+	</p>
+	<p>
+		It is important to keep in mind that in collaboration with the Clerk&rsquo;s Office we will continue to make enhancements and provide access to more information as we continue to build and enhance the features of this Checkbook Register.
+	</p>
+	<p>
+		Information from independent County agencies such as the Sheriff&rsquo;s Office, Tax Collector, Supervisor of Elections, and Property Appraiser will not be included.
+	</p>
+	<p>
+		For questions or additional information, please contact us through the <a href="https://service.hillsboroughcounty.org/311">Customer Service Center</a>.
+	</p>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="well text-center">
+				<p class="text-center">
+					<a id="checkusoutBtn" href="http://transparency.hillsboroughcounty.org/analytics/saw.dll?Dashboard&amp;NQUser=anonymous&amp;NQPassword=anonymous1&amp;PortalPath=%2Fshared%2FCheckbook%2FHillsborough%20County%20Checkbook%20v3&amp;page=Checkbook%20Overview" class="btn btn-success btn-block" target="_blank">Open the Checkbook Registry</a>
+				</p>
+				<p>
+					The Checkbook data will be refreshed nightly from 11:00 pm TO 8:00 am. During this time, the Checkbook will not be available.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="collapse" id="collapseDisclaimer">
+		<div class="alert alert-warning">
+			<p>
+				The information provided is produced from records maintained by the Hillsborough County Clerk of the Circuit Court, however Hillsborough County does not guarantee the full accuracy, completeness, or usefulness of the data. Confidential or exempt information according to Florida's public records law will be omitted.
+			</p>
+			<p>
+				Please keep in mind that Hillsborough County will make every effort to ensure the information provided is accurate, though it may be unaudited. Hillsborough County has the right to make changes to the information provided at any time.
+			</p>
+			<p>
+				The information contained in the Online Checkbook Register is informational. No reliance should be placed upon it for making legal, business, or other important decisions.
+			</p>
+		</div>
+	</div>
+	<p class="text-center">
+		<a data-toggle="collapse" href="#collapseDisclaimer">Disclaimer</a>
+	</p>
+</div>
+
+<script type="text/javascript">
+
+var checkTimeHour = function(){
+	var timeHours = new Date().getHours(),
+	$btn = $('#checkusoutBtn');
+	if (timeHours > 23 || timeHours < 8) {
+		$btn.addClass('disabled');
+	} else {
+		$btn.removeClass('disabled');
+	}
+}
+
+checkTimeHour();
+window.setInterval(function() {
+	checkTimeHour();
+}, 1000 * 60);
+
+</script>
