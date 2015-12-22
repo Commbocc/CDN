@@ -1,2 +1,8 @@
 <!DOCTYPE HTML>
-<script src="//cdn.rawgit.com/jpillora/xdomain/0.7.3/dist/xdomain.min.js" master="http://hillsboroughcounty.org"></script>
+<script src="//cdn.rawgit.com/jpillora/xdomain/0.7.3/dist/xdomain.min.js"></script>
+<script>
+xdomain.masters({
+	'http://localhost:4000': '/*',
+	'http://hillsboroughcounty.org': '/*'
+});
+</script>
