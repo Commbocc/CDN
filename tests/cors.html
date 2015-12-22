@@ -1,0 +1,8 @@
+<script src="//cdn.rawgit.com/jpillora/xdomain/0.7.3/dist/xdomain.min.js" slave="http://commbocc.github.io/CDN/cors/proxy.html"></script>
+<script type="text/javascript">
+$.get('http://commbocc.github.io/CDN/tests/elapp.html').done(function(data) {
+	$('#corsContent').html(data);
+});
+</script>
+
+<div id="corsContent"></div>
