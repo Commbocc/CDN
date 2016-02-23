@@ -1,0 +1,51 @@
+---
+permalink: /severe-weather-week/
+---
+
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/3.3.5/civic.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/lightbox.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
+<script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
+<![endif]-->
+
+<div class="bs">
+
+	<p class="lead">
+		Weather. Most days, we rarely pay it a passing thought. Our bright sunshine and warm temperatures are part of the reason why Hillsborough County is a great place to call home. There are times, however, when paying close attention to the weather can help ensure your safety. That's why the Florida Division of Emergency Management is hosting Severe Weather Awareness Week from February 22 through 26. During this week, residents are urged to take the time to learn about potential weather threats and how they can protect themselves, their families and their property. Here is some information that you might find helpful as you prepare for the potential of severe weather:
+	</p>
+
+	{% for day in site.sw_days %}
+	{% if day.active %}
+
+	<div id="{{ day.date | date: "%A" }}" class="sw_day" data-date="{{ day.date | date: "%FT%R" }}">
+		<!-- {{ day.date | date: "%A" }} -->
+		<h3>
+			{{ day.date | date: "%A %B %e, %Y" }} -
+			<em><a href="{{ day.link }}" target="_blank" style="font-family:inherit !important; font-size:inherit !important; font-weight:inherit !important; font-style:inherit !important;">
+				{{ day.title }}
+			</a></em>
+		</h3>
+		{% if day.content %}<p>{{ day.content }}</p>{% endif %}
+		<div class="row">
+			{% for image in day.images %}
+			<div class="col-sm-4">
+				<p>
+					<img src="{{ '/images/sw_days' | prepend: site.baseurl }}/{{ image.src }}" alt="{{ day.title }} Infograph {{forloop.index}}" class="img-thumbnail center-block">
+				</p>
+			</div>
+			{% endfor %}
+		</div>
+		<hr>
+	</div>
+
+	{% endif %}
+	{% endfor %}
+
+</div>
+
+<!-- lightbox js -->
+<script type="text/javascript" src="http://commbocc.github.io/CDN/js/lightbox.min.js"></script>
