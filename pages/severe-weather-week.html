@@ -34,7 +34,7 @@ permalink: /severe-weather-week/
 			{% for image in day.images %}
 			<div class="col-sm-4">
 				<p>
-					<img src="{{ '/images/sw_days' | prepend: site.baseurl }}/{{ image.src }}" alt="{{ day.title }} Infograph {{forloop.index}}" class="img-thumbnail center-block">
+					<img src="{{ image.src | prepend: 'https://commbocc.github.io/CDN/images/sw_days/' }}" alt="{{ day.title }} Infograph {{forloop.index}}" class="img-thumbnail center-block">
 				</p>
 			</div>
 			{% endfor %}
