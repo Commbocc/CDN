@@ -32,7 +32,7 @@ permalink: /severe-weather-week/
 		{% if day.content %}<p>{{ day.content }}</p>{% endif %}
 		<div class="row">
 			{% for image in day.images %}
-			<div class="col-sm-4">
+			<div class="col-sm-{{ day.col_width }}">
 				<p>
 					<img src="{{ image.src | prepend: 'https://commbocc.github.io/CDN/images/sw_days/' }}" alt="{{ day.title }} Infograph {{forloop.index}}" class="img-thumbnail center-block">
 				</p>
