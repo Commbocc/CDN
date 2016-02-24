@@ -1,6 +1,6 @@
 ---
 title: Tornadoes & Thunderstorms
-active: false
+active: true
 col_width: 4
 link: http://www.floridadisaster.org/EMTOOLS/Severe/thunderstorms.htm
 images:
