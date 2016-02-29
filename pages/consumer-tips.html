@@ -19,13 +19,12 @@ permalink: /consumer-tips/
 	{% if day.link %}
 	<a href="{{ day.link }}" style="font-family:inherit !important; font-size:inherit !important; font-weight:inherit !important; font-style:inherit !important;">
 		<i class="fa fa-calendar"></i>
-		{{ day.date | date: "%A, %B %e, %Y" }}
+		{{ day.date | date: "%A, %B %e, %Y" }}:
 	</a>
 	{% else %}
 	<i class="fa fa-calendar"></i>
-	{{ day.date | date: "%A, %B %e, %Y" }}
+	{{ day.date | date: "%A, %B %e, %Y" }}:
 	{% endif %}
-	:
 	{{ day.title }}
 </h3>
 
