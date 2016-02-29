@@ -13,10 +13,11 @@ permalink: /consumer-tips/
 
 {% for day in site.consumer_tips reversed %}
 {% if true %}
+<!-- if day.date <= site.time -->
 
 <h3>
 	{% if day.link %}
-	<a href="{{ day.link }}">
+	<a href="{{ day.link }}" style="font-family:inherit !important; font-size:inherit !important; font-weight:inherit !important; font-style:inherit !important;">
 		<i class="fa fa-calendar"></i>
 		{{ day.date | date: "%A, %B %e, %Y" }}
 	</a>
