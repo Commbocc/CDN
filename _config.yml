@@ -14,6 +14,8 @@ baseurl: "/CDN" # the subpath of your site, e.g. /blog/
 collections:
    sw_days:
       output: false
+   consumer_tips:
+      output: false
 
 # Build settings
 markdown: kramdown

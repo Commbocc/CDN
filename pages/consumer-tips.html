@@ -1,0 +1,18 @@
+---
+layout: civic-bs
+permalink: /consumer-tips/
+---
+
+{% for day in site.consumer_tips reversed %}
+{% if day.date <= site.time %}
+
+<h3>
+	<i class="fa fa-calendar"></i>
+	{{ day.date | date: "%A %B %e, %Y" }}:
+	{{ day.title }}
+</h3>
+
+{{ day.content }}
+
+{% endif %}
+{% endfor %}
