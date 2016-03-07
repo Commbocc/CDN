@@ -1,7 +1,7 @@
 ---
 title: Beware Of Section 8 Scammers
-link: '#event-url'
-image_src: https://commbocc.github.io/CDN/images/sw_days/Lightning-1.jpg
+# link: '#event-url'
+# image_src: https://commbocc.github.io/CDN/images/sw_days/Lightning-1.jpg
 ---
 
 Are you searching for affordable housing? If so, beware of Section 8 housing assistance scams that prey on homebuyers. This scam leads home-seekers to fake websites that look like registration sites for Section 8 waiting list lotteries, evening using an Equal Housing Opportunity logo in an attempt to collect fees and personal information from unsuspecting victims.  The Florida Trade Commission (FTC) warns consumers not to sign up for the waitlist, enter personal information, or pay a registration fee, if the site asks for one. The fee goes straight to the scammers' bank accounts, and the online form gives them access to your identity.
