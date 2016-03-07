@@ -1,6 +1,8 @@
 ## 2016 Consumer Protection Week
 
-The main page that showcases each day of the week (files above) is found [here](https://github.com/Commbocc/CDN/blob/gh-pages/pages/consumer-tips.html)
+[http://hillsboroughcounty.org/?nid=4110](http://hillsboroughcounty.org/?nid=4110)
+
+The main page that showcases each day of the week (files above) is found [here](https://github.com/Commbocc/CDN/blob/gh-pages/pages/consumer-tips.html).
 
 The images are placed in [this folder](https://github.com/Commbocc/CDN/tree/gh-pages/images/consumer_tips) and are called via front-matter variables in the header of each file above. An example is below:
 
