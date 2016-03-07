@@ -10,4 +10,4 @@ In addition, some of the fake sites will list Section 8 properties that are avai
 
 There is no fee to register for a real Section 8 waiting list. The U.S. Department of Housing and Urban Development's Section 8 program provides funding to local government housing authorities. The local authorities issue housing choice vouchers to help people find housing in privately-owned rental units.
 
-To get on the waiting list for a voucher, contact your local housing authority at [www.thafl.com](http://www.thafl.com) or contact Hillsborough County Consumer Protection at (813) 903-3430 for more information.
+To get on the waiting list for a voucher, contact your local housing authority at [www.thafl.com](http://www.thafl.com) or contact Hillsborough County Consumer Protection at 813-903-3430 for more information.
