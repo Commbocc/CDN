@@ -1,6 +1,6 @@
 ## 2016 Consumer Protection Week
 
-[http://hillsboroughcounty.org/?nid=4110](http://hillsboroughcounty.org/?nid=4110)
+The content above the tips can be edited in CivicPlus. [http://hillsboroughcounty.org/?nid=4110](http://hillsboroughcounty.org/?nid=4110)
 
 The main page that showcases each day of the week (files above) is found [here](https://github.com/Commbocc/CDN/blob/gh-pages/pages/consumer-tips.html).
 
