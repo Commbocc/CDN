@@ -4,7 +4,7 @@ permalink: /consumer-tips/
 ---
 
 <!-- <div class="page-header top">
-	<img src="http://www.hillsboroughcounty.org/images/pages/N284/militaryInsignia-v2.png" alt="2016 NCPW Daily Tips" class="img-responsive center-block" />
+<img src="http://www.hillsboroughcounty.org/images/pages/N284/militaryInsignia-v2.png" alt="2016 NCPW Daily Tips" class="img-responsive center-block" />
 </div> -->
 
 <p class="lead">
@@ -18,35 +18,43 @@ permalink: /consumer-tips/
 </p>
 
 {% for day in site.consumer_tips reversed %}
-{% if day.date <= site.time %}
-
-<h3>
-	<small>
-		{% if day.link %}
-		<a href="{{ day.link }}" style="font-family:inherit !important; font-size:inherit !important; font-weight:inherit !important; font-style:inherit !important; text-decoration: none !important;">
+<div class="consumer-tip" data-date="{{ day.date }}">
+	<h3>
+		<small>
+			{% if day.link %}
+			<a href="{{ day.link }}" style="font-family:inherit !important; font-size:inherit !important; font-weight:inherit !important; font-style:inherit !important; text-decoration: none !important;">
+				<i class="fa fa-calendar"></i>
+				{{ day.date | date: "%A, %B %e, %Y" }}:
+			</a>
+			{% else %}
 			<i class="fa fa-calendar"></i>
 			{{ day.date | date: "%A, %B %e, %Y" }}:
-		</a>
-		{% else %}
-		<i class="fa fa-calendar"></i>
-		{{ day.date | date: "%A, %B %e, %Y" }}:
-		{% endif %}
-	</small>
-	<br>
-	{{ day.title }}
-</h3>
+			{% endif %}
+		</small>
+		<br>
+		{{ day.title }}
+	</h3>
 
-{% if day.image_src %}
-<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 pull-right">
-	<p>
-		<img class="img-responsive img-thumbnail center-block" src="{{ day.image_src }}" alt="Consumer Tip: {{ day.title }}">
-	</p>
+	{% if day.image_src %}
+	<div class="col-xs-12 col-sm-5 col-md-5 col-lg-4 pull-right">
+		<p>
+			<img class="img-responsive img-thumbnail center-block" src="{{ day.image_src }}" alt="Consumer Tip: {{ day.title }}">
+		</p>
+	</div>
+	{% endif %}
+
+	{{ day.content }}
+
+	<span class="clearfix"></span>
 </div>
-{% endif %}
-
-{{ day.content }}
-
-<span class="clearfix"></span>
-
-{% endif %}
 {% endfor %}
+
+<script type="text/javascript">
+$('.consumer-tip').each(function() {
+	var tipDate = new Date($(this).data('date'));
+	var nowTime = new Date();
+	if (tipDate >= nowTime) {
+		$(this).hide();
+	}
+});
+</script>
