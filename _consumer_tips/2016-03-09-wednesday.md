@@ -1,6 +1,6 @@
 ---
 title: Beware Of Section 8 Scammers
-# image_src: https://commbocc.github.io/CDN/images/consumer_tips/03-cpt-wednesday.png
+image_src: https://commbocc.github.io/CDN/images/consumer_tips/03-cpt-wednesday.jpg
 # link: '#event-url'
 ---
 
