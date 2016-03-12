@@ -1,4 +1,5 @@
 ---
+permalink: /recycle-the-holidays
 ---
 
 <link rel="stylesheet" href="http://commbocc.github.io/CDN/css/3.3.5/civic.css">
@@ -32,7 +33,7 @@
 		Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
 	</p>
 
-	{% for item in site.categories.holiday_items reversed %}
+	{% for item in site._recycle_holiday_items reversed %}
 	{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
 	{% if modulo == '1' %}
 	<div class="row">

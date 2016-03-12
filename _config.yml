@@ -12,9 +12,11 @@ baseurl: "/CDN" # the subpath of your site, e.g. /blog/
 # github_username:  jekyll
 
 collections:
-   sw_days:
+   _sw_days:
       output: false
-   consumer_tips:
+   _consumer_tips:
+      output: false
+   _recycle_holiday_items:
       output: false
 
 # Build settings

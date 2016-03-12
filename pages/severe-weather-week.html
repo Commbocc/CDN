@@ -18,7 +18,7 @@ permalink: /severe-weather-week/
 		Weather. Most days, we rarely pay it a passing thought. Our bright sunshine and warm temperatures are part of the reason why Hillsborough County is a great place to call home. There are times, however, when paying close attention to the weather can help ensure your safety. That's why the Florida Division of Emergency Management is hosting Severe Weather Awareness Week from <strong>February 22 through 26</strong>. During this week, residents are urged to take the time to learn about potential weather threats and how they can protect themselves, their families and their property. Here is some information that you might find helpful as you prepare for the potential of severe weather:
 	</p>
 
-	{% for day in site.sw_days %}
+	{% for day in site._sw_days %}
 	{% if day.active %}
 
 	<div id="{{ day.date | date: "%A" }}" class="sw_day" data-date="{{ day.date | date: "%FT%R" }}">
