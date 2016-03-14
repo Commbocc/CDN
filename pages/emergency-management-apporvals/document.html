@@ -3,9 +3,30 @@ layout: civic-bs
 permalink: /emergency-management-approvals/document/
 ---
 
+<p class="hidden-print">
+<button onclick="window.print()" class="btn btn-default btn-md btn-block">Print this Form</button>
+</p>
+
+<p>
+	This Continuity of Operations Plan (Plan) was prepared by <strong class="the_department">the Department</strong> to develop, implement and maintain a viable continuity capability. This Plan complies with applicable internal department policy, County policy, local and state regulations, and supports recommendations provided in the Federal Continuity Guidance Circular 1 (CGC1), National Fire Protection Association Standard on Disaster/Emergency Management and Business Continuity Programs (NFPA 1600), Emergency Management Accreditation Program (EMAP), and industry accepted "best practices".
+</p>
+
+<p>
+	This Plan has been distributed internally within <strong class="the_department">the Department</strong> and to other departments and agencies that might be affected by its implementation.
+</p>
+
+<p>
+	This Plan shall be reviewed annually. The annual review shall include, at a minimum, an updated risk assessment for alternate facilities, vital records assessment, mission critical systems and equipment assessment, updated staff roster and contact information, and assessment of essential functions.
+</p>
+
+<p>
+	By their signatures below, the following senior level officials certify that they approve this continuity plan and fully understand the continuity of operations procedures that are to be followed as the result of an event that impacts the facilities and employees for which they are responsible.
+</p>
+
+
 <div class="departments">
 	{% for department in site.data.emerg_approv_depts %}
-	<section id="{{ forloop.index | prepend: 'department_' }}" class="department" style="display: none;">
+	<section id="{{ forloop.index | prepend: 'department_' }}" data-department-name="{{ department.department_name }}" class="department" style="display: none;">
 		<div class="table-responsive">
 			<table class="table table-bordered">
 				<tbody>
@@ -170,6 +191,8 @@ var department_id = getParameter('department');
 if (!department_id) {
 	window.location = "http://coin.hillsboroughcounty.org/index.aspx?NID=952";
 } else {
+	var department_name = $('#department_'+department_id).data('department-name');
+	$('.the_department').text(department_name);
 	$('#department_'+department_id).show();
 }
 </script>
