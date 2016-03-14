@@ -1,0 +1,26 @@
+---
+layout: civic-bs
+permalink: /emergency-management-approvals/form/
+---
+
+<p class="lead">
+	Select your department.
+</p>
+<p class="">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<form action="/index.aspx" method="get">
+	<input type="hidden" name="NID" value="953">
+	<input type="hidden" name="PREVIEW" value="YES">
+	<div class="form-group form-group-lg">
+		<select id="department" name="department" class="form-control">
+			{% for department in site.data.emerg_approv_depts %}
+			<option value="{{ forloop.index }}">{{ department.department_name }}</option>
+			{% endfor %}
+		</select>
+	</div>
+	<p class="text-center">
+		<button type="submit" class="btn btn-md btn-primary">Get Form</button>
+	</p>
+</form>

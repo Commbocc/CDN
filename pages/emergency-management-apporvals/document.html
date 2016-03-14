@@ -1,0 +1,192 @@
+---
+layout: civic-bs
+permalink: /emergency-management-approvals/document/
+---
+
+<p class="hidden-print">
+	<button onclick="window.print()" class="btn btn-default btn-sm btn-block">Print this Form</button>
+</p>
+
+<p>
+	This Continuity of Operations Plan (Plan) was prepared by the Department to develop, implement and maintain a viable continuity capability. This Plan complies with applicable internal department policy, County policy, local and state regulations, and supports recommendations provided in the Federal Continuity Guidance Circular 1 (CGC1), National Fire Protection Association Standard on Disaster/Emergency Management and Business Continuity Programs (NFPA 1600), Emergency Management Accreditation Program (EMAP), and industry accepted "best practices".
+</p>
+<p>
+	This Plan has been distributed internally within the HCFR Office of Emergency Management and to other departments and agencies that might be affected by its implementation.
+</p>
+<p>
+	This Plan shall be reviewed annually. The annual review shall include, at a minimum, an updated risk assessment for alternate facilities, vital records assessment, mission critical systems and equipment assessment, updated staff roster and contact information, and assessment of essential functions.
+</p>
+<p>
+	By their signatures below, the following senior level officials certify that they approve this continuity plan and fully understand the continuity of operations procedures that are to be followed as the result of an event that impacts the facilities and employees for which they are responsible.
+</p>
+
+<div class="departments">
+	{% for department in site.data.emerg_approv_depts %}
+	<section id="{{ forloop.index | prepend: 'department_' }}" class="department" style="display: none;">
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th width="20%">
+							Approved:
+						</th>
+						<td width="55%">
+
+						</td>
+						<th width="10%">
+							Date:
+						</th>
+						<td width="15%">
+
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Title
+						</th>
+						<td colspan="3">
+							Department Liaison
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th width="20%">
+							Approved:
+						</th>
+						<td width="55%">
+
+						</td>
+						<th width="10%">
+							Date:
+						</th>
+						<td width="15%">
+
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Title
+						</th>
+						<td colspan="3">
+							COOP Committee Member
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th width="20%">
+							Approved:
+						</th>
+						<td width="55%">
+
+						</td>
+						<th width="10%">
+							Date:
+						</th>
+						<td width="15%">
+
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Title
+						</th>
+						<td colspan="3">
+							{{ department.director }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th width="20%">
+							Approved:
+						</th>
+						<td width="55%">
+
+						</td>
+						<th width="10%">
+							Date:
+						</th>
+						<td width="15%">
+
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Title
+						</th>
+						<td colspan="3">
+							{{ department.admin }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<th width="20%">
+							Approved:
+						</th>
+						<td width="55%">
+
+						</td>
+						<th width="10%">
+							Date:
+						</th>
+						<td width="15%">
+
+						</td>
+					</tr>
+					<tr>
+						<th>
+							Title
+						</th>
+						<td colspan="3">
+							Chair, COOP Committee
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	{% endfor %}
+</div>
+
+<style media="print">
+#BreadCrumbOwner { display: none; }
+</style>
+
+<script type="text/javascript">
+function getParameter(name, url) {
+	if (!url) url = window.location.href;
+	url = url.toLowerCase();
+	name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var department_id = getParameter('department');
+if (!department_id) {
+	window.location = "http://coin.hillsboroughcounty.org/index.aspx?NID=952";
+} else {
+	$('#department_'+department_id).show();
+}
+</script>
