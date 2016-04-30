@@ -4,6 +4,7 @@ email: webrequest@hillsboroughcounty.org
 
 description:
 
+url: 'http://commbocc.github.io/CDN'
 baseurl: "/CDN" # the subpath of your site, e.g. /blog/
 
 # url: "http://yourdomain.com" # the base hostname & protocol for your site
