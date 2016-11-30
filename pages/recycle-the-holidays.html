@@ -1,96 +1,59 @@
 ---
+layout: bootstrap
 permalink: /recycle-the-holidays
 ---
 
-<link rel="stylesheet" href="http://commbocc.github.io/CDN/css/3.3.5/civic.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!--[if lt IE 9]>
-<script src="http://commbocc.github.io/CDN/js/ie-column-fix.js"></script>
-<script src="http://commbocc.github.io/CDN/js/jquery.xdomainrequest.min.js"></script>
-<![endif]-->
-
 <style type="text/css">
-
-.embed-responsive.embed-responsive-1by1 {
-	padding-bottom: 100%;
-}
-.img-replacement {
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100% 100%;
+img.recycle-holiday-img {
+	width: 100%;
+	max-width: 250px;
 }
 </style>
 
-<div class="bs">
+<p class="lead">
+	Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
+</p>
 
-	<header class="page-header top">
-		<img src="http://hillsboroughcounty.org/images/pages/N3713/banner.jpg" alt="Holiday Trash and Recycling" class="img-responsive center-block" />
-	</header>
-
-	<p class="lead">
-		Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
-	</p>
-
-	{% for item in site._recycle_holiday_items reversed %}
-	{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
-	{% if modulo == '1' %}
-	<div class="row">
-		{% endif %}
-
-		<div class="col-sm-3">
-			<div class="thumbnail">
-
-				<a href="#" data-toggle="modal" data-target=".{{ item.param }}" class="hidden-xs">
-					<div class="img-container">
-						<img src="http://hillsboroughcounty.org/images/pages/N3713/{{ item.param }}.png" alt="{{ item.title }}" class="img-responsive center-block">
-					</div>
-
-					<h5 class="text-center">
-						{{ item.title }}
-					</h5>
-				</a>
-
-				<a href="#{{ item.param }}" data-toggle="collapse" class="visible-xs-block">
-					<div class="img-container">
-						<div class="img-replacement embed-responsive embed-responsive-1by1 visible-xs-block" style="background-image:url('http://hillsboroughcounty.org/images/pages/N3713/{{ item.param }}.png');"></div>
-					</div>
-
-					<h5 class="text-center">
-						{{ item.title }}
-					</h5>
-				</a>
-
-				<div class="collapse" id="{{ item.param }}">
-					{{ item.content }}
-				</div>
-
-			</div>
-
-			<div class="modal fade {{ item.param }}">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<h4 class="modal-title">
-								{{ item.title }}
-							</h4>
-						</div>
-						<div class="modal-body">
-							{{ item.content }}
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
-					</div><!-- /.modal-content -->
-				</div><!-- /.modal-dialog -->
-			</div><!-- /.modal -->
-		</div>
-
-		{% if modulo == '0' or forloop.last %}
-	</div>
+{% for item in site._recycle_holiday_items reversed %}
+{% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
+{% if modulo == '1' %}
+<div class="row">
 	{% endif %}
-	{% endfor %}
 
+	<div class="col-sm-3">
+		<a href="#" data-toggle="modal" data-target="#modal-{{ item.param }}" class="thumbnail">
+
+			<img src="http://fl-hillsboroughcounty.civicplus.com/images/pages/N3713/{{ item.param }}.png" alt="{{ item.title }}" class="img-responsive center-block recycle-holiday-img">
+
+			<div class="caption">
+				<h5 class="text-center">
+					{{ item.title }}
+				</h5>
+			</div>
+		</a>
+	</div>
+
+	{% if modulo == '0' or forloop.last %}
 </div>
+{% endif %}
+
+<div id="modal-{{ item.param }}" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<header class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">
+					{{ item.title }}
+				</h4>
+			</header>
+			<section class="modal-body">
+				{{ item.content }}
+			</section>
+			<footer class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</footer>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+{% endfor %}

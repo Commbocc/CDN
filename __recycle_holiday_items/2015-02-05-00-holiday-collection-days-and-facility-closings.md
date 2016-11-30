@@ -16,18 +16,18 @@ All Hillsborough County solid waste facilities, including community collection c
 		</thead>
 		<tbody>
 			<tr>
-				<td>Thanksgiving, Thursday Nov. 26</td>
+				<td>Thanksgiving, Thursday Nov. 24</td>
 				<td>No</td>
 				<td>Your next scheduled collection day</td>
 			</tr>
 			<tr>
-				<td>Christmas, Friday, Dec. 25</td>
+				<td>Christmas, Sunday, Dec. 25</td>
 				<td>No</td>
 				<td>Your next scheduled collection day</td>
 			</tr>
 			<tr>
-				<td>New Year's Day, Friday, Jan. 1</td>
-				<td>Recycling Only</td>
+				<td>New Year's Day, Sunday, Jan. 1</td>
+				<td>No</td>
 				<td>Your next scheduled collection day</td>
 			</tr>
 		</tbody>
