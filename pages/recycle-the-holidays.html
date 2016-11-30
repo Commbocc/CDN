@@ -1,6 +1,7 @@
 ---
 layout: bootstrap
 permalink: /recycle-the-holidays
+subheading: "Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more."
 ---
 
 <style type="text/css">
@@ -10,17 +11,13 @@ img.recycle-holiday-img {
 }
 </style>
 
-<p class="lead">
-	Tis' the season to recycle your leftover trash from the holidays. Click on the icons for information on holiday collection schedules, tips on how to dispose of unique holiday items, recycling options and more.
-</p>
-
 {% for item in site._recycle_holiday_items reversed %}
 {% capture modulo %}{{ forloop.index | modulo: 4 }}{% endcapture %}
 {% if modulo == '1' %}
 <div class="row">
 	{% endif %}
 
-	<div class="col-sm-3">
+	<div class="col-md-3">
 		<a href="#" data-toggle="modal" data-target="#modal-{{ item.param }}" class="thumbnail">
 
 			<img src="http://fl-hillsboroughcounty.civicplus.com/images/pages/N3713/{{ item.param }}.png" alt="{{ item.title }}" class="img-responsive center-block recycle-holiday-img">
@@ -36,7 +33,9 @@ img.recycle-holiday-img {
 	{% if modulo == '0' or forloop.last %}
 </div>
 {% endif %}
+{% endfor %}
 
+{% for item in site._recycle_holiday_items reversed %}
 <div id="modal-{{ item.param }}" class="modal fade" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -55,5 +54,4 @@ img.recycle-holiday-img {
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 {% endfor %}
